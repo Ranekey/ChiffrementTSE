@@ -12,6 +12,7 @@ int main(){
 	unsigned taille;
 	//Ceci est un test pour github
 	int b = 42;
+	//Ca va?
 
 	return 0;
 }
