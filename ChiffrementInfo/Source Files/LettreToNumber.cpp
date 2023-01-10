@@ -1,3 +1,5 @@
+#include "decrypter.h"
+
 int LettreToNumber(char lettre)
 {
 	int indLettre;

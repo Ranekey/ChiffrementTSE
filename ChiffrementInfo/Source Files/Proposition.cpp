@@ -1,3 +1,5 @@
+#include "decrypter.h"
+
 void Proposition_initiale(float freq[], float proposition[])
 {
 	char alphabet[27] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
