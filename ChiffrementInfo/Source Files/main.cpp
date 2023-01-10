@@ -10,9 +10,7 @@ int main(){
 	//mots dans la variable text au fur et à mesure
 	char text[100000];// text de cent milles charctères Initialisation
 	unsigned taille;
-	//Ceci est un test pour github
-	int b = 42;
-	//Ca va?
+	
 
 	return 0;
 }
