@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 #include "WRfichier.h"
+#include "decrypter.h"
 using namespace std;
 
 

@@ -1,9 +1,7 @@
-#include "decrypter.h"
+int LettreToNumber(char lettre)
+{
+	int indLettre;
 
-
-
-unsigned int LettreToNumber(char lettre) {
-	unsigned int indLettre;
 	switch (lettre)
 	{
 	case 'A':
@@ -107,12 +105,8 @@ unsigned int LettreToNumber(char lettre) {
 		indLettre = 25;
 		break;
 
-	//Tout les carctère spéciaux à ajouter éventuellement
-	case ' ':
-		indLettre = 26;
-		break;
 	default:
-		//Erreur BG
+		indLettre = -1;
 		break;
 	}
 	return indLettre;
