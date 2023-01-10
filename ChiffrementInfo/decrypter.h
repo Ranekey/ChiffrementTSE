@@ -1,5 +1,10 @@
 void Proposition();
-float Score();
+/*
+Rôle : Assigne un score de plausibilité à un tableau de charactère
+Entré : Un tableau de caractères étant le texte, un entier correspondant à la taille réelle du texte
+Sortie : un réel représentant le score du texte
+*/
+float Score(char texte[], unsigned int tpTexte, float bigramme[26][26]);
 
 /*R : Etablir une proposition initial à partir d'un texte donné en fonction de la fréquence d'appartion des lettres
 E : Un tableau de la fréquence d'apparition de chacune des 26 lettres (dans l'ordre A à Z)
@@ -15,6 +20,8 @@ void FreqApparitions(char texte[], int taille_texte, char freq[]);
 
 
 /*
-Permet de donne l'indice d'une lettre dans l'alphabet
+Rôle: Permet de donne l'indice d'une lettre dans l'alphabet (exemple : LettreToNumber('a') = 0
+Entrée : un charctère (entre simple cote)
+Sortie : un entier entre 0 et 25
 */
 unsigned int LettreToNumber(char lettre);
