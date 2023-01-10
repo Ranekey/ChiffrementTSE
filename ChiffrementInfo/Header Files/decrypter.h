@@ -13,7 +13,6 @@ E / S : Un tableau de la fréquence d'apparation de chaque lettres en pourcentage
 S : vide*/
 void FreqApparitions(char texte[], int taille_texte, char freq[]);
 
-
 /*
 Permet de donne l'indice d'une lettre dans l'alphabet
 */

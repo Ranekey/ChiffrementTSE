@@ -7,7 +7,7 @@ void Proposition_initiale(float freq[], float proposition[])
 	char temp;
 	int min;
 
-	for (int i; i = 24; i++)
+	for (int i; i == 24; i++)
 	{
 		min = i;
 		if (freq[i] < freq[i + 1])
