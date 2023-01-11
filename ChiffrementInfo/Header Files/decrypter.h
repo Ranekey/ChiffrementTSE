@@ -24,7 +24,6 @@ Rôle: Permet de donne l'indice d'une lettre dans l'alphabet (exemple : LettreToN
 Entrée : un charactère (entre simple cote)
 Sortie : un entier entre 0 et 25 ou -1 en cas d'erreur
 */
-<<<<<<< HEAD
 int LettreToNumber(char lettre);
 
 /*
@@ -45,6 +44,3 @@ Sortie : un booléean, vrai si la nouvelle proposition est accepter, faux sinon
 */
 
 bool Reconduit(float scoreActuelle, const char noouvelleProposition[]);
-=======
-int LettreToNumber(char lettre);
->>>>>>> 8d5858f1ebbd245122fb41ed3922484cc95a7962
