@@ -13,10 +13,12 @@ E / S : Un tableau étant la proposition de l'ordre des 26 lettres
 S : vide*/
 void Proposition_initiale(float freq[], float proposition[]);
 
-/*R : Retourner la fréquence d'apparation de chaque lettres dans un texte
+/*
+R : Retourner la fréquence d'apparation des lettres en majuscules uniquement dans un texte
 E : Un tableau de caractères étant le texte
 E / S : Un tableau de la fréquence d'apparation de chaque lettres en pourcentage (de 0 à 1) (dans l'ordre A à Z)
-S : vide*/
+S : vide
+*/
 void FreqApparitions(char texte[], float freq[]);
 
 /*
