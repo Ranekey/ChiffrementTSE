@@ -1,6 +1,6 @@
 #include "WRfichier.h"
 
-int TextInTab(string nomfichier, char texte[])
+unsigned int TextInTab(string nomfichier, char texte[])
 {
 	unsigned int ind = 0;
 	ifstream Fichier(nomfichier.c_str());
@@ -14,7 +14,7 @@ int TextInTab(string nomfichier, char texte[])
 				texte[ind] = ligne[i];
 				ind = ind + 1;
 			}
-			text[ind] = '\n';
+			texte[ind] = '\n';
 			ind = ind + 1;
 		}
 	}

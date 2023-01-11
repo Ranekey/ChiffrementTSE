@@ -1,7 +1,7 @@
-#include "WRfichier.h";
-#include <iostream>;
+#include <iostream>
 #include <fstream>
 using namespace std;
+#include "WRfichier.h"
 
 void LectureParMots(string nomfichier)
 {
@@ -15,6 +15,8 @@ void LectureParMots(string nomfichier)
 		unsigned int finMot = 0;
 		unsigned int tailleMot = 0;
 		unsigned int indMot = 0;
+		unsigned int indiceMotGlobal = 0;
+		string texte[100];
 		string Mot = "";
 		while (ligne[ind] =! '\0') // On vérifie que c'est différent du charactère fin de chaine
 		{
@@ -28,7 +30,7 @@ void LectureParMots(string nomfichier)
 					Mot.append(indMot, ligne[debutMot + ind]);
 
 				}
-				text[indiceMotGlobal] = Mot;
+				texte[indiceMotGlobal] = Mot;
 
 				debutMot = ind + 1;
 			}
