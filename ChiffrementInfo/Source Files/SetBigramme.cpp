@@ -31,7 +31,7 @@ bool SetBigramme(string nomfichier, long float bigramme[26][26]) {
 			//Pour calculer le score il faut multiplier tout les probabilté puis appliquer le log
 			//Or on sait que log(A*B) = log(A) + log(B)
 			//Vu que l'on va avoir des petites probabilité je préfère appliquer directement le log
-			bigramme[indPremierLettre][indDeuximeLettre] = ln(occurrence / maxBigramme);
+			bigramme[indPremierLettre][indDeuximeLettre] = log(occurrence / maxBigramme);
 		}
 	}
 	else {
