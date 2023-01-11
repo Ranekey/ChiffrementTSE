@@ -1,6 +1,6 @@
 #include "WRfichier.h"
 
-unsigned int TextInTab(string nomfichier, char texte[]) {
+int TextInTab(string nomfichier, char texte[]) {
 	unsigned int ind = 0;
 	ifstream Fichier(nomfichier.c_str());
 	if (Fichier) {
@@ -21,6 +21,6 @@ unsigned int TextInTab(string nomfichier, char texte[]) {
 	else {
 		//Erreur
 	}
-	return ind //cela correspond à la taille pratique du tableau
+	return ind; //cela correspond à la taille pratique du tableau
 
 }
