@@ -2,11 +2,13 @@
 #include "WRfichier.h"
 #include <math.h>
 
-float score(char texte[], unsigned int tpTexte, float bigramme[26][26]) {
+float score(char texte[], unsigned int tpTexte, float bigramme[26][26])
+{
 	unsigned int indPremierLettre;
 	unsigned int indDeuxiemeLettre;
 	long float score = 0;
-	for (unsigned int indChar = 1; indChar < tpTexte; indChar++) {
+	for (unsigned int indChar = 1; indChar < tpTexte; indChar++)
+	{
 		indDeuxiemeLettre = LettreToNumber(texte[indChar]);
 		indPremierLettre = LettreToNumber(texte[indChar - 1]);
 		score = score + bigramme[indPremierLettre][indDeuxiemeLettre];

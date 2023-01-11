@@ -7,15 +7,18 @@
 using namespace std;
 
 
-int main(){
+int main()
+{
 	//Varible initialisée, c'est un cursor utiliser pour ajouter les
 	//mots dans la variable text au fur et à mesure
-	char text[100000];// text de cent milles charctères Initialisation
+	char text[1000];// text de cent milles charctères Initialisation
 	unsigned taille;
-	long float bigramme[26][26];
-	for (unsigned int ligne = 0; ligne < 26; ligne++) {
+	float tableau[50];
+	float valeurInitial = 0.0;
 
-		InitialisationTableau(bigramme[ligne], 26, valeurInitial)
+	for (unsigned int ligne = 0; ligne < 26; ligne++)
+	{
+		InitialisationTableau(tableau, 26, valeurInitial);
 	}
 
 

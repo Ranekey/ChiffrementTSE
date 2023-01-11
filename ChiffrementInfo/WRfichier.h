@@ -4,7 +4,6 @@
 #include <string>
 using namespace std;
 
-
 void Ecriture(string nomfichier, string texte);
 
 //Ecrit le text crypter dans le tableau et renvoie la taille pratique( donc le nombre de charactère dans le texte)

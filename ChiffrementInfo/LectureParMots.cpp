@@ -3,12 +3,12 @@
 #include <fstream>
 using namespace std;
 
-
-
-void LectureParMots(string nomfichier) {
+void LectureParMots(string nomfichier)
+{
 	ifstream fichier(nomfichier.c_str());
 	string ligne; //ligne actuel
-	if (fichier) {
+	if (fichier)
+	{
 		getline(fichier, ligne);
 		unsigned int ind = 0;
 		unsigned int debutMot = ind;
@@ -18,8 +18,8 @@ void LectureParMots(string nomfichier) {
 		string Mot = "";
 		while (ligne[ind] =! '\0') // On vérifie que c'est différent du charactère fin de chaine
 		{
-			
-			if (ligne[ind] == ' ') {
+			if (ligne[ind] == ' ')
+			{
 				
 				finMot = ind - 1;
 				tailleMot = finMot - debutMot;
@@ -31,17 +31,11 @@ void LectureParMots(string nomfichier) {
 				text[indiceMotGlobal] = Mot;
 
 				debutMot = ind + 1;
-
-				
 			}
-			
-
 		}
 	}
-	else {
+	else 
+	{
 		cout << "Erreur lecture fichier";
 	}
-
-
-
 }
