@@ -75,5 +75,4 @@ void Proposition_initiale(const char alphabet[], const float freqAlphabet[], con
 		indiceProp = LettreToNumber(associationAlphabet[i].caractere);
 		proposition[indiceProp] = associationMess[i].caractere;
 	}
-
 }

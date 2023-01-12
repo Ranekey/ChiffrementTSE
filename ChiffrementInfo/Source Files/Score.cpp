@@ -2,7 +2,7 @@
 #include "WRfichier.h"
 #include <math.h>
 
-float score(char texte[], unsigned int tpTexte, float bigramme[26][26])
+float Score(char texte[], unsigned int tpTexte, float bigramme[26][26])
 {
 	unsigned int indPremierLettre;
 	unsigned int indDeuxiemeLettre;
