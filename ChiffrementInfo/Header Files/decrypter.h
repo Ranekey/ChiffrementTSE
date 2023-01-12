@@ -16,6 +16,14 @@ S : vide
 void FreqApparitions(char texte[], float freq[]);
 
 /*
+R : Associer à chaque lettre de l'alphabet sa fréquence en utilisant le type composé dicoFreq
+E : 1 tableau de caractère étant l'alphabet à associer, 1 tableau de réels étant les fréquences d'apparitions des lettres dans l'ordre alphabétique
+E / S : 1 tableau de type composé dicoFreq où les lettres et les fréquences sont associés par pairs
+S : vide
+*/
+void AssociationFreq(const char alphabet[], const float freqApparitions[], dicoFreq associationLettresFreq[]);
+
+/*
 R : Trier dans l'ordre des fréquences d'apparitions (de 0 à 1) un tableau de type composé dicoFreq
 E : vide
 E / S : un tableau de type composé dicoFreq trier dans l'ordre décroissant des fréquences d'apparitions

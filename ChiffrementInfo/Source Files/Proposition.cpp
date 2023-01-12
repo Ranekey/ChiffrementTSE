@@ -4,7 +4,7 @@ using namespace std;
 
 void Trier_frequence(dicoFreq tab[])
 {
-	//Trier les deux tableaux dans l'ordre croissant en fonction de la fréquence
+	//Trier le tableau dans l'ordre croissant en fonction de la fréquence
 	for (int i = 0; i < 26; i++)
 	{
 		dicoFreq x_temp = tab[i];
@@ -20,6 +20,17 @@ void Trier_frequence(dicoFreq tab[])
 	}
 }
 
+
+void AssociationFreq(const char alphabet[], const float freqApparitions[], dicoFreq associationLettresFreq[])
+{
+	for (int i = 0; i < 26; i++)
+	{
+		associationLettresFreq[i].caractere = alphabet[i];
+		associationLettresFreq[i].frequence = freqApparitions[i];
+	}
+}
+
+
 void Proposition_initiale(const float freq[], char proposition[])
 {
 	dicoFreq freqBase[26];
@@ -28,14 +39,8 @@ void Proposition_initiale(const float freq[], char proposition[])
 	dicoFreq x_temp;
 	int j;
 
-	//Associer à chaque lettre de l'alphabet sa fréquence en utiliser le type composé dicoFreq (en faire une fonction)
-	for (int i = 0; i < 26; i++)
-	{
-		freqBase[i].caractere = alphabet[i];
-		freqBase[i].frequence = freq[i];
-		freqMess[i].caractere = alphabet[i];
-		freqMess[i].frequence = proposition[i];
-	}
+	//Associer à chaque lettre de l'alphabet sa fréquence en utilisant le type composé dicoFreq (en faire une fonction)
+	
 	Trier_frequence(freqBase);
 	Trier_frequence(freqMess);
 }
