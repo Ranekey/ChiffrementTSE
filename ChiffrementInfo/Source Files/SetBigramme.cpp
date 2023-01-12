@@ -15,14 +15,14 @@ bool SetBigramme(string nomfichier, long float bigramme[26][26]) {
 	ifstream Fichier(nomfichier.c_str());
 	if (Fichier) {
 		sansErreur = true;
-		string ligne
+		string ligne;
 		while (getline(Fichier, ligne)) {
 			indPremierLettre = LettreToNumber(ligne[0]);
 			indDeuximeLettre = LettreToNumber(ligne[1]);
 			occurrence = 0;
 			// i commence à 3 car on sait qu'a ligne[2] c'est un espace
 			for (unsigned int i = ligne.length(); i > 2; i--) {
-				occurence = occurence + atoi(ligne[i]) * pow(10, ligne.length()-i);
+				occurrence = occurrence + atoi(&ligne[i]) * pow(10, ligne.length()-i);
 				//la fonction atoi est inclue dans lalibraire standard
 				//elle permet de convertir un charctère qui est un numéro entre 0 et 9 en un entier
 				//la plus petite unité est le dernier charactère
