@@ -45,7 +45,7 @@
     <ClCompile Include="Source Files\ApplicationProposition.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="FreqToTab.cpp">
+    <ClCompile Include="Source Files\FreqToTab.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -53,16 +53,16 @@
     <Text Include="Ressource Files\BigrammeTexte.txt">
       <Filter>Resource Files</Filter>
     </Text>
-    <Text Include="ListeMotFr.txt">
+    <Text Include="Ressource Files\ListeMotFr.txt">
       <Filter>Resource Files</Filter>
     </Text>
-    <Text Include="OccurenceTotalParLettre.txt">
+    <Text Include="Ressource Files\OccurenceTotalParLettre.txt">
       <Filter>Resource Files</Filter>
     </Text>
-    <Text Include="TestText.txt">
+    <Text Include="Ressource Files\TestText.txt">
       <Filter>Resource Files</Filter>
     </Text>
-    <Text Include="FrequencesLettres.txt">
+    <Text Include="Ressource Files\FrequencesLettres.txt">
       <Filter>Resource Files</Filter>
     </Text>
   </ItemGroup>
