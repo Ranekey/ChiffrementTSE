@@ -15,33 +15,53 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
+    <ClCompile Include="Source Files\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Ecriture.cpp">
+    <ClCompile Include="Source Files\Ecriture.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="LectureParMots.cpp">
+    <ClCompile Include="Source Files\LectureParMots.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Proposition.cpp">
+    <ClCompile Include="Source Files\Proposition.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Score.cpp">
+    <ClCompile Include="Source Files\Score.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="LettreToNumber.cpp">
+    <ClCompile Include="Source Files\LettreToNumber.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="TextInTab.cpp">
+    <ClCompile Include="Source Files\TextInTab.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source Files\InitialisationTableau2D.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source Files\InitialisationTableau.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source Files\SetBigramme.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source Files\ApplicationProposition.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="WRfichier.h">
+    <Text Include="Ressource Files\BigrammeTexte.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Header Files\decrypter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="decrypter.h">
+    <ClInclude Include="Header Files\utils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Header Files\WRfichier.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
