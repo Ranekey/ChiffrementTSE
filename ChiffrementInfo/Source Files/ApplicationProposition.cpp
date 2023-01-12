@@ -10,6 +10,5 @@ void ApplicationProposition(const char proposition[], char texte[], unsigned int
 		//Proposition est comme un dictionnaire, au rang 0 c'est la lettre A, au rang 1 la lettre B etc...
 		// la clé est l'indice (donc indLettre), la valeur est  Proposition[indLettre]
 		texte[indTexte] = proposition[indLettre];//
-
 	}
 }
