@@ -1,6 +1,7 @@
 #include "WRfichier.h"
 #include "decrypter.h"
 #include <math.h>
+using namespace std;
 
 bool SetBigramme(string nomfichier, long float bigramme[26][26]) {
 	const unsigned int maxBigramme = 10525096; // nombre totale de lettre
