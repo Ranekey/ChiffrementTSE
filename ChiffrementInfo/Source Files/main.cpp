@@ -22,7 +22,6 @@ int main()
 		cout << tableau[i];
 	}
 	*/
-	
 
 	unsigned int tpTexte = 0;
 	char texte[100000];
