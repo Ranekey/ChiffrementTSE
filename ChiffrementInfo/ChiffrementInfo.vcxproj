@@ -141,7 +141,7 @@
     <ClCompile Include="Source Files\TextInTab.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="Frequence.txt" />
+    <Text Include="FrequenceLettres.txt" />
     <Text Include="ListeMotFr.txt" />
     <Text Include="OccurenceTotalParLettre.txt" />
     <Text Include="Ressource Files\BigrammeTexte.txt" />
