@@ -17,12 +17,16 @@ le log de ce résultat est -7.02 (environ)
 cela sera donc la valeur à laquelle sera initialisé le tableau (à l'exception des charactère spéciaux) 
 */
 
-bool SetBigramme(string nomfichier, float bigramme[27][27]) {
-	const unsigned int maxBigramme = 10525096; // nombre totale de lettre
+/*occurenceTotal = [858233,102743,331243,392195,1830803,117642,101900,89870,769610,47935,2511,598945,
+302325,749605,555439,294371,127336,698456,856958,760068,671894,172783,2885,43647,29651,15632];
+
+*/
+bool SetBigramme(string nomfichier, float bigramme[27][27], const unsigned int occurenceTotal[26]) {
 	unsigned int indPremierLettre;
 	unsigned int indDeuximeLettre;
 	unsigned int occurrence;
-	bool sansErreur; // renvoie Vrai si le fichier s'est ouvert, faux sinon
+	bool sansErreur;
+	// renvoie Vrai si le fichier s'est ouvert, faux sinon
 	// Chaque ligne du fichier est constituer de la manière suivante
 	// 1erLettre2ièmeLettre nombreOccurence
 	// Nous allons nous servir de cette particularité
@@ -30,13 +34,13 @@ bool SetBigramme(string nomfichier, float bigramme[27][27]) {
 	if (Fichier) {
 		sansErreur = true;
 		string ligne;
-		float freqMin = 1 / maxBigramme;
+		float freqMin;
 		// Initialisation 
 		for (unsigned int i = 0; i < 26; i++) {
 			for (unsigned int j = 0; j < 26; j++) {
-				bigramme[i][j] = log(freqMin);
+				bigramme[i][j] = log(1/occurenceTotal[i]);
 			}
-			bigramme[i][26] = 0; //Charactères spéciaux
+			bigramme[i][26] = 0; //Charactères spéciaux , a voir si on conserve
 		}
 		InitialisationTableau(bigramme[26], 27, 0);// Initalise la dernier colone à 0;
 		// Calcule fréquence 
@@ -44,6 +48,7 @@ bool SetBigramme(string nomfichier, float bigramme[27][27]) {
 			indPremierLettre = LettreToNumber(ligne[0]);
 			indDeuximeLettre = LettreToNumber(ligne[1]);
 			occurrence = 0;
+
 			for (unsigned int i = ligne.length(); i > 2; i--) {
 				occurrence = occurrence + atoi(&ligne[i]) * pow(10, ligne.length()-i);
 				//la fonction atoi est inclue dans lalibraire standard
@@ -55,7 +60,7 @@ bool SetBigramme(string nomfichier, float bigramme[27][27]) {
 			//Pour calculer le score il faut multiplier tout les probabilté puis appliquer le log
 			//Or on sait que log(A*B) = log(A) + log(B)
 			//Vu que l'on va avoir des petites probabilité je préfère appliquer directement le log
-			bigramme[indPremierLettre][indDeuximeLettre] = log(occurrence / maxBigramme);
+			bigramme[indPremierLettre][indDeuximeLettre] = log(occurrence / occurenceTotal[indPremierLettre]);
 		}
 	}
 	else {
