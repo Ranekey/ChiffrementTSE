@@ -24,7 +24,6 @@ int main()
 		cout << tableau[i];
 	}
 	*/
-	
 
 	unsigned int tpTexte = 0;
 	char texte[100000];
@@ -54,6 +53,6 @@ int main()
 	{
 		cout << apparitions[i].caractere << " : " << apparitions[i].frequence << endl;
 	}
-	*/
+	
 	return 0;
 }
