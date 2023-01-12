@@ -132,7 +132,6 @@
     <ClCompile Include="Source Files\Ecriture.cpp" />
     <ClCompile Include="Source Files\InitialisationTableau.cpp" />
     <ClCompile Include="Source Files\InitialisationTableau2D.cpp" />
-    <ClCompile Include="Source Files\LectureParMots.cpp" />
     <ClCompile Include="Source Files\LettreToNumber.cpp" />
     <ClCompile Include="Source Files\main.cpp" />
     <ClCompile Include="Source Files\Proposition.cpp" />
@@ -146,6 +145,7 @@
     <Text Include="ListeMotFr.txt" />
     <Text Include="OccurenceTotalParLettre.txt" />
     <Text Include="Ressource Files\BigrammeTexte.txt" />
+    <Text Include="TestText.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header Files\decrypter.h" />
