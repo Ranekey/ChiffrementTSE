@@ -49,7 +49,7 @@ Rôle : Assigne un score de plausibilité à un tableau de charactère
 Entré : Un tableau de caractères étant le texte, un entier correspondant à la taille réelle du texte
 Sortie : un réel représentant le score du texte
 */
-float Score(char texte[], unsigned int tpTexte, float bigramme[26][26]);
+float Score(const char texte[], unsigned int tpTexte, float bigramme[26][26]);
 
 /*
 Rôle: Permet de donne l'indice d'une lettre dans l'alphabet (exemple : LettreToNumber('A') = 0)

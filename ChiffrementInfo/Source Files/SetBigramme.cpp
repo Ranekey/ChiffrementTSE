@@ -2,6 +2,8 @@
 #include "decrypter.h"
 #include "utils.h"
 #include <math.h>
+#include <cstdlib>
+#include <iostream>
 using namespace std;
 /*
 SetBigramme permet d'enregistrer dans un tableau 2D le log des fréquence d'apparation
@@ -21,11 +23,12 @@ cela sera donc la valeur à laquelle sera initialisé le tableau (à l'exception de
 302325,749605,555439,294371,127336,698456,856958,760068,671894,172783,2885,43647,29651,15632];
 
 */
-bool SetBigramme(string nomfichier, float bigramme[27][27], const unsigned int occurenceTotal[26]) {
+bool SetBigramme(string nomfichier, float bigramme[26][26], const unsigned int occurenceTotal[26]) {
 	unsigned int indPremierLettre;
 	unsigned int indDeuximeLettre;
-	unsigned int occurrence;
+	float occurrence;
 	bool sansErreur;
+	unsigned int maxBigramme = 10524680;
 	// renvoie Vrai si le fichier s'est ouvert, faux sinon
 	// Chaque ligne du fichier est constituer de la manière suivante
 	// 1erLettre2ièmeLettre nombreOccurence
@@ -34,33 +37,33 @@ bool SetBigramme(string nomfichier, float bigramme[27][27], const unsigned int o
 	if (Fichier) {
 		sansErreur = true;
 		string ligne;
-		float freqMin;
+		float valMin = 0.00000000000001;
+		char ligneChar[11];
 		// Initialisation 
 		for (unsigned int i = 0; i < 26; i++) {
 			for (unsigned int j = 0; j < 26; j++) {
-				bigramme[i][j] = log(1/occurenceTotal[i]);
+				//bigramme[i][j] = log(1.0/occurenceTotal[i]);
+				bigramme[i][j] = log(1.0/maxBigramme);
+				//cout << "ligne : " << i << " col : " << j << " valeur : " << bigramme[i][j]<< endl;
 			}
-			bigramme[i][26] = 0; //Charactères spéciaux , a voir si on conserve
+			//bigramme[i][26] = 0; //Charactères spéciaux , a voir si on conserve
 		}
-		InitialisationTableau(bigramme[26], 27, 0);// Initalise la dernier colone à 0;
+		//InitialisationTableau(bigramme[26], 27, 0);// Initalise la dernier colone à 0;
 		// Calcule fréquence 
 		while (getline(Fichier, ligne)) {
 			indPremierLettre = LettreToNumber(ligne[0]);
 			indDeuximeLettre = LettreToNumber(ligne[1]);
-			occurrence = 0;
-
-			for (unsigned int i = ligne.length(); i > 2; i--) {
-				occurrence = occurrence + atoi(&ligne[i]) * pow(10, ligne.length()-i);
-				//la fonction atoi est inclue dans lalibraire standard
-				//elle permet de convertir un charctère qui est un numéro entre 0 et 9 en un entier
-				//la plus petite unité est le dernier charactère
-				//Chaque charctère avant lui est dizaine supérieur à lui
-				//Exemple 6541 = 6*10^3 + 5*10^2+ 4*10^1 + 1*10^0
+			strcpy_s(ligneChar, ligne.c_str());
+			for (int i = 0; i < 3; i++) {
+				ligneChar[i] = '0';
 			}
+			occurrence = atoi(ligneChar);
 			//Pour calculer le score il faut multiplier tout les probabilté puis appliquer le log
 			//Or on sait que log(A*B) = log(A) + log(B)
 			//Vu que l'on va avoir des petites probabilité je préfère appliquer directement le log
-			bigramme[indPremierLettre][indDeuximeLettre] = log(occurrence / occurenceTotal[indPremierLettre]);
+			//bigramme[indPremierLettre][indDeuximeLettre] = log(occurrence / occurenceTotal[indPremierLettre] + valMin);
+			bigramme[indPremierLettre][indDeuximeLettre] = log(occurrence /maxBigramme);
+			cout << "bigramme : " << bigramme[indPremierLettre][indDeuximeLettre] << " occurence = " << occurrence << "rapport = " << occurrence / maxBigramme << endl;
 		}
 	}
 	else {

@@ -21,11 +21,24 @@ int main()
 	}
 	*/
 
+	/*
+	
+	*/
 	unsigned int tpTexte = 0;
-	char texte[1000];
+	bool Erreur;
+	const unsigned int occurenceTotal[26] = { 858233, 102743, 331243, 392195, 1830803, 117642, 101900, 89870, 769610, 47935, 2511, 598945,
+		302325, 749605, 555439, 294371, 127336, 698456, 856958, 760068, 671894, 172783, 2885, 43647, 29651, 15632 };
+	float scorre = 0;
+	char texte[1000000];
 	const string nomFichier = "Ressource Files/TestText.txt";
+	const string nomFichierBigramme = "Ressource Files/BigrammeTexte.txt";
 	tpTexte = TextInTab(nomFichier, texte);
-	cout << texte;
+	cout << tpTexte << endl;
+	float bigramme[26][26];
+	Erreur = SetBigramme(nomFichierBigramme, bigramme, occurenceTotal);
+	scorre = Score(texte, tpTexte, bigramme);
+	cout << scorre;
+	//cout <<"Nouvel jhu " << bigramme[6 ][7] << endl;
 
 	/*
 	
