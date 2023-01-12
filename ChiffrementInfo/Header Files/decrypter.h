@@ -1,3 +1,6 @@
+#include<string>
+using namespace std;
+
 /*
 Type composé utilisé pour associer à chaque caractère une fréquence d'apparation (en pourcentage de 0 à 1)
 */
@@ -40,9 +43,11 @@ void Proposition_initiale(const char alphabet[], const float freqAlphabet[], con
 
 /*
 R : Convertir les frequences d'apparitions de caractères d'un fichier txt à un tableau de réels
-E : 
-S :
+E : la localisation relative du fichier contenant les fréquences d'apparitions de chaque lettres
+E / S : un tableau de réels avec les fréquences d'apparitions de chaque lettres dans l'ordre alphabétique
+S : vide
 */
+void FreqToTab(const string nomFichier, float tabFreq[]);
 
 /*
 Rôle : Assigne un score de plausibilité à un tableau de charactère

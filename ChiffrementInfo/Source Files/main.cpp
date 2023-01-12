@@ -49,5 +49,13 @@ int main()
 		InitialisationTableau(tableau, 26, valeurInitial);
 	}
 	*/
+	const string nomFichier("Ressource Files/FrequencesLettres.txt");
+	float tabFreq[26];
+	FreqToTab(nomFichier,tabFreq);
+	for (int i = 0; i < 26; i++)
+	{
+		cout << tabFreq[i] << endl;
+	}
+
 	return 0;
 }
