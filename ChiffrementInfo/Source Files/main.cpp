@@ -24,6 +24,7 @@ int main()
 	/*
 	
 	*/
+	//setlocale(LC_ALL, "fr-FR");
 	unsigned int tpTexte = 0;
 	bool Erreur;
 	const unsigned int occurenceTotal[26] = { 858233, 102743, 331243, 392195, 1830803, 117642, 101900, 89870, 769610, 47935, 2511, 598945,
@@ -37,7 +38,7 @@ int main()
 	float bigramme[26][26];
 	Erreur = SetBigramme(nomFichierBigramme, bigramme, occurenceTotal);
 	scorre = Score(texte, tpTexte, bigramme);
-	cout << scorre;
+	cout << texte;
 	//cout <<"Nouvel jhu " << bigramme[6 ][7] << endl;
 
 	/*
@@ -49,13 +50,14 @@ int main()
 		InitialisationTableau(tableau, 26, valeurInitial);
 	}
 	*/
+	/*
 	const string nomFichier("Ressource Files/FrequencesLettres.txt");
 	float tabFreq[26];
 	FreqToTab(nomFichier,tabFreq);
 	for (int i = 0; i < 26; i++)
 	{
 		cout << tabFreq[i] << endl;
-	}
+	}*/
 
 	return 0;
 }

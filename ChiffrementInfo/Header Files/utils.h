@@ -21,6 +21,8 @@ char UpperCase(char lettre);
 */
 char RemoveAccent(char lettre);
 
+char RemoveWeirdCharactre(char lettre);
+
 
 /*
 Rôle : initialiser un tableau de tableau de réel 

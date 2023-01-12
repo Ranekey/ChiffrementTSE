@@ -53,7 +53,7 @@ bool SetBigramme(string nomfichier, float bigramme[26][26], const unsigned int o
 		while (getline(Fichier, ligne)) {
 			indPremierLettre = LettreToNumber(ligne[0]);
 			indDeuximeLettre = LettreToNumber(ligne[1]);
-			strcpy_s(ligneChar, ligne.c_str());
+			strcpy_s(ligneChar, ligne.c_str()); // convertie ligne en un tableau de charctère enregistrer dans ligneChar
 			for (int i = 0; i < 3; i++) {
 				ligneChar[i] = '0';
 			}
@@ -63,7 +63,7 @@ bool SetBigramme(string nomfichier, float bigramme[26][26], const unsigned int o
 			//Vu que l'on va avoir des petites probabilité je préfère appliquer directement le log
 			//bigramme[indPremierLettre][indDeuximeLettre] = log(occurrence / occurenceTotal[indPremierLettre] + valMin);
 			bigramme[indPremierLettre][indDeuximeLettre] = log(occurrence /maxBigramme);
-			cout << "bigramme : " << bigramme[indPremierLettre][indDeuximeLettre] << " occurence = " << occurrence << "rapport = " << occurrence / maxBigramme << endl;
+			//cout << "bigramme : " << bigramme[indPremierLettre][indDeuximeLettre] << " occurence = " << occurrence << " rapport = " << occurrence / maxBigramme << endl;
 		}
 	}
 	else {

@@ -15,8 +15,11 @@ unsigned int TextInTab(const string nomfichier, char texte[])
 		{
 			for (unsigned int i = 0; i < ligne.length(); i++)
 			{
+				cout << ligne[i] << endl;
 				lettre = RemoveAccent(ligne[i]);
 				lettre = UpperCase(lettre);
+				lettre = RemoveWeirdCharactre(lettre);
+				
 				texte[ind] = lettre;
 				ind = ind + 1;
 			}

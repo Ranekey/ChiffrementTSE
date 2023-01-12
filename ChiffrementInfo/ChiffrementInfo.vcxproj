@@ -128,11 +128,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="RemoveAccent.cpp" />
+    <ClCompile Include="CleanText.cpp" />
     <ClCompile Include="Source Files\ApplicationProposition.cpp" />
     <ClCompile Include="Source Files\Ecriture.cpp" />
     <ClCompile Include="Source Files\InitialisationTableau.cpp" />
-    <ClCompile Include="Source Files\InitialisationTableau2D.cpp" />
     <ClCompile Include="Source Files\LettreToNumber.cpp" />
     <ClCompile Include="Source Files\main.cpp" />
     <ClCompile Include="Source Files\Proposition.cpp" />
@@ -140,7 +139,6 @@
     <ClCompile Include="Source Files\SetBigramme.cpp" />
     <ClCompile Include="Source Files\TextInTab.cpp" />
     <ClCompile Include="Source Files\FreqToTab.cpp" />
-    <ClCompile Include="UpperCase.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Ressource Files\FrequencesLettres.txt" />
@@ -148,7 +146,7 @@
     <Text Include="Ressource Files\OccurenceTotalParLettre.txt" />
     <Text Include="Ressource Files\BigrammeTexte.txt" />
     <Text Include="Ressource Files\TestText.txt" />
-    <Text Include="TestText2.txt" />
+    <Text Include="TestTextTT.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header Files\decrypter.h" />

@@ -33,9 +33,6 @@
     <ClCompile Include="Source Files\TextInTab.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Source Files\InitialisationTableau2D.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Source Files\InitialisationTableau.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -48,10 +45,7 @@
     <ClCompile Include="Source Files\FreqToTab.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="UpperCase.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="RemoveAccent.cpp">
+    <ClCompile Include="CleanText.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -71,7 +65,7 @@
     <Text Include="Ressource Files\FrequencesLettres.txt">
       <Filter>Resource Files</Filter>
     </Text>
-    <Text Include="TestText2.txt">
+    <Text Include="TestTextTT.txt">
       <Filter>Resource Files</Filter>
     </Text>
   </ItemGroup>
