@@ -32,6 +32,7 @@ int main()
 	
 	char texte[100] = "BONJOUR CECI Z EST UN TEST DE LA FONCTION FREQAPPARITIONS. Merci !";
 	float freq[26]; //Le tableau des fréquences d'apparations de chaque lettres
+	char proposition[27];
 	
 	FreqApparitions(texte, freq);
 
