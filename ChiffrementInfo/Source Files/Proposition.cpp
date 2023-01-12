@@ -20,32 +20,16 @@ void Trier_frequence(dicoFreq tab[])
 	}
 }
 
-
 void AssociationFreq(const char alphabet[], const float freqApparitions[], dicoFreq associationLettresFreq[])
 {
-	for (int i = 0; i < 26; i++)
+	for (int i = 0; alphabet[i] != '\0'; i++)
 	{
 		associationLettresFreq[i].caractere = alphabet[i];
 		associationLettresFreq[i].frequence = freqApparitions[i];
 	}
 }
 
-
-void Proposition_initiale(const float freq[], char proposition[])
-{
-	dicoFreq freqBase[26];
-	dicoFreq freqMess[26];
-	char alphabet[27] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-	dicoFreq x_temp;
-	int j;
-
-	//Associer à chaque lettre de l'alphabet sa fréquence en utilisant le type composé dicoFreq (en faire une fonction)
-	
-	Trier_frequence(freqBase);
-	Trier_frequence(freqMess);
-}
-
-void FreqApparitions(char texte[], float freq[])
+void FreqApparitions(const char texte[], float freq[])
 {
 	int occurences[26] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 	int indLettre;
@@ -70,3 +54,27 @@ void FreqApparitions(char texte[], float freq[])
 		}
 	}
 }
+
+void Proposition_initiale(const char alphabet[], const float freqAlphabet[], const char texte[], char proposition[])
+{
+	float freqMess[26];
+	dicoFreq associationMess[26];
+	dicoFreq associationAlphabet[26];
+	int indiceProp;
+
+	FreqApparitions(texte, freqMess);
+
+	AssociationFreq(alphabet, freqMess, associationMess);
+	AssociationFreq(alphabet, freqAlphabet, associationAlphabet);
+
+	Trier_frequence(associationMess);
+	Trier_frequence(associationAlphabet);
+
+	for (int i = 0; i < 26; i++)
+	{
+		indiceProp = LettreToNumber(associationAlphabet[i].caractere);
+		proposition[indiceProp] = associationMess[i].caractere;
+	}
+
+}
+

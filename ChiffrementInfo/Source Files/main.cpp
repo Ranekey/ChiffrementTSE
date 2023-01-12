@@ -31,24 +31,10 @@ int main()
 	*/
 	
 	
-	
+	char alphabet[27] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	char texte[100] = "BONJOUR CECI EST UN TEST DE LA FONCTION FREQAPPARITIONS. Merci !";
 	float freq[26]; //Le tableau des fréquences d'apparations de chaque lettres
-	char proposition[27];
-	
-	FreqApparitions(texte, freq);
 
-	//Affichage des valeurs du tableau freq
-
-	char alphabet[27] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-
-	dicoFreq apparitions[26];
-	AssociationFreq(alphabet, freq, apparitions);
-
-	for (int i = 0; i < 26; i++)
-	{
-		cout << apparitions[i].caractere << " : " << apparitions[i].frequence << endl;
-	}
 
 	return 0;
 }

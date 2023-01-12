@@ -13,7 +13,7 @@ E : Un tableau de caractères étant le texte
 E / S : Un tableau de la fréquence d'apparation de chaque lettres en pourcentage (de 0 à 1) (dans l'ordre A à Z)
 S : vide
 */
-void FreqApparitions(char texte[], float freq[]);
+void FreqApparitions(const char texte[], float freq[]);
 
 /*
 R : Associer à chaque lettre de l'alphabet sa fréquence en utilisant le type composé dicoFreq
@@ -31,11 +31,12 @@ S : vide
 */
 void Trier_frequence(dicoFreq tab[]);
 
-/*R : Etablir une proposition initial à partir d'un texte donné en fonction de la fréquence d'appartion des lettres
-E : Un tableau de la fréquence d'apparition de chacune des 26 lettres (dans l'ordre A à Z)
+/*R : Etablir une proposition de clé initial à partir de la fréquence d'appartion des lettres dans un texte
+E : un tableau de caractère étant l'alphabet qui va être utilisé, un tableau de réels étant la fréquence d'apparitions des lettres (entre 0 et 1)
+dans l'ordre de cet alphabet, un tableau de caractère étant le texte à décrypter
 E / S : Un tableau étant la proposition de l'ordre des 26 lettres
 S : vide*/
-void Proposition_initiale(const float freq[], char proposition[]);
+void Proposition_initiale(const char alphabet[], const float freqAlphabet[], const char texte[], char proposition[]);
 
 /*
 Rôle : Assigne un score de plausibilité à un tableau de charactère
