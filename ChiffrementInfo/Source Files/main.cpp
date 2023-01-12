@@ -1,10 +1,10 @@
 #include <fstream>
 #include <iostream>
 #include <string>
+using namespace std;
 #include "WRfichier.h"
 #include "decrypter.h"
 #include "utils.h"
-using namespace std;
 
 
 int main()
@@ -34,7 +34,6 @@ int main()
 	char alphabet[27] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	char texte[100] = "BONJOUR CECI EST UN TEST DE LA FONCTION FREQAPPARITIONS. Merci !";
 	float freq[26]; //Le tableau des fréquences d'apparations de chaque lettres
-
 
 	return 0;
 }

@@ -139,6 +139,7 @@
     <ClCompile Include="Source Files\Score.cpp" />
     <ClCompile Include="Source Files\SetBigramme.cpp" />
     <ClCompile Include="Source Files\TextInTab.cpp" />
+    <ClCompile Include="FreqToTab.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="FrequencesLettres.txt" />

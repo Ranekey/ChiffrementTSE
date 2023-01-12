@@ -39,6 +39,12 @@ S : vide*/
 void Proposition_initiale(const char alphabet[], const float freqAlphabet[], const char texte[], char proposition[]);
 
 /*
+R : Convertir les frequences d'apparitions de caractères d'un fichier txt à un tableau de réels
+E : 
+S :
+*/
+
+/*
 Rôle : Assigne un score de plausibilité à un tableau de charactère
 Entré : Un tableau de caractères étant le texte, un entier correspondant à la taille réelle du texte
 Sortie : un réel représentant le score du texte
