@@ -1,26 +1,49 @@
 #include "WRfichier.h"
 #include "decrypter.h"
+#include "utils.h"
 #include <math.h>
 using namespace std;
+/*
+SetBigramme permet d'enregistrer dans un tableau 2D le log des fréquence d'apparation
+de chaque bigramme de lettres, 
+Il faut au préalable initialiser le tableau bigramme or nous sommes faces à des contraintes
+pour les charactère spéciaux il ne faut pas qu'il influe sur le score
+leur valeurs initiales devra donc être de 1 car log(1) = 0
+pour les bigrammes qui ne sont pas dans le fichier texte cela signifie que leur fréquente d'apparition
+est très proche de 0. 
+On va assumer qu'il apparaissant 1 fois au minimum
+leur fréquence d'apparition est donc 1/maxBigramme
+le log de ce résultat est -7.02 (environ)
+cela sera donc la valeur à laquelle sera initialisé le tableau (à l'exception des charactère spéciaux) 
+*/
 
-bool SetBigramme(string nomfichier, long float bigramme[26][26]) {
+bool SetBigramme(string nomfichier, float bigramme[27][27]) {
 	const unsigned int maxBigramme = 10525096; // nombre totale de lettre
 	unsigned int indPremierLettre;
 	unsigned int indDeuximeLettre;
 	unsigned int occurrence;
 	bool sansErreur; // renvoie Vrai si le fichier s'est ouvert, faux sinon
 	// Chaque ligne du fichier est constituer de la manière suivante
-	// 1erLettre2ièmeLettre nombreD'occurence
+	// 1erLettre2ièmeLettre nombreOccurence
 	// Nous allons nous servir de cette particularité
 	ifstream Fichier(nomfichier.c_str());
 	if (Fichier) {
 		sansErreur = true;
 		string ligne;
+		float freqMin = 1 / maxBigramme;
+		// Initialisation 
+		for (unsigned int i = 0; i < 26; i++) {
+			for (unsigned int j = 0; j < 26; j++) {
+				bigramme[i][j] = log(freqMin);
+			}
+			bigramme[i][26] = 0; //Charactères spéciaux
+		}
+		InitialisationTableau(bigramme[26], 27, 0);// Initalise la dernier colone à 0;
+		// Calcule fréquence 
 		while (getline(Fichier, ligne)) {
 			indPremierLettre = LettreToNumber(ligne[0]);
 			indDeuximeLettre = LettreToNumber(ligne[1]);
 			occurrence = 0;
-			// i commence à 3 car on sait qu'a ligne[2] c'est un espace
 			for (unsigned int i = ligne.length(); i > 2; i--) {
 				occurrence = occurrence + atoi(&ligne[i]) * pow(10, ligne.length()-i);
 				//la fonction atoi est inclue dans lalibraire standard

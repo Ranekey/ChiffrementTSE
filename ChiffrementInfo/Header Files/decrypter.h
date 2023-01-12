@@ -46,3 +46,5 @@ Sortie : un booléean, vrai si la nouvelle proposition est accepter, faux sinon
 */
 
 bool Reconduit(float scoreActuelle, const char noouvelleProposition[]);
+
+bool Metropolis(float scoreActuelle, const char noouvelleProposition[]);

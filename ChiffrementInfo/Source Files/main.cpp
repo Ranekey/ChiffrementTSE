@@ -20,6 +20,7 @@ int main()
 	for (unsigned int i = 0; i < 26; i++) {
 		cout << tableau[i];
 	}
+
 	/*
 	for (unsigned int ligne = 0; ligne < 26; ligne++)
 	{

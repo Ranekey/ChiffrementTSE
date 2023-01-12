@@ -53,6 +53,9 @@
     <Text Include="Ressource Files\BigrammeTexte.txt">
       <Filter>Resource Files</Filter>
     </Text>
+    <Text Include="ListeMotFr.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header Files\decrypter.h">
