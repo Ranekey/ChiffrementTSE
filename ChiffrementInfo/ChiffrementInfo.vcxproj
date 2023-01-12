@@ -138,14 +138,14 @@
     <ClCompile Include="Source Files\Score.cpp" />
     <ClCompile Include="Source Files\SetBigramme.cpp" />
     <ClCompile Include="Source Files\TextInTab.cpp" />
-    <ClCompile Include="FreqToTab.cpp" />
+    <ClCompile Include="Source Files\FreqToTab.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="FrequencesLettres.txt" />
-    <Text Include="ListeMotFr.txt" />
-    <Text Include="OccurenceTotalParLettre.txt" />
+    <Text Include="Ressource Files\FrequencesLettres.txt" />
+    <Text Include="Ressource Files\ListeMotFr.txt" />
+    <Text Include="Ressource Files\OccurenceTotalParLettre.txt" />
     <Text Include="Ressource Files\BigrammeTexte.txt" />
-    <Text Include="TestText.txt" />
+    <Text Include="Ressource Files\TestText.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header Files\decrypter.h" />
