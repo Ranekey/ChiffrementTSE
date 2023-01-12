@@ -77,4 +77,3 @@ void Proposition_initiale(const char alphabet[], const float freqAlphabet[], con
 	}
 
 }
-

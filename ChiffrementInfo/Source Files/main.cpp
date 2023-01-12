@@ -20,13 +20,13 @@ int main()
 		cout << tableau[i];
 	}
 	*/
-
+	/*
 	unsigned int tpTexte = 0;
 	char texte[1000];
 	const string nomFichier = "Ressource Files/TestText.txt";
 	tpTexte = TextInTab(nomFichier, texte);
 	cout << texte;
-
+	*/
 	/*
 	
 
@@ -36,5 +36,13 @@ int main()
 		InitialisationTableau(tableau, 26, valeurInitial);
 	}
 	*/
+	const string nomFichier("Ressource Files/FrequencesLettres.txt");
+	float tabFreq[26];
+	FreqToTab(nomFichier,tabFreq);
+	for (int i = 0; i < 26; i++)
+	{
+		cout << tabFreq[i] << endl;
+	}
+
 	return 0;
 }
