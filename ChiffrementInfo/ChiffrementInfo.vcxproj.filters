@@ -21,9 +21,6 @@
     <ClCompile Include="Source Files\Ecriture.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Source Files\LectureParMots.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Source Files\Proposition.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -60,6 +57,9 @@
       <Filter>Resource Files</Filter>
     </Text>
     <Text Include="OccurenceTotalParLettre.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="TestText.txt">
       <Filter>Resource Files</Filter>
     </Text>
   </ItemGroup>

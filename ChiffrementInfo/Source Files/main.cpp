@@ -4,6 +4,8 @@
 #include "WRfichier.h"
 #include "decrypter.h"
 #include "utils.h"
+#include <filesystem>
+#include <iostream>
 using namespace std;
 
 
@@ -22,15 +24,15 @@ int main()
 		cout << tableau[i];
 	}
 	*/
+	
+
+	unsigned int tpTexte = 0;
+	char texte[100000];
+	string nomFichier = "./Resource Files/TestText.txt";
+	tpTexte = TextInTab(nomFichier, texte);
+	cout << texte;
 
 	/*
-	for (unsigned int ligne = 0; ligne < 26; ligne++)
-	{
-		InitialisationTableau(tableau, 26, valeurInitial);
-	}
-	*/
-	
-	
 	
 	char texte[100] = "BONJOUR CECI EST UN TEST DE LA FONCTION FREQAPPARITIONS. Merci !";
 	float freq[26]; //Le tableau des fréquences d'apparations de chaque lettres
@@ -49,6 +51,6 @@ int main()
 	{
 		cout << apparitions[i].caractere << " : " << apparitions[i].frequence << endl;
 	}
-
+	*/
 	return 0;
 }

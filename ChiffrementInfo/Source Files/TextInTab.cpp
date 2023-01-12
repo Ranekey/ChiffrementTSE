@@ -1,4 +1,6 @@
 #include "WRfichier.h"
+#include <iostream>
+using namespace std;
 
 unsigned int TextInTab(string nomfichier, char texte[])
 {
@@ -20,7 +22,7 @@ unsigned int TextInTab(string nomfichier, char texte[])
 	}
 	else
 	{
-		//Erreur
+		cout << "Le fichier n'a pas été lu.";
 	}
 	return ind; //cela correspond à la taille pratique du tableau
 }
