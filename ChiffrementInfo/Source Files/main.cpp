@@ -1,12 +1,10 @@
 #include <fstream>
 #include <iostream>
 #include <string>
+using namespace std;
 #include "WRfichier.h"
 #include "decrypter.h"
 #include "utils.h"
-#include <filesystem>
-#include <iostream>
-using namespace std;
 
 
 int main()
@@ -46,13 +44,5 @@ int main()
 	char texte[100] = "BONJOUR CECI EST UN TEST DE LA FONCTION FREQAPPARITIONS. Merci !";
 	float freq[26]; //Le tableau des fréquences d'apparations de chaque lettres
 
-	dicoFreq apparitions[26];
-	AssociationFreq(alphabet, freq, apparitions);
-
-	for (int i = 0; i < 26; i++)
-	{
-		cout << apparitions[i].caractere << " : " << apparitions[i].frequence << endl;
-	}
-	
 	return 0;
 }
