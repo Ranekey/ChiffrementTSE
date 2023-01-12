@@ -24,8 +24,8 @@ int main()
 	*/
 
 	unsigned int tpTexte = 0;
-	char texte[100000];
-	string nomFichier = "./Resource Files/TestText.txt";
+	char texte[1000];
+	const string nomFichier = "Ressource Files/TestText.txt";
 	tpTexte = TextInTab(nomFichier, texte);
 	cout << texte;
 
@@ -38,11 +38,5 @@ int main()
 		InitialisationTableau(tableau, 26, valeurInitial);
 	}
 	*/
-	
-	
-	char alphabet[27] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-	char texte[100] = "BONJOUR CECI EST UN TEST DE LA FONCTION FREQAPPARITIONS. Merci !";
-	float freq[26]; //Le tableau des fréquences d'apparations de chaque lettres
-
 	return 0;
 }

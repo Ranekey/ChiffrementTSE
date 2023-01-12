@@ -2,7 +2,7 @@
 #include <iostream>
 using namespace std;
 
-unsigned int TextInTab(string nomfichier, char texte[])
+unsigned int TextInTab(const string nomfichier, char texte[])
 {
 	unsigned int ind = 0;
 	ifstream Fichier(nomfichier.c_str());

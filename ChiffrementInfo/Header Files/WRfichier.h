@@ -12,7 +12,7 @@ Rôle : Ecrit le text crypter dans le tableau et renvoie la taille pratique( donc
 Entrée : le nom du fichier dans lequelle se trouve le texte, un tableau dans lequelle chaque charctère sera enregistrer
 Sortie : la taille pratique du tableau texte (donc le nombre de charctère) 
 */
-unsigned int TextInTab(string nomfichier, char texte[]);
+unsigned int TextInTab(const string nomfichier, char texte[]);
 
 /*
 Rôle : Permet de configuer le bigramme à partir d'un fichier texte
