@@ -56,6 +56,12 @@
     <Text Include="ListeMotFr.txt">
       <Filter>Resource Files</Filter>
     </Text>
+    <Text Include="Frequence.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="OccurenceTotalParLettre.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header Files\decrypter.h">
