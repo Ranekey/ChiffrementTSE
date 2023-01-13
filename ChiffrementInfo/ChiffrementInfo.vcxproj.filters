@@ -60,24 +60,46 @@
     <ClCompile Include="affiche_cle.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="LettreToNumberComplet.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ScoreBigramm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ScoreQuadgramm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SetBigrammeComplet.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SetQuadgramm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source Files\affiche_cle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="Resource Files\BigrammeTexte.txt">
-      <Filter>Resource Files</Filter>
-    </Text>
     <Text Include="Resource Files\ListeMotFr.txt">
       <Filter>Resource Files</Filter>
     </Text>
     <Text Include="Resource Files\OccurenceTotalParLettre.txt">
       <Filter>Resource Files</Filter>
     </Text>
-    <Text Include="Resource Files\TestText.txt">
-      <Filter>Resource Files</Filter>
-    </Text>
     <Text Include="Resource Files\FrequencesLettres.txt">
       <Filter>Resource Files</Filter>
     </Text>
-    <Text Include="Resource Files\TestTextTT.txt">
+    <Text Include="Resource Files\mess_crypt.txt" />
+    <Text Include="Resource Files\BigrammesTexte.txt" />
+    <Text Include="Resource Files\TextCrypter.txt" />
+    <Text Include="Resource Files\TextDecrypter.txt" />
+    <Text Include="..\..\..\..\..\Documents\Visual Studio 2022\TSE\french_bigrams.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="..\..\..\..\..\Documents\Visual Studio 2022\TSE\french_monograms.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="..\..\..\..\..\Documents\Visual Studio 2022\TSE\french_quadgrams.txt">
       <Filter>Resource Files</Filter>
     </Text>
   </ItemGroup>
