@@ -57,6 +57,9 @@ Entrée : Un tableau de caractères étant le texte, un entier correspondant à la t
 Sortie : un réel représentant le score du texte
 */
 float Score(const char texte[], unsigned int tpTexte, float bigramme[26][26]);
+float ScoreBigramm(const char texte[], unsigned int tpTexte, float bigramme[26][26]);
+
+float ScoreQuadgramm(const char texte[], unsigned int tpTexte, float quadgramm[42][42][42][42]);
 
 /*
 Rôle: Permet de donne l'indice d'une lettre dans l'alphabet (exemple : LettreToNumber('A') = 0)
@@ -64,7 +67,7 @@ Entrée : un charactère (entre simple cote)
 Sortie : un entier entre 0 et 25 ou -1 en cas d'erreur
 */
 int LettreToNumber(char lettre);
-
+int LettreToNumberComplet(char lettre);
 /*
 Rôle: Application d'une proposition à un texte donné
 Entrée : un tableau de caractères (le texte à traduire), la taille pratique du texte (un entier) une proposition (tableaux de 26 caractères)

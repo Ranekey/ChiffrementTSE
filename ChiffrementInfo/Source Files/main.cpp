@@ -19,6 +19,9 @@ int main()
 	char texte_crypt[10000];
 	char proposition_actuelle[27];
 	float bigrammes[26][26];
+	
+	
+	//float quadgramm[42][42][42][42];
 
 
 	//On convertit le texte contenu dans un fichier en un tableau de caractères et on en récupère sa taille
