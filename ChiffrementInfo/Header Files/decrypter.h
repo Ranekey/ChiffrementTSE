@@ -54,7 +54,7 @@ Entrée : Un tableau de caractères étant le texte, un entier correspondant à la t
 Sortie : un réel représentant le score du texte
 */
 float Score(const char texte[], unsigned int tpTexte, float bigramme[26][26]);
-float ScoreBigramm(const char texte[], unsigned int tpTexte, float bigramme[26][26]);
+float ScoreBigramm(const char texte[], unsigned int tpTexte, float bigramme[42][42]);
 
 float ScoreQuadgramm(const char texte[], unsigned int tpTexte, float quadgramm[42][42][42][42]);
 
@@ -105,5 +105,5 @@ bool Metropolis(float score_courant, float score_actuelle, unsigned int taille);
 Rôle : Evaluer la plausibilité d'un texte avec une comparaison par bigrammes
 Sortie : un réel (le meilleur score obtenu)
 */
-float MetropolisBoucle(char proposition_initiale[26], char texte[], char proposition_courante[26], char proposition_actuelle[26], char best_proposition[26], unsigned int tailleTexte, float bigramme[26][26]);
+float MetropolisBoucle(char proposition_initiale[43], char texte[], char proposition_courante[43], char proposition_actuelle[43], char best_proposition[43], unsigned int tailleTexte, float quadgramm[42][42]);
 

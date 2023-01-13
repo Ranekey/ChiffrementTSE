@@ -60,6 +60,7 @@ bool SetQuadgramm(string nomfichier, float quadgramm[42][42][42][42])
 		}
 	}
 	else {
+		cout << " Pas ouver set";
 		sansErreur = false; //Erreur dans la lecture du fichier
 	}
 	return sansErreur;

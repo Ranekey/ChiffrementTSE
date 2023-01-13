@@ -23,10 +23,10 @@ bool Metropolis(float score_courant,float score_actuelle, unsigned int taille) {
 	return x < p; // Si vrai on accepte la proposition
 }
 
-float MetropolisBoucle(char proposition_initiale[43], char texte[], char proposition_courante[43], char proposition_actuelle[43], char best_proposition[43], unsigned int tailleTexte, float quadgramm[42][42][42][42]) {
+float MetropolisBoucle(char proposition_initiale[43], char texte[], char proposition_courante[43], char proposition_actuelle[43], char best_proposition[43], unsigned int tailleTexte, float bigramm[42][42]) {
 	//initialisation variable pour decrypter
 	float best_score, score_courant, score_actuelle;
-	float score_initiale = ScoreQuadgramm(texte, tailleTexte, quadgramm);
+	float score_initiale = ScoreBigramm(texte, tailleTexte, bigramm);
 	score_courant = score_initiale;
 	best_score = score_initiale;
 	score_actuelle = score_initiale;
@@ -42,7 +42,7 @@ float MetropolisBoucle(char proposition_initiale[43], char texte[], char proposi
 	while (i < MAXITER) {
 		//Nouvelle proposition
 		//proposition_courante = Proposition(); A faire Proposition
-		score_courant = ScoreQuadgramm(texte, tailleTexte, quadgramm); // score à changer
+		score_courant = ScoreBigramm(texte, tailleTexte, bigramm); // score à changer
 		if (Metropolis(score_courant, score_actuelle, tailleTexte)) {
 			proposition_actuelle = proposition_courante;
 			score_actuelle = score_courant;

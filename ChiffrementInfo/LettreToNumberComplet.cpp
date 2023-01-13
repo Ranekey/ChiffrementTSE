@@ -1,5 +1,6 @@
 #include "decrypter.h"
 #include <string>
+using namespace std;
 
 int LettreToNumberComplet(char lettre)
 {

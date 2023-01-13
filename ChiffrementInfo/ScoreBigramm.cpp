@@ -3,7 +3,7 @@
 #include <iostream>// à suppprimer
 #include <math.h>
 
-float Score(const char texte[], unsigned int tpTexte, float bigramme[42][42])
+float ScoreBigramm(const char texte[], unsigned int tpTexte, float bigramme[42][42])
 {
 	unsigned int indPremierLettre;
 	unsigned int indDeuxiemeLettre;
