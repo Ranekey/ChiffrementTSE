@@ -58,6 +58,7 @@ void Recuit_boucle(const char texte_initiale[], const unsigned int tpTexte_initi
 
 	while (k < NB_ITTERATIONS)
 	{
+		Proposition
 		ApplicationProposition(texte_initiale, tpTexte_initial,proposition_actuel,texte_trad);
 	}
 }
