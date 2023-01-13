@@ -128,14 +128,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="CleanText.cpp" />
-    <ClCompile Include="Metropolis.cpp" />
+    <ClCompile Include="Source Files\CleanText.cpp" />
+    <ClCompile Include="Source Files\Metropolis.cpp" />
     <ClCompile Include="Source Files\ApplicationProposition.cpp" />
     <ClCompile Include="Source Files\Ecriture.cpp" />
     <ClCompile Include="Source Files\InitialisationTableau.cpp" />
     <ClCompile Include="Source Files\LettreToNumber.cpp" />
     <ClCompile Include="Source Files\main.cpp" />
     <ClCompile Include="Source Files\Proposition.cpp" />
+    <ClCompile Include="Source Files\Recuit_simulé.cpp" />
     <ClCompile Include="Source Files\Score.cpp" />
     <ClCompile Include="Source Files\SetBigramme.cpp" />
     <ClCompile Include="Source Files\TextInTab.cpp" />
@@ -147,7 +148,7 @@
     <Text Include="Ressource Files\OccurenceTotalParLettre.txt" />
     <Text Include="Ressource Files\BigrammeTexte.txt" />
     <Text Include="Ressource Files\TestText.txt" />
-    <Text Include="TestTextTT.txt" />
+    <Text Include="Ressource Files\TestTextTT.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header Files\decrypter.h" />

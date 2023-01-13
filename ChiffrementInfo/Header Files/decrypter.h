@@ -73,11 +73,14 @@ void ApplicationProposition(const char proposition[], char texte[], unsigned int
 
 /*
 Rôle: c'est la fonction qui permet de décrypter le message, cela se base sur un algorithme
-de reconduit(qui lui même se base sur un algorithme de métropolis)
+de recuit simulé (qui lui même se base sur un algorithme de métropolis)
 Entrée : Une proposition donc une chaine de 26 charctère, le score actuelle du texte, (le score initiale basé de
 l'analyse fréquentielle, définir commme une variable global ou constante )
 Sortie : un booléean, vrai si la nouvelle proposition est accepter, faux sinon
 */
-bool Reconduit(float scoreActuelle, const char noouvelleProposition[]);
+bool Recuit(float scoreActuelle, const char noouvelleProposition[], char liste_mots[]);
+
+float Score_Mots(const char texte[], char liste_mots[]);
 
 bool Metropolis(float scoreActuelle, const char noouvelleProposition[]);
+
