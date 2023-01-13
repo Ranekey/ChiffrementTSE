@@ -128,7 +128,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Source Files\affiche_cle.cpp" />
+    <ClCompile Include="..\..\..\..\..\Documents\Visual Studio 2022\TSE\PropositionYazid.cpp" />
+    <ClCompile Include="affiche_cle.cpp" />
+    <ClCompile Include="LettreToNumberComplet.cpp" />
+    <ClCompile Include="ScoreBigramm.cpp" />
+    <ClCompile Include="ScoreQuadgramm.cpp" />
+    <ClCompile Include="SetBigrammeComplet.cpp" />
+    <ClCompile Include="SetQuadgramm.cpp" />
     <ClCompile Include="Source Files\CleanText.cpp" />
     <ClCompile Include="Source Files\ApplicationProposition.cpp" />
     <ClCompile Include="Source Files\Ecriture.cpp" />
@@ -144,6 +150,9 @@
     <ClCompile Include="Source Files\FreqToTab.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="..\..\..\..\..\Documents\Visual Studio 2022\TSE\french_bigrams.txt" />
+    <Text Include="..\..\..\..\..\Documents\Visual Studio 2022\TSE\french_monograms.txt" />
+    <Text Include="..\..\..\..\..\Documents\Visual Studio 2022\TSE\french_quadgrams.txt" />
     <Text Include="Resource Files\FrequencesLettres.txt" />
     <Text Include="Resource Files\ListeMotFr.txt" />
     <Text Include="Resource Files\mess_crypt.txt" />

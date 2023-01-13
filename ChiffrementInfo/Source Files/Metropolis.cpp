@@ -23,7 +23,7 @@ bool Metropolis(float score_courant,float score_actuelle, unsigned int taille) {
 	return x < p; // Si vrai on accepte la proposition
 }
 
-float MetropolisBoucle(char proposition_initiale[26], char texte[], char proposition_courante[26], char proposition_actuelle[26], char best_proposition[26],unsigned int tailleTexte, float bigramme[26][26]) {
+float MetropolisBoucle(char proposition_initiale[26], char texte[], char proposition_courante[26], char proposition_actuelle[26], char best_proposition[26], unsigned int tailleTexte, float bigramme[26][26]) {
 	//initialisation variable pour decrypter
 	float best_score, score_courant, score_actuelle;
 	float score_initiale = Score(texte, tailleTexte, bigramme);

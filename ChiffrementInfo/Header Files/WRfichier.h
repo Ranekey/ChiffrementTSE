@@ -24,6 +24,7 @@ Entrée : le nom du fichier, le tableau dans lequelle le bigramme va être enregis
 Sortie : un booléan , Vrai si l'enregistrement s'est effuctuer sans erreur, faux sinon
 */
 bool SetBigramme(string nomfichier, float bigramme[26][26]);
+bool SetBigrammeComplet(string nomfichier, float bigramme[42][42])
 
 /*
 Rôle :
