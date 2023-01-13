@@ -16,7 +16,7 @@ unsigned int TextInTab(const string nomfichier, char texte[])
 			for (unsigned int i = 0; i < ligne.length(); i++)
 			{
 				cout << ligne[i] << endl;
-				lettre = RemoveAccent(ligne[i]);
+				lettre = RemoveAccent(ligne[i]); // on peut supposer qu'il n'y aura pas d'accent
 				lettre = UpperCase(lettre);
 				lettre = RemoveWeirdCharactre(lettre);
 				

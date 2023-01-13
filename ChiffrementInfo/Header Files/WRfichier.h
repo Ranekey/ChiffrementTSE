@@ -33,9 +33,9 @@ Sortie :
 void InitialisationBigramme(float bigramme[26][26]);
 
 /*
-Rôle : Lire le fichier contenant le mots et les mettres dans un tableau de tableau
-Entrée : le chemin du fichier en string
-Entrée / Sortie : le tableau de tableau de caratères cotenant les mots
-Sortie : un entier (la taille de liste de mots, c'est à dire le nombre de mots dans la liste)
+Rôle : permet d'afficher la clé et le texte décrypter
+Entrée : la clé et le texte décrypter sous forme de tableau, le nom du fichier où la clé ser enrgistrer
+Sortie : vide
 */
-unsigned int RecuperationMots(const string fichier, char liste_mots[][50]);
+
+void affiche_cle(const char cle[], const char texteDecrypter[], string nomfichier);

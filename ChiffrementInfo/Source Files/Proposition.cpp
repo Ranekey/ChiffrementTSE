@@ -1,5 +1,6 @@
 #include "decrypter.h"
 #include <iostream>
+#include <random>
 using namespace std;
 
 void Trier_frequence(dicoFreq tab[])
@@ -83,4 +84,23 @@ void Proposition_initiale(const char alphabet[], const float freqAlphabet[], con
 		indiceProp = LettreToNumber(associationAlphabet[i].caractere);
 		proposition[indiceProp] = associationMess[i].caractere;
 	}
+}
+
+void Proposition(int tailleProposition, char proposition[])
+{
+
+	int ind1, ind2;
+	char temp;
+	ind1 = rand() % tailleProposition;
+	ind2 = rand() % tailleProposition;
+	while (ind1 == ind2) // On veut deux indices différents
+	{
+		ind1 = rand() % tailleProposition;
+		ind2 = rand() % tailleProposition;
+
+	}
+	//Permutation
+	temp = proposition[ind1];
+	proposition[ind1] = proposition[ind2];
+	proposition[ind2] = temp;
 }

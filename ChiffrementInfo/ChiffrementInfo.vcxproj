@@ -128,6 +128,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\..\..\Documents\Visual Studio 2022\TSE\PropositionYazid.cpp" />
+    <ClCompile Include="affiche_cle.cpp" />
     <ClCompile Include="Source Files\CleanText.cpp" />
     <ClCompile Include="Source Files\ApplicationProposition.cpp" />
     <ClCompile Include="Source Files\Ecriture.cpp" />

@@ -54,6 +54,12 @@
     <ClCompile Include="Source Files\Metropolis.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Documents\Visual Studio 2022\TSE\PropositionYazid.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="affiche_cle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="Resource Files\BigrammeTexte.txt">
@@ -71,7 +77,9 @@
     <Text Include="Resource Files\FrequencesLettres.txt">
       <Filter>Resource Files</Filter>
     </Text>
-    <Text Include="Resource Files\TestTextTT.txt" />
+    <Text Include="Resource Files\TestTextTT.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header Files\decrypter.h">
