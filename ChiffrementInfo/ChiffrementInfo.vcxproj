@@ -143,12 +143,12 @@
     <ClCompile Include="Source Files\FreqToTab.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="Ressource Files\FrequencesLettres.txt" />
-    <Text Include="Ressource Files\ListeMotFr.txt" />
-    <Text Include="Ressource Files\OccurenceTotalParLettre.txt" />
-    <Text Include="Ressource Files\BigrammeTexte.txt" />
-    <Text Include="Ressource Files\TestText.txt" />
-    <Text Include="Ressource Files\TestTextTT.txt" />
+    <Text Include="Resource Files\FrequencesLettres.txt" />
+    <Text Include="Resource Files\ListeMotFr.txt" />
+    <Text Include="Resource Files\OccurenceTotalParLettre.txt" />
+    <Text Include="Resource Files\BigrammeTexte.txt" />
+    <Text Include="Resource Files\TestText.txt" />
+    <Text Include="Resource Files\TestTextTT.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header Files\decrypter.h" />

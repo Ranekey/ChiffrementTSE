@@ -45,32 +45,33 @@
     <ClCompile Include="Source Files\FreqToTab.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="CleanText.cpp">
+    <ClCompile Include="Source Files\CleanText.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Metropolis.cpp">
+    <ClCompile Include="Source Files\Metropolis.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source Files\Recuit_simulé.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="Ressource Files\BigrammeTexte.txt">
+    <Text Include="Resource Files\BigrammeTexte.txt">
       <Filter>Resource Files</Filter>
     </Text>
-    <Text Include="Ressource Files\ListeMotFr.txt">
+    <Text Include="Resource Files\ListeMotFr.txt">
       <Filter>Resource Files</Filter>
     </Text>
-    <Text Include="Ressource Files\OccurenceTotalParLettre.txt">
+    <Text Include="Resource Files\OccurenceTotalParLettre.txt">
       <Filter>Resource Files</Filter>
     </Text>
-    <Text Include="Ressource Files\TestText.txt">
+    <Text Include="Resource Files\TestText.txt">
       <Filter>Resource Files</Filter>
     </Text>
-    <Text Include="Ressource Files\FrequencesLettres.txt">
+    <Text Include="Resource Files\FrequencesLettres.txt">
       <Filter>Resource Files</Filter>
     </Text>
-    <Text Include="TestTextTT.txt">
-      <Filter>Resource Files</Filter>
-    </Text>
+    <Text Include="Resource Files\TestTextTT.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header Files\decrypter.h">

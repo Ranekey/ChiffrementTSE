@@ -8,6 +8,35 @@ using namespace std;
 
 int main()
 {
+	//MAIN PRINCIPAL
+	const string fichier_freq_alphabet_base = "Resource Files/FrequencesLettres.txt";
+	const string fichier_texte_crypt = "Resource Files/mess_crypt.txt";
+	const string fichier_bigrammes = "Resource Files/BigrammesTexte.txt";
+	
+	char alphabetBase[27] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	float freq_alphabet_base[26];
+	char texte_crypt[10000];
+	char proposition_actuelle[27];
+	float bigrammes[26][26];
+
+
+	//On convertit le texte contenu dans un fichier en un tableau de caractères et on en récupère sa taille
+	const unsigned int taille_texte = TextInTab(fichier_texte_crypt, texte_crypt);
+
+	//On convertit les bigrammes contenus dans un fichier dans un tableau de réels à 2 entrées
+	SetBigramme(fichier_bigrammes, bigrammes);
+
+	//On ajoute les fréquences d'apparitions des lettres contenus dans un fichier dans un tableau de réels
+	FreqToTab(fichier_freq_alphabet_base, freq_alphabet_base);
+	
+	//On génère une proposition de clé initiale
+	Proposition_initiale(alphabetBase, freq_alphabet_base, texte_crypt, proposition_actuelle);
+
+	//On applique la proposition de clé sur le texte (refair pour ne pas modifier le texte original)
+	ApplicationProposition(proposition_actuelle, texte_crypt, taille_texte);
+
+	//On calcule le score de cette application
+	float score_actuelle = Score(texte_crypt, taille_texte, bigrammes);
 	//Varible initialisée, c'est un cursor utiliser pour ajouter les
 	//mots dans la variable text au fur et à mesure
 	/*
@@ -25,6 +54,8 @@ int main()
 	
 	*/
 	//setlocale(LC_ALL, "fr-FR");
+	/*
+	
 	unsigned int tpTexte = 0;
 	bool Erreur;
 	const unsigned int occurenceTotal[26] = { 858233, 102743, 331243, 392195, 1830803, 117642, 101900, 89870, 769610, 47935, 2511, 598945,
@@ -40,7 +71,7 @@ int main()
 	scorre = Score(texte, tpTexte, bigramme);
 	cout << scorre;
 	//cout <<"Nouvel jhu " << bigramme[6 ][7] << endl;
-
+	*/
 	/*
 	
 
