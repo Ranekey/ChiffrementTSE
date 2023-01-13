@@ -23,13 +23,13 @@ cela sera donc la valeur à laquelle sera initialisé le tableau (à l'exception de
 302325,749605,555439,294371,127336,698456,856958,760068,671894,172783,2885,43647,29651,15632];
 
 */
-bool SetBigrammeComplet(string nomfichier, float bigramme[26][26], const unsigned int occurenceTotal[26])
+bool SetBigrammeComplet(string nomfichier, float bigramme[42][42], const unsigned int occurenceTotal[26])
 {
 	unsigned int indPremierLettre;
 	unsigned int indDeuximeLettre;
 	float occurrence;
 	bool sansErreur;
-	unsigned int maxBigramme = 10524680;
+	unsigned int maxBigramme = 290000000; //290*10^6
 	// renvoie Vrai si le fichier s'est ouvert, faux sinon
 	// Chaque ligne du fichier est constituer de la manière suivante
 	// 1erLettre2ièmeLettre nombreOccurence
@@ -38,13 +38,14 @@ bool SetBigrammeComplet(string nomfichier, float bigramme[26][26], const unsigne
 	if (Fichier) {
 		sansErreur = true;
 		string ligne;
-		float valMin = 0.00000000000001;
+		float valMin = 0.01;
 		char ligneChar[11];
 		// Initialisation 
-		for (unsigned int i = 0; i < 26; i++) {
-			for (unsigned int j = 0; j < 26; j++) {
+		for (unsigned int i = 0; i < 42; i++) {
+			for (unsigned int j = 0; j < 42; j++) {
+						bigramme[i][j] = log(valMin / maxBigramme);
 				//bigramme[i][j] = log(1.0/occurenceTotal[i]);
-				bigramme[i][j] = log(1.0 / maxBigramme);
+				
 				//cout << "ligne : " << i << " col : " << j << " valeur : " << bigramme[i][j]<< endl;
 			}
 			//bigramme[i][26] = 0; //Charactères spéciaux , a voir si on conserve
@@ -52,10 +53,10 @@ bool SetBigrammeComplet(string nomfichier, float bigramme[26][26], const unsigne
 		//InitialisationTableau(bigramme[26], 27, 0);// Initalise la dernier colone à 0;
 		// Calcule fréquence 
 		while (getline(Fichier, ligne)) {
-			if(ligne[2] == ' ')
-			{
-				indPremierLettre = LettreToNumber(ligne[0]);
-				indDeuximeLettre = LettreToNumber(ligne[1]);
+			
+				indPremierLettre = LettreToNumberComplet(ligne[0]);
+				indDeuximeLettre = LettreToNumberComplet(ligne[1]);
+				
 				strcpy_s(ligneChar, ligne.c_str()); // convertie ligne en un tableau de charctère enregistrer dans ligneChar
 				for (int i = 0; i < 3; i++) {
 					ligneChar[i] = '0';
@@ -68,7 +69,7 @@ bool SetBigrammeComplet(string nomfichier, float bigramme[26][26], const unsigne
 				bigramme[indPremierLettre][indDeuximeLettre] = log(occurrence / maxBigramme);
 				//cout << "bigramme : " << bigramme[indPremierLettre][indDeuximeLettre] << " occurence = " << occurrence << " rapport = " << occurrence / maxBigramme << endl;
 			}
-		}
+		
 	}
 	else {
 		sansErreur = false; //Erreur dans la lecture du fichier
