@@ -48,6 +48,9 @@
     <ClCompile Include="CleanText.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Metropolis.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="Ressource Files\BigrammeTexte.txt">

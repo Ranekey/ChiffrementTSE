@@ -38,7 +38,7 @@ int main()
 	float bigramme[26][26];
 	Erreur = SetBigramme(nomFichierBigramme, bigramme, occurenceTotal);
 	scorre = Score(texte, tpTexte, bigramme);
-	cout << texte;
+	cout << scorre;
 	//cout <<"Nouvel jhu " << bigramme[6 ][7] << endl;
 
 	/*

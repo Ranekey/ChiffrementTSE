@@ -24,5 +24,6 @@ float Score(const char texte[], unsigned int tpTexte, float bigramme[26][26])
 		//il ne reste plus qu'à faire l'addition
 	}
 
-	return score;
+
+	return score/tpTexte; // on normalise par le nombre de charactères
 }

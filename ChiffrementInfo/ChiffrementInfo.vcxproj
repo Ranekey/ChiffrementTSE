@@ -129,6 +129,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="CleanText.cpp" />
+    <ClCompile Include="Metropolis.cpp" />
     <ClCompile Include="Source Files\ApplicationProposition.cpp" />
     <ClCompile Include="Source Files\Ecriture.cpp" />
     <ClCompile Include="Source Files\InitialisationTableau.cpp" />
