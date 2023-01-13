@@ -44,6 +44,14 @@ Sortie : vide
 void Proposition_initiale(const char alphabet[], const float freqAlphabet[], const char texte[], char proposition[]);
 
 /*
+R: melanger les caractere d'une chaine de caracteres
+E: 1 tableau de caracteres avec caracteres non melangés
+E/S: 1 tableau de caracteres avec lettres melangers
+S: Vide
+*/
+void Proposition(int tailleProposition, char proposition[]);
+
+/*
 Rôle : Assigne un score de plausibilité à un tableau de charactère
 Entrée : Un tableau de caractères étant le texte, un entier correspondant à la taille réelle du texte
 Sortie : un réel représentant le score du texte
@@ -79,10 +87,16 @@ Sortie : un réel (le score du texte)
 */
 float Score_Mots(const char texte[], char liste_mots[]);
 
+
+/*
+Rôle : utiliser l'algorithme de métropolis pour savoir si une proposition est conserver ou non
+Entrée : le score de proposition actuelle et proposition courant, la taille du texte
+Sortie: un bool , Vrai si la proposition est accepter, faux sinon
+*/
 bool Metropolis(float score_courant, float score_actuelle, unsigned int taille);
 
 /*
 
 */
-float MetropolisBoucle(char best_proposition[26], char proposition_actuelle[26], char proposition_courante[26], char texte[]);
+float MetropolisBoucle(char proposition_initiale[26], char texte[], char proposition_courante[26], char proposition_actuelle[26], char best_proposition[26], unsigned int tailleTexte, float bigramme[26][26]);
 

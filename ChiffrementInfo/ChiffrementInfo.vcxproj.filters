@@ -54,6 +54,9 @@
     <ClCompile Include="Source Files\Recuit_simulé.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Documents\Visual Studio 2022\TSE\PropositionYazid.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="Resource Files\BigrammeTexte.txt">
