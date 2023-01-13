@@ -8,7 +8,6 @@ using namespace std;
 
 int main()
 {
-	//MAIN PRINCIPAL
 	const string fichier_freq_alphabet_base = "Resource Files/FrequencesLettres.txt";
 	const string fichier_texte_crypt = "Resource Files/mess_crypt.txt";
 	const string fichier_bigrammes = "Resource Files/BigrammesTexte.txt";
@@ -16,8 +15,8 @@ int main()
 
 	char alphabetBase[27] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	float freq_alphabet_base[26];
-	char texte_crypt[10000];
-	char texte_trad[10000];
+	char texte_crypt[100000];
+	char texte_trad[100000];
 	float bigrammes[26][26];
 	char liste_mots[350000][50];
 	
@@ -29,8 +28,6 @@ int main()
 
 	float score_courant;
 	char proposition_courante[27];
-
-
 
 
 	//On convertit le texte contenu dans un fichier en un tableau de caractères et on en récupère sa taille

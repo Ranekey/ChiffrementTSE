@@ -27,9 +27,9 @@ float MetropolisBoucle(char proposition_initiale[26], char texte[], char proposi
 	//initialisation variable pour decrypter
 	float best_score, score_courant, score_actuelle;
 	float score_initiale = Score(texte, tailleTexte, bigramme);
-	score_initiale = score_courant;
-	score_initiale = best_score;
-	score_initiale = score_actuelle;
+	score_courant = score_initiale;
+	best_score = score_initiale;
+	score_actuelle = score_initiale;
 	//ca fait beaucoup de variable mais c++ me laisse pas faire de variable locale
 	proposition_courante = proposition_initiale;
 	proposition_actuelle = proposition_initiale;

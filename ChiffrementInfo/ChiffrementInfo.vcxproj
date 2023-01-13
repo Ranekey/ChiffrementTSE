@@ -146,10 +146,9 @@
   <ItemGroup>
     <Text Include="Resource Files\FrequencesLettres.txt" />
     <Text Include="Resource Files\ListeMotFr.txt" />
+    <Text Include="Resource Files\mess_crypt.txt" />
     <Text Include="Resource Files\OccurenceTotalParLettre.txt" />
-    <Text Include="Resource Files\BigrammeTexte.txt" />
-    <Text Include="Resource Files\TestText.txt" />
-    <Text Include="Resource Files\TestTextTT.txt" />
+    <Text Include="Resource Files\BigrammesTexte.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header Files\decrypter.h" />
