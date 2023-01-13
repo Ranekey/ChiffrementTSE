@@ -52,6 +52,10 @@ int main()
 	//On utilise ensuite l'algorithme de Metropolis
 	best_score = MetropolisBoucle(proposition_courante, texte_crypt, proposition_courante,proposition_actuelle,best_proposition,taille_texte,bigrammes);
 
+	affiche_cle(best_proposition, texte_trad, "Resource Files/DecrypterTestTest.txt");
+
+
+
 	//Initialiser la liste des mots dans
 	//unsigned int taille_liste_mots = RecuperationMots(fichier_liste_mots, liste_mots);
 

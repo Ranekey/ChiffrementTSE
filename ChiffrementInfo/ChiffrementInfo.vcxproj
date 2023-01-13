@@ -149,6 +149,8 @@
     <Text Include="Resource Files\mess_crypt.txt" />
     <Text Include="Resource Files\OccurenceTotalParLettre.txt" />
     <Text Include="Resource Files\BigrammesTexte.txt" />
+    <Text Include="Resource Files\TextCrypter.txt" />
+    <Text Include="Resource Files\TextDecrypter.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header Files\decrypter.h" />
