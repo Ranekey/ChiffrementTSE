@@ -86,7 +86,7 @@ Entrée : vide
 Entrée / Sortie : un tableau de caractère (la clé la plus probable trouvé)
 Sortie : vide
 */
-void Recuit_boucle(char proposition_finale[]);
+float Recuit_boucle(char proposition_actuelle[27], float bigramme[26][26], const char texte_initial[], const unsigned int tpTexte_initial, const char liste_mots[][50], const unsigned int taille_liste, char texte_trad[], float best_score, char best_proposition[27]);
 
 /*
 Rôle : Evaluer le score d'un texte en fonction du nombre de mots présents parmi une liste de mots (ici en Francais)

@@ -42,7 +42,7 @@ bool Recuit(float score_actuel, float score_courant, float temperature)
 
 }
 
-float Recuit_boucle(char proposition_actuelle[27], float bigramme[26][26], const char texte_initial[], const unsigned int tpTexte_initial, const char liste_mots[][50], const unsigned int taille_liste, char texte_trad[], float best_score, char best_proposition[27], char proposition_finale[])
+float Recuit_boucle(char proposition_actuelle[27], float bigramme[26][26], const char texte_initial[], const unsigned int tpTexte_initial, const char liste_mots[][50], const unsigned int taille_liste, char texte_trad[], float best_score, char best_proposition[27])
 {
 	const int NB_ITTERATIONS = 2000;
 	const unsigned int k = 0;

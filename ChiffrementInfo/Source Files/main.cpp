@@ -17,16 +17,20 @@ int main()
 	char alphabetBase[27] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	float freq_alphabet_base[26];
 	char texte_crypt[10000];
+	char texte_trad[10000];
 	float bigrammes[26][26];
-
+	char liste_mots[350000][50];
+	
 	float best_score;
 	char best_proposition[27];
 
-	float score_actuelle;
+	float score_actuel;
 	char proposition_actuelle[27];
 
 	float score_courant;
 	char proposition_courante[27];
+
+
 
 
 	//On convertit le texte contenu dans un fichier en un tableau de caractères et on en récupère sa taille
@@ -41,11 +45,21 @@ int main()
 	//On génère une proposition de clé initiale
 	Proposition_initiale(alphabetBase, freq_alphabet_base, texte_crypt, best_proposition);
 
-	//On applique la proposition de clé sur le texte (refair pour ne pas modifier le texte original)
-	ApplicationProposition(proposition_actuelle, texte_crypt, taille_texte);
+	//On applique la proposition de clé sur le texte
+	ApplicationProposition(texte_crypt,taille_texte,best_proposition,texte_trad);
 
 	//On calcule le score de cette application
-	float score_actuelle = Score(texte_crypt, taille_texte, bigrammes);
+	score_actuel = Score(texte_crypt, taille_texte, bigrammes);
+	best_score = score_actuel;
+
+	//On utilise ensuite l'algorithme de Metropolis
+	best_score = MetropolisBoucle(proposition_courante, texte_crypt, proposition_courante,proposition_actuelle,best_proposition,taille_texte,bigrammes);
+
+	//Initialiser la liste des mots dans
+	unsigned int taille_liste_mots = RecuperationMots(fichier_liste_mots, liste_mots);
+
+	//On utilise ensuite l'algorithme de Recuit Simulé
+	best_score = Recuit_boucle(proposition_actuelle, bigrammes, texte_crypt, taille_texte, liste_mots, taille_liste_mots, texte_trad, best_score, best_proposition);
 
 	return 0;
 }

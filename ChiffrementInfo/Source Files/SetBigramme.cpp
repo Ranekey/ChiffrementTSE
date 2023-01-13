@@ -23,7 +23,7 @@ cela sera donc la valeur à laquelle sera initialisé le tableau (à l'exception de
 302325,749605,555439,294371,127336,698456,856958,760068,671894,172783,2885,43647,29651,15632];
 
 */
-bool SetBigramme(string nomfichier, float bigramme[26][26], const unsigned int occurenceTotal[26])
+bool SetBigramme(string nomfichier, float bigramme[26][26])
 {
 	unsigned int indPremierLettre;
 	unsigned int indDeuximeLettre;
