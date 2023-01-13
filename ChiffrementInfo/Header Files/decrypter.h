@@ -66,18 +66,26 @@ Sortie : vide
 void ApplicationProposition(const char texte_initial[], const unsigned int tpTexte, const char proposition[], char texte_trad[]);
 
 /*
-Rôle: décrypter le message grâce à un dictionnaire de mots et une évaluation avec la fonction Score_Mots
-Entrée : Une proposition donc une chaine de 26 charctère, le score actuelle du texte et une liste de mots sur lesquelles se baser
+Rôle: renvoie si le message décrypter doit être garder ou non grâce a une loi de probabilité
+Entrée : un réel (le score actuel entrain d'être analyser), un réel (le score courant), un réel (la température utilisée pour le calcul)
 Sortie : un booléean, vrai si la nouvelle proposition est accepter, faux sinon
 */
-bool Recuit(const char noouvelleProposition[], float scoreActuelle, char liste_mots[]);
+bool Recuit(float score_actuel, float score_courant, float temperature);
+
+/*
+Rôle : Evaluer la plausibilité d'un texte avec une liste de mots
+Entrée : vide
+Entrée / Sortie : un tableau de caractère (la clé la plus probable trouvé)
+Sortie : vide
+*/
+void Recuit_boucle(char proposition_finale[]);
 
 /*
 Rôle : Evaluer le score d'un texte en fonction du nombre de mots présents parmi une liste de mots (ici en Francais)
-Entrée: un tableau de caractères (le texte à évaluer), un tableau de tableau de caractères (la liste des mots)
+Entrée: un tableau de caractères (le texte à évaluer), un tableau de tableau de caractères (la liste des mots), un entier (le nombre de mots dans la liste)
 Sortie : un réel (le score du texte)
 */
-float Score_Mots(const char texte[], char liste_mots[]);
+float Score_Mots(const char texte[], const char liste_mots[][50], const unsigned int taille_liste);
 
 bool Metropolis(float score_courant, float score_actuelle, unsigned int taille);
 

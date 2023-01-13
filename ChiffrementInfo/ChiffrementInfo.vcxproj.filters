@@ -48,10 +48,10 @@
     <ClCompile Include="Source Files\CleanText.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Source Files\Metropolis.cpp">
+    <ClCompile Include="Source Files\Recuit_simulé.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Source Files\Recuit_simulé.cpp">
+    <ClCompile Include="Source Files\Metropolis.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

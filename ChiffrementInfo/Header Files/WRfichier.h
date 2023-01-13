@@ -31,3 +31,11 @@ Entrée :
 Sortie :
 */
 void InitialisationBigramme(float bigramme[26][26]);
+
+/*
+Rôle : Lire le fichier contenant le mots et les mettres dans un tableau de tableau
+Entrée : le chemin du fichier en string
+Entrée / Sortie : le tableau de tableau de caratères cotenant les mots
+Sortie : un entier (la taille de liste de mots, c'est à dire le nombre de mots dans la liste)
+*/
+unsigned int RecuperationMots(const string fichier, char liste_mots[][50]);
