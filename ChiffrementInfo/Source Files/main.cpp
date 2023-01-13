@@ -18,7 +18,7 @@ int main()
 	char texte_crypt[100000];
 	char texte_trad[100000];
 	float bigrammes[26][26];
-	char liste_mots[350000][50];
+	//char liste_mots[350000][50];
 	
 	float best_score;
 	char best_proposition[27];
@@ -53,10 +53,10 @@ int main()
 	best_score = MetropolisBoucle(proposition_courante, texte_crypt, proposition_courante,proposition_actuelle,best_proposition,taille_texte,bigrammes);
 
 	//Initialiser la liste des mots dans
-	unsigned int taille_liste_mots = RecuperationMots(fichier_liste_mots, liste_mots);
+	//unsigned int taille_liste_mots = RecuperationMots(fichier_liste_mots, liste_mots);
 
 	//On utilise ensuite l'algorithme de Recuit Simulé
-	best_score = Recuit_boucle(proposition_actuelle, bigrammes, texte_crypt, taille_texte, liste_mots, taille_liste_mots, texte_trad, best_score, best_proposition);
+	//best_score = Recuit_boucle(proposition_actuelle, bigrammes, texte_crypt, taille_texte, liste_mots, taille_liste_mots, texte_trad, best_score, best_proposition);
 
 	return 0;
 }
