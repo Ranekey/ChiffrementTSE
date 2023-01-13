@@ -82,5 +82,10 @@ bool Recuit(float scoreActuelle, const char noouvelleProposition[], char liste_m
 
 float Score_Mots(const char texte[], char liste_mots[]);
 
-bool Metropolis(float scoreActuelle, const char noouvelleProposition[]);
+bool Metropolis(float score_courant, float score_actuelle, unsigned int taille);
+
+/*
+
+*/
+float MetropolisBoucle(char best_proposition[26], char proposition_actuelle[26], char proposition_courante[26], char texte[]);
 
