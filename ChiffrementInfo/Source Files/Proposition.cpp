@@ -4,7 +4,7 @@ using namespace std;
 
 void Trier_frequence(dicoFreq tab[])
 {
-	//Trier le tableau dans l'ordre croissant en fonction de la fréquence
+	//Trier le tableau dans l'ordre croissant en fonction de la fréquence grâce au tri par insertion
 	for (int i = 0; i < 26; i++)
 	{
 		dicoFreq x_temp = tab[i];
@@ -31,11 +31,18 @@ void AssociationFreq(const char alphabet[], const float freqApparitions[], dicoF
 
 void FreqApparitions(const char texte[], float freq[])
 {
-	int occurences[26] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+	int occurences[26];
+	//initialiser toutes les occurences à 0
+	for (int i = 0; i < 26 ; i++)
+	{
+		occurences[i] = 0;
+	}
 	int indLettre;
 	char lettre;
 	int nbLettres = 0;
 
+	//Parcourir le texte (tableau de caractères) jusqu'à atteindre le caractère fin de chaine
+	//Compte le nombre de chaque caractère
 	for (int i = 0; texte[i] != '\0'; i++)
 	{
 		lettre = texte[i];
@@ -46,6 +53,7 @@ void FreqApparitions(const char texte[], float freq[])
 			nbLettres = nbLettres + 1;
 		}
 	}
+	//Calcul la fréquence d'apparition de chaque caractère (de 0 à 1)
 	if (nbLettres != 0)
 	{
 		for (int i = 0; i < 26; i++)

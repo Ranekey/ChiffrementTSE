@@ -1,36 +1,33 @@
-#pragma once
 #include <fstream>
 #include <iostream>
 #include <string>
 using namespace std;
 
-void Ecriture(string nomfichier, string texte);
-
-//Ecrit le text crypter dans le tableau et renvoie la taille pratique( donc le nombre de charactère dans le texte)
 /*
-Rôle : Ecrit le text crypter dans le tableau et renvoie la taille pratique( donc le nombre de charactère dans le texte)
-Entrée : le nom du fichier dans lequelle se trouve le texte, un tableau dans lequelle chaque charctère sera enregistrer
-Sortie : la taille pratique du tableau texte (donc le nombre de charctère) 
+Rôle : Ecrit le text crypter dans le tableau et renvoie la taille pratique (donc le nombre de charactère dans le texte)
+Entrée : le nom du fichier dans lequelle se trouve le texte, un tableau dans lequelle chaque charctère sera enregistré
+Sortie : la taille pratique du tableau texte (donc le nombre de charactère)
 */
 unsigned int TextInTab(const string nomfichier, char texte[]);
 
 /*
-Rôle : Permet de configuer le bigramme à partir d'un fichier texte
-Entrée : le nom du fichier, le tableau dans lequelle le bigramme va être enregistrer
+Rôle : Convertir les frequences d'apparitions des caractères d'un fichier txt à un tableau de réels
+Entrée : la localisation du fichier contenant les fréquences d'apparitions de chaque lettres
+Entrée / Sortie : un tableau de réels avec les fréquences d'apparitions de chaque lettres dans l'ordre alphabétique
+Sortie : vide
+*/
+void FreqToTab(const string nomFichier, float tabFreq[]);
+
+/*
+Rôle : Permet de configurer le bigramme à partir d'un fichier texte
+Entrée : le nom du fichier, le tableau dans lequelle le bigramme va être enregistré
 Sortie : un booléan , Vrai si l'enregistrement s'est effuctuer sans erreur, faux sinon
 */
 bool SetBigramme(string nomfichier, float bigramme[26][26], const unsigned int occurenceTotal[26]);
 
 /*
-
+Rôle :
+Entrée :
+Sortie :
 */
 void InitialisationBigramme(float bigramme[26][26]);
-
-unsigned int CompteMotsCorrect(char texte[]);
-
-
-
-
-
-void LectureParMots(string nomfichier);
-void LectureGlobal(string nomfichier);
