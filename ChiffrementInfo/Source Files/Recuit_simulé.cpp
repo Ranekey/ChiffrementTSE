@@ -2,7 +2,7 @@
 #include<math.h>
 #include <decrypter.h>
 
-bool Recuit(float scoreActuelle, const char noouvelleProposition[], char liste_mots[])
+bool Recuit(const char noouvelleProposition[], float scoreActuelle, char liste_mots[])
 {
 	bool b;
 	float temperature = 0.05;

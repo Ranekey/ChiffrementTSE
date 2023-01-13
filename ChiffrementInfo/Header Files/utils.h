@@ -1,11 +1,9 @@
-
 /*
-Rôle : initialiser un tableau de réel 
-Entrée : l'addresse du tableau, l'indice jusqu'au qu'elle l'on veut que les valeurs soit initialiser, la valeur initial
+Rôle : initialiser un tableau de réel avec la même valeur
+Entrée : le tableau de réels à initialiser, l'indice jusqu'au quel on veut que les valeurs soient initialisées, la valeur initial
 Sortie : Vide
 */
-
-void InitialisationTableau(float tab[], unsigned int tpTab, float valeurInitial);
+void InitialisationTableau(float tab[], const unsigned int tpTab, float valeurInitial);
 
 
 /*
