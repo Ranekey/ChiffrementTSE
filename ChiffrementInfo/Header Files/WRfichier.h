@@ -31,3 +31,11 @@ Entrée :
 Sortie :
 */
 void InitialisationBigramme(float bigramme[26][26]);
+
+/*
+Rôle : permet d'afficher la clé et le texte décrypter
+Entrée : la clé et le texte décrypter sous forme de tableau, le nom du fichier où la clé ser enrgistrer
+Sortie : vide
+*/
+
+void affiche_cle(const char cle[], const char texteDecrypter[], string nomfichier);
