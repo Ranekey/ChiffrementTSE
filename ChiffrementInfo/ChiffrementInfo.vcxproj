@@ -135,6 +135,7 @@
     <ClCompile Include="ScoreQuadgramm.cpp" />
     <ClCompile Include="SetBigrammeComplet.cpp" />
     <ClCompile Include="SetQuadgramm.cpp" />
+    <ClCompile Include="Source Files\affiche_cle.cpp" />
     <ClCompile Include="Source Files\CleanText.cpp" />
     <ClCompile Include="Source Files\ApplicationProposition.cpp" />
     <ClCompile Include="Source Files\Ecriture.cpp" />
