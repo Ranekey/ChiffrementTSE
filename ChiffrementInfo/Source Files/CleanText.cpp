@@ -40,6 +40,13 @@ char RemoveAccent(char lettre) {
 	return sansAccent;
 
 }
+
+/*
+Rôle : Remplace par un espace une lettre qui n'est pas "ABCDEFGHIJKLMNOPQRSTUVWXZ"
+Entrée : un caractère que l'on veut tester
+Sortie : un caractère standardiser
+
+*/
 char RemoveWeirdCharactre(char lettre) {
 	char standardiser = lettre;
 	if (int(lettre) > 92 || int(lettre) < 64) {
