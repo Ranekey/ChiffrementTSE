@@ -1,6 +1,3 @@
-#include<string>
-using namespace std;
-
 /*
 Type composé utilisé pour associer à chaque caractère une fréquence d'apparation (en pourcentage de 0 à 1)
 */
@@ -82,9 +79,7 @@ bool Recuit(float score_actuel, float score_courant, float temperature);
 
 /*
 Rôle : Evaluer la plausibilité d'un texte avec une liste de mots
-Entrée : vide
-Entrée / Sortie : un tableau de caractère (la clé la plus probable trouvé)
-Sortie : vide
+Sortie : un réel (le meilleur score obtenu)
 */
 float Recuit_boucle(char proposition_actuelle[27], float bigramme[26][26], const char texte_initial[], const unsigned int tpTexte_initial, const char liste_mots[][50], const unsigned int taille_liste, char texte_trad[], float best_score, char best_proposition[27]);
 
@@ -104,7 +99,8 @@ Sortie: un bool , Vrai si la proposition est accepter, faux sinon
 bool Metropolis(float score_courant, float score_actuelle, unsigned int taille);
 
 /*
-
+Rôle : Evaluer la plausibilité d'un texte avec une comparaison par bigrammes
+Sortie : un réel (le meilleur score obtenu)
 */
 float MetropolisBoucle(char proposition_initiale[26], char texte[], char proposition_courante[26], char proposition_actuelle[26], char best_proposition[26], unsigned int tailleTexte, float bigramme[26][26]);
 
