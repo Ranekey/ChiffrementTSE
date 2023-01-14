@@ -73,11 +73,11 @@ void Proposition_initiale(const char alphabet[], const float freqAlphabet[], con
 
 	FreqApparitions(texte, freqMess);
 
-	AssociationFreq(alphabet, freqMess, associationMess);
 	AssociationFreq(alphabet, freqAlphabet, associationAlphabet);
+	AssociationFreq(alphabet, freqMess, associationMess);
 
-	Trier_frequence(associationMess);
 	Trier_frequence(associationAlphabet);
+	Trier_frequence(associationMess);
 
 	for (int i = 0; i < 26; i++)
 	{

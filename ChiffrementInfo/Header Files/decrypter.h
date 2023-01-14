@@ -54,12 +54,8 @@ void Proposition(int tailleProposition, char proposition[]);
 Rôle : Assigne un score de plausibilité à un tableau de charactère
 Entrée : Un tableau de caractères étant le texte, un entier correspondant à la taille réelle du texte
 Sortie : un réel représentant le score du texte
-A NE PLUS UTTILISER, UTILISER SCOREBIGRAMM
 */
-float Score(const char texte[], unsigned int tpTexte, float bigramme[26][26]);
-
-
-float ScoreBigramm(const string texte, unsigned int tpTexte, float bigramme[42][42]);
+float ScoreBigramm(const string texte, unsigned int tpTexte, const float bigramme[42][42]);
 
 float ScoreQuadgramm(const char texte[], unsigned int tpTexte, float quadgramm[42][42][42][42]);
 
@@ -76,25 +72,25 @@ même rôle que lettre to number mais prends en compte un alphabet plus grand
 int LettreToNumberComplet(char lettre);
 /*
 Rôle: Application d'une proposition à un texte donné
-Entrée : un tableau de caractères (le texte à traduire), la taille pratique du texte (un entier) une proposition (tableaux de 26 caractères)
-Entrée / Sortie: Un tableau de caractères étant le nouveau texte sur lequel on a appliqué la proposition
+Entrée : la taille pratique du texte (un entier) une proposition (tableaux de 26 caractères)
+Entrée / Sortie: un tableau de caractères (le texte à traduire qui est traduit)
 Sortie : vide
 */
-void ApplicationProposition( unsigned int tpTexte, char proposition[], char texte_trad[]);
+void ApplicationProposition(const char texte_initial[], char texte_traduit[], const unsigned int tpTexte, const char proposition[]);
 
 /*
 Rôle: renvoie si le message décrypter doit être garder ou non grâce a une loi de probabilité
 Entrée : un réel (le score actuel entrain d'être analyser), un réel (le score courant), un réel (la température utilisée pour le calcul)
 Sortie : un booléean, vrai si la nouvelle proposition est accepter, faux sinon
 */
-bool Recuit(float score_actuel, float score_courant, float temperature);
+bool Recuit(const float score_actuel, const float score_courant, const float temperature);
 
 /*
 Rôle : Evaluer la plausibilité d'un texte avec une liste de mots
 Sortie : un réel (le meilleur score obtenu)
 */
-//float Recuit_boucle(char proposition_actuelle[], char best_proposition[], char proposition_courante[], float bigramme[42][42], char texte_crypt_actuelle[], unsigned int taille_texte, const char liste_mots[][50], const unsigned int taille_liste, char texte_crypt_courant[], float best_score);
-float Recuit_boucle(char proposition_actuelle[27], char best_proposition[27], char proposition_courante[27], float bigramme[42][42], char texte_crypt_actuelle[], unsigned int taille_texte, string listeMots, unsigned int taille_liste, char texte_crypt_courant[], float best_score);
+float Recuit_boucle(const char texte_crypt[], char texte_crypt_courant[], const unsigned int taille_texte, char best_proposition[27], string listeMots, const unsigned int taille_liste, const float bigrammes[42][42]);
+
 /*
 Rôle : Evaluer le score d'un texte en fonction du nombre de mots présents parmi une liste de mots (ici en Francais)
 Entrée: un tableau de caractères (le texte à évaluer), un tableau de tableau de caractères (la liste des mots), un entier (le nombre de mots dans la liste)
@@ -114,5 +110,4 @@ bool Metropolis(float score_courant, float score_actuelle, unsigned int taille);
 Rôle : Evaluer la plausibilité d'un texte avec une comparaison par bigrammes
 Sortie : un réel (le meilleur score obtenu)
 */
-float MetropolisBoucle(char texte_crypt_actuelle[], char texte_crypt_courant[], unsigned int taille_texte, char proposition_courante[], char proposition_actuelle[], char best_proposition[], float bigrammes[42][42]);
-
+float MetropolisBoucle(const char texte_crypt[], char texte_crypt_courant[], unsigned int taille_texte, char proposition_courante[], char proposition_actuelle[], char best_proposition[], float bigrammes[42][42]);

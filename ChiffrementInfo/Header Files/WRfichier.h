@@ -22,12 +22,13 @@ Rôle : Permet de configurer le bigramme à partir d'un fichier texte
 Entrée : le nom du fichier, le tableau dans lequelle le bigramme va être enregistré
 Sortie : un booléan , Vrai si l'enregistrement s'est effuctuer sans erreur, faux sinon
 */
-bool SetBigramme(string nomfichier, float bigramme[26][26]);
+bool SetBigramme(const string nomfichier, float bigramme[26][26]);
 
 /*
 même rôle que SetBigrammme mais prends en compte un alphabet plus grand
 */
-bool SetBigrammeComplet(string nomfichier, float bigramme[42][42]);
+bool SetBigrammeComplet(const string nomfichier, float bigramme[42][42]);
+
 bool SetQuadgramm(string nomfichier, float quadgramm[42][42][42][42]);
 
 
@@ -37,8 +38,8 @@ Rôle : permet d'afficher la clé et le texte décrypter
 Entrée : la clé et le texte décrypter sous forme de tableau, le nom du fichier où la clé ser enrgistrer
 Sortie : vide
 */
+void Affiche_cle(unsigned int taille, char cle[], char texteDecrypter[], string nomfichier);
 
-void affiche_cle(unsigned int taille, char cle[], char texteDecrypter[], string nomfichier);
 /*
 Rôle : Lire le fichier contenant le mots et les mettres dans un tableau de tableau
 Entrée : le chemin du fichier en string
@@ -51,4 +52,4 @@ unsigned int RecuperationMots(const string fichier, char liste_mots[][50]);
 Enregistre dans un string tout les mots du fichier de liste de mots francais
 En théorie cela fonctionne mais dans la pratique le string n'a pas assez d'octet pour stocker toute les informations;
 */
-string MotInTab(const string nomFichier);
+unsigned int MotInTab(const string nomFichier, string liste_mots);

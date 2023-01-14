@@ -7,59 +7,34 @@
 #include<string>
 using namespace std;
 
-unsigned int RecuperationMots(const string nomFichier, char liste_mots[][50])
-{
-	/*
-	ifstream fichier(nomFichier.c_str());
-	unsigned int ind = 0;
-
-	if (fichier)
-	{
-		string ligne;
-
-		do
-		{
-			fichier >> liste_mots[ind];
-			ind++;
-		} while (getline(fichier, ligne));
-	}
-	else
-	{
-		//Erreur de lecture
-		cout << "Impossible de lire le fichier" << endl;
-	}
-	return ind;
-	*/
-	return 0;
-}
 /*
 Mets tout les mots dans la liste mot francais dans une variable string 
 */
-string MotInTab(const string nomFichier) {
+unsigned int MotInTab(const string nomFichier, string liste_mots)
+{
 	ifstream fichier(nomFichier.c_str());
-	string mots = "";
+	liste_mots = "";
+	unsigned int i = 0;
 	if (fichier) {
 		string ligne;
-		string mots;
+		
 		while (getline(fichier, ligne) ){
-			mots.append(ligne);
-			mots.append(" ");
-			cout << mots;
+			liste_mots.append(ligne);
+			liste_mots.append(" ");
+			
+			i++;
 		}
-
 	}
 	else
 	{
-		cout << "Pas ouvert motintab";
+		cout << "Impossible d'ouvrir le fichier";
 	}
 	
-	return mots;
+	return i;
 }
 
-bool Recuit(float score_actuel, float score_courant, float temperature)
-{
-
-	
+bool Recuit(const float score_actuel, const float score_courant, const float temperature)
+{	
 	bool b;
 	float prob;
 	//crée un nombre aléatoire 
@@ -68,57 +43,70 @@ bool Recuit(float score_actuel, float score_courant, float temperature)
 	std::uniform_real_distribution<> dist(0, 1);
 
 
-	float x = dist(gen); // génére un nombre aléatoire entre 0 et 1 // génére un nombre aléatoire entre 0 et 1
+	float x = dist(gen); // génére un nombre aléatoire entre 0 et 1
 
 	//Calcul de la probabilité selon la loi d'algorithme de Recuit Simulé
-	prob = exp(-(score_courant - score_actuel) / temperature);
+	prob = exp( - (score_courant - score_actuel) / temperature);
 
 	return (x < prob);
 
 }
 
-float Recuit_boucle(char proposition_actuelle[27], char best_proposition[27], char proposition_courante[27], float bigramme[42][42], char texte_crypt_actuelle[], unsigned int taille_texte, string listeMots, unsigned int taille_liste, char texte_crypt_courant[], float best_score)
+float Recuit_boucle(const char texte_crypt[], char texte_crypt_courant[], const unsigned int taille_texte, char best_proposition[27], string listeMots, const unsigned int taille_liste, const float bigrammes[42][42])
 {
-	const int NB_ITTERATIONS = 1000;
-	unsigned int k = 0;
+	const int MAXITTER = 10000;
 	const int FACTEUR_SCORE_MOTS = 4;
-	//const int FACTEUR_SCORE_MOTS = 1;
 	float temperature = 0.05;
-	float rho_modif_temperature = 0.99;
-	float score_mots;
-	float score_total_courant;
+	float rho_modif_temperature = 0.999;
+
 	float score_courant = 0;
-	
+	float score_mots_courant = 0;
+	float score_total_courant = 0;
+	char proposition_courante[27];
+	Copy(27, proposition_courante, best_proposition);
+
+	float score_total_actuel = 0;
+	char proposition_actuelle[27];
+	Copy(27, proposition_actuelle, best_proposition);
+
+	float score_total_best = 0;
 
 
-	score_mots = Score_Mots(texte_crypt_actuelle, listeMots, taille_liste);
-	//float best_score_total = FACTEUR_SCORE_MOTS * score_mots + best_score;
-	float best_score_total = FACTEUR_SCORE_MOTS * score_mots + best_score;
-	float score_actuel = best_score_total;
+	ApplicationProposition(texte_crypt, texte_crypt_courant, taille_texte, best_proposition);
+	score_courant = ScoreBigramm(texte_crypt_courant, taille_texte, bigrammes);
+	score_mots_courant = Score_Mots(texte_crypt_courant, listeMots, taille_liste);
+	score_total_courant = FACTEUR_SCORE_MOTS * score_mots_courant + score_courant;
+	score_total_actuel = score_total_courant;
+	score_total_best = score_total_courant;
 
-	while (k < NB_ITTERATIONS)
+	unsigned int k = 0;
+
+	while (k < MAXITTER)
 	{
 		Proposition(26, proposition_courante);
-		ApplicationProposition(taille_texte, proposition_courante, texte_crypt_courant);
-		score_courant = ScoreBigramm(texte_crypt_courant, taille_texte, bigramme);
-		score_mots = Score_Mots(texte_crypt_courant, listeMots, taille_liste);
-		score_total_courant = FACTEUR_SCORE_MOTS * score_mots + score_courant;
+		ApplicationProposition(texte_crypt, texte_crypt_courant, taille_texte, proposition_courante);
+		score_courant = ScoreBigramm(texte_crypt_courant, taille_texte, bigrammes);
+		score_mots_courant = Score_Mots(texte_crypt_courant, listeMots, taille_liste);
+		score_total_courant = FACTEUR_SCORE_MOTS * score_mots_courant + score_courant;
 
-		if (Recuit(score_actuel, score_total_courant, temperature))
+		if (Recuit(score_total_actuel, score_total_courant, temperature))
 		{
-			score_actuel = score_total_courant;
-			Copy(taille_texte, texte_crypt_actuelle, texte_crypt_courant);
-			Copy(26, proposition_actuelle, proposition_courante);
+			score_total_actuel = score_total_courant;
+			Copy(27, proposition_actuelle, proposition_courante);
 		}
-		if (score_actuel > best_score_total)
+		if (score_total_actuel > score_total_best)
 		{
-			best_score_total = score_actuel;
-			Copy(26, best_proposition, proposition_actuelle);
+			score_total_best = score_total_actuel;
+			Copy(27, best_proposition, proposition_actuelle);
 		}
+		//Faire baisser la température dans la recherche
+		temperature = temperature * rho_modif_temperature;
+
+		//Pour voir les propositions en temps réel
 		k = k + 1;
-		cout << " k (r) : " << k;
-		cout << " score_mots : " << score_mots << endl;
+		//cout << " k (r) : " << k;
+		//cout << " proposition : " << proposition_courante << " et le best_score : " << score_total_best << endl;
 		
 	}
-	return best_score;
+	return score_total_best;
 }
