@@ -89,7 +89,6 @@ float Recuit_boucle(const char texte_crypt[], char texte_crypt_courant[], const 
 		score_mots_courant = Score_Mots(texte_crypt_courant, listeMots, taille_liste);
 		score_total_courant = FACTEUR_SCORE_MOTS * score_mots_courant + score_courant;
 
-		cout << "Le score actuel : " << score_total_actuel << "Le score courant : " << score_total_courant << endl;
 		if (Recuit(score_total_actuel, score_total_courant, temperature))
 		{
 			score_total_actuel = score_total_courant;
