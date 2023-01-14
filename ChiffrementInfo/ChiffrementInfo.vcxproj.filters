@@ -54,28 +54,25 @@
     <ClCompile Include="Source Files\Metropolis.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\..\Documents\Visual Studio 2022\TSE\PropositionYazid.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="affiche_cle.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="LettreToNumberComplet.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ScoreBigramm.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ScoreQuadgramm.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="SetBigrammeComplet.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="SetQuadgramm.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Source Files\affiche_cle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source Files\Copy.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source Files\LettreToNumberComplet.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source Files\ScoreBigramm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source Files\ScoreQuadgramm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source Files\SetBigrammeComplet.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source Files\SetQuadgramm.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -93,15 +90,8 @@
     <Text Include="Resource Files\BigrammesTexte.txt" />
     <Text Include="Resource Files\TextCrypter.txt" />
     <Text Include="Resource Files\TextDecrypter.txt" />
-    <Text Include="..\..\..\..\..\Documents\Visual Studio 2022\TSE\french_bigrams.txt">
-      <Filter>Resource Files</Filter>
-    </Text>
-    <Text Include="..\..\..\..\..\Documents\Visual Studio 2022\TSE\french_monograms.txt">
-      <Filter>Resource Files</Filter>
-    </Text>
-    <Text Include="..\..\..\..\..\Documents\Visual Studio 2022\TSE\french_quadgrams.txt">
-      <Filter>Resource Files</Filter>
-    </Text>
+    <Text Include="Resource Files\BigrammeTexteComplet.txt" />
+    <Text Include="Resource Files\quadgramm.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header Files\decrypter.h">

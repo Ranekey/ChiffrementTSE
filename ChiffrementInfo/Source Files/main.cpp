@@ -20,7 +20,7 @@ int main()
 	float freq_alphabet_base[26];
 	char texte_crypt[10000];
 
-	//string texte_crypt_courant;
+	//string texte_crypt_courant;d
 	char texte_crypt_courant[50000];
 	//string texte_crypt_actuelle;
 	char texte_crypt_actuelle[50000];
