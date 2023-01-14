@@ -61,7 +61,6 @@ float Score_Mots(const char texte[], string dico)
 				//On vérifie si il y a une correspondance
 				if (listeMots.find(motRecherche) != std::string::npos)
 				{
-					cout << " les mots : " << motRecherche<<endl;
 					mots_corrects = mots_corrects + 1;
 					break;
 				}
