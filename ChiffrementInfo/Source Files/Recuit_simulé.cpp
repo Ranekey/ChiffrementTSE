@@ -33,7 +33,7 @@ unsigned int MotInTab(const string nomFichier, string liste_mots)
 	return i;
 }
 
-bool Recuit(float score_actuel, float score_courant, float temperature)
+bool Recuit(const float score_actuel, const float score_courant, const float temperature)
 {	
 	bool b;
 	float prob;
@@ -46,7 +46,7 @@ bool Recuit(float score_actuel, float score_courant, float temperature)
 	float x = dist(gen); // génére un nombre aléatoire entre 0 et 1
 
 	//Calcul de la probabilité selon la loi d'algorithme de Recuit Simulé
-	prob = exp(-(score_courant - score_actuel) / temperature);
+	prob = exp( - (score_courant - score_actuel) / temperature);
 
 	return (x < prob);
 
@@ -85,9 +85,11 @@ float Recuit_boucle(const char texte_crypt[], char texte_crypt_courant[], const 
 	{
 		Proposition(26, proposition_courante);
 		ApplicationProposition(texte_crypt, texte_crypt_courant, taille_texte, proposition_courante);
+		score_courant = ScoreBigramm(texte_crypt_courant, taille_texte, bigrammes);
 		score_mots_courant = Score_Mots(texte_crypt_courant, listeMots, taille_liste);
 		score_total_courant = FACTEUR_SCORE_MOTS * score_mots_courant + score_courant;
 
+		cout << "Le score actuel : " << score_total_actuel << "Le score courant : " << score_total_courant << endl;
 		if (Recuit(score_total_actuel, score_total_courant, temperature))
 		{
 			score_total_actuel = score_total_courant;
@@ -103,8 +105,8 @@ float Recuit_boucle(const char texte_crypt[], char texte_crypt_courant[], const 
 
 		//Pour voir les propositions en temps réel
 		k = k + 1;
-		cout << " k (r) : " << k;
-		cout << " proposition : " << proposition_courante << " et le best_score : " << score_total_best << endl;
+		//cout << " k (r) : " << k;
+		//cout << " proposition : " << proposition_courante << " et le best_score : " << score_total_best << endl;
 		
 	}
 	return score_total_best;

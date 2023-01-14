@@ -83,7 +83,7 @@ Rôle: renvoie si le message décrypter doit être garder ou non grâce a une loi de
 Entrée : un réel (le score actuel entrain d'être analyser), un réel (le score courant), un réel (la température utilisée pour le calcul)
 Sortie : un booléean, vrai si la nouvelle proposition est accepter, faux sinon
 */
-bool Recuit(float score_actuel, float score_courant, float temperature);
+bool Recuit(const float score_actuel, const float score_courant, const float temperature);
 
 /*
 Rôle : Evaluer la plausibilité d'un texte avec une liste de mots

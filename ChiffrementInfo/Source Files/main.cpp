@@ -65,8 +65,8 @@ int main()
 
 	if (bigrammesExiste) {
 		
-		best_score = MetropolisBoucle(texte_crypt, texte_crypt_courant, taille_texte, proposition_courante, proposition_actuelle, best_proposition, bigrammes);
-		cout << "Deuxième méthode : " << endl;
+		//best_score = MetropolisBoucle(texte_crypt, texte_crypt_courant, taille_texte, proposition_courante, proposition_actuelle, best_proposition, bigrammes);
+		//cout << "Deuxième méthode : " << endl;
 		best_score = Recuit_boucle(texte_crypt, texte_crypt_courant, taille_texte, best_proposition, liste_mots, taille_liste_mots, bigrammes);
 	}
 	else {
