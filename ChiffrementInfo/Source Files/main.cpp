@@ -67,13 +67,13 @@ int main()
 		
 		best_score = MetropolisBoucle(texte_crypt, texte_crypt_courant, taille_texte, proposition_courante, proposition_actuelle, best_proposition, bigrammes);
 		cout << "Deuxième méthode : " << endl;
-		best_score = Recuit_boucle(texte_crypt, texte_crypt_courant, taille_texte, best_proposition, liste_mots, taille_liste_mots, bigrammes);
+		best_score = Recuit_boucle(texte_crypt, texte_crypt_courant, taille_texte, best_proposition, fichier_liste_mots, taille_liste_mots, bigrammes);
 	}
 	else {
 		cout << "Erreur dans la création du bigramme";
 	}
 	
-	//Affiche_cle(taille_texte,best_proposition, texte_crypt, fichier_texte_decrypt);
+	Affiche_cle(taille_texte,best_proposition, texte_crypt, fichier_texte_decrypt);
 
 
 	return 0;
