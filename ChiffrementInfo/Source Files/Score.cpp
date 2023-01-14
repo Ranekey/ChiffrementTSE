@@ -65,6 +65,7 @@ float Score_Mots(const char texte[], const string dico)
 					break;
 				}
 			}
+			fichier.clear(); 
 			nb_mots++;
 			//On efface les mots au fur et à mesure
 			texteString.erase(0, pos + delimiter.length());
