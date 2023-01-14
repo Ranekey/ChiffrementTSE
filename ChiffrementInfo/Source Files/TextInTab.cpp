@@ -20,17 +20,14 @@ unsigned int TextInTab(const string nomfichier, char texte[])
 			for (unsigned int i = 0; i < ligne.length(); i++)
 			{
 				
-				//lettre = RemoveAccent(ligne[i]); // on peut supposer qu'il n'y aura pas d'accent
-				//lettre = UpperCase(lettre);
-				//lettre = RemoveWeirdCharactre(lettre);
+				
 				
 				lettre = ligne[i];
 				texte[ind] = lettre;
 				ind = ind + 1;
 			}
 		
-			//texte.append(ligne);
-			
+
 			
 		}
 	}
@@ -39,5 +36,5 @@ unsigned int TextInTab(const string nomfichier, char texte[])
 		cout << "Le fichier n'a pas été lu.";
 	}
 
-	return ind; //cela correspond à la taille pratique du tableau
+	return ind; 
 }

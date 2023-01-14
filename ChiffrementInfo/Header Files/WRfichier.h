@@ -47,3 +47,5 @@ Entrée / Sortie : le tableau de tableau de caratères cotenant les mots
 Sortie : un entier (la taille de liste de mots, c'est à dire le nombre de mots dans la liste)
 */
 unsigned int RecuperationMots(const string fichier, char liste_mots[][50]);
+
+string MotInTab(const string nomFichier);

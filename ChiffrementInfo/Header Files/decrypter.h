@@ -86,14 +86,14 @@ bool Recuit(float score_actuel, float score_courant, float temperature);
 Rôle : Evaluer la plausibilité d'un texte avec une liste de mots
 Sortie : un réel (le meilleur score obtenu)
 */
-float Recuit_boucle(char proposition_actuelle[27], float bigramme[26][26], const char texte_initial[], const unsigned int tpTexte_initial, const char liste_mots[][50], const unsigned int taille_liste, char texte_trad[], float best_score, char best_proposition[27]);
-
+//float Recuit_boucle(char proposition_actuelle[], char best_proposition[], char proposition_courante[], float bigramme[42][42], char texte_crypt_actuelle[], unsigned int taille_texte, const char liste_mots[][50], const unsigned int taille_liste, char texte_crypt_courant[], float best_score);
+float Recuit_boucle(char proposition_actuelle[27], char best_proposition[27], char proposition_courante[27], float bigramme[42][42], char texte_crypt_actuelle[], unsigned int taille_texte, string listeMots, unsigned int taille_liste, char texte_crypt_courant[], float best_score);
 /*
 Rôle : Evaluer le score d'un texte en fonction du nombre de mots présents parmi une liste de mots (ici en Francais)
 Entrée: un tableau de caractères (le texte à évaluer), un tableau de tableau de caractères (la liste des mots), un entier (le nombre de mots dans la liste)
 Sortie : un réel (le score du texte)
 */
-float Score_Mots(const char texte[], const char liste_mots[][50], const unsigned int taille_liste);
+float Score_Mots(const char texte[], string listeMots, const unsigned int taille_liste);
 
 
 /*
@@ -107,5 +107,5 @@ bool Metropolis(float score_courant, float score_actuelle, unsigned int taille);
 Rôle : Evaluer la plausibilité d'un texte avec une comparaison par bigrammes
 Sortie : un réel (le meilleur score obtenu)
 */
-float MetropolisBoucle(char proposition_initiale[43], char texte[], char proposition_courante[43], char proposition_actuelle[43], char best_proposition[43], unsigned int tailleTexte, float quadgramm[42][42]);
+float MetropolisBoucle(char texte_crypt_actuelle[], char texte_crypt_courant[], unsigned int taille_texte, char proposition_courante[], char proposition_actuelle[], char best_proposition[], float bigrammes[42][42]);
 

@@ -15,9 +15,10 @@ void affiche_cle(unsigned int taille,char cle[], char texteDecrypter[], string n
 		fichier << "le texte decrypter est le suivant : ";
 		for (unsigned int i = 0; i < taille; i++) {
 			fichier << texteDecrypter[i];
-			cout << "lettre numero :"<< i<< " : " << texteDecrypter[i]<<endl;
 		}
 
+		cout << "la cle est la suivante : " << cle<< endl;
+		cout << "le texte decrypter est le suivant : ";
 		//cout << "la cle est la suivante : " << cle << ' \n'; // retour console
 		//cout << "le texte decrypter est le suivant : \n" << texteDecrypter;
 		fichier.close();  // on ferme le fichier

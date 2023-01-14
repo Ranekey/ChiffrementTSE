@@ -2,6 +2,8 @@
 #include "WRfichier.h"
 #include <iostream>// à suppprimer
 #include <math.h>
+#include <string>
+
 
 float Score(const char texte[], unsigned int tpTexte, float bigramme[26][26])
 {
@@ -28,30 +30,29 @@ float Score(const char texte[], unsigned int tpTexte, float bigramme[26][26])
 	return score/tpTexte; // on normalise par le nombre de charactères
 }
 
-float Score_Mots(const char texte[], const char liste_mots[][50], const unsigned int taille_liste)
+float Score_Mots(const char texte[], string listeMots, const unsigned int taille_liste)
 {
-	char mot_actuel[50];
-	int mots_corrects = 0;
+	//unsigned int occurence = 0;
+	//char mot_actuel[50];
+	int mots_corrects = 0; // == occurence
 	int nb_mots = 0;
-	int j = 0 ;
+	int j = 0;
+	string motRecherche;
 
 	while (texte[j] != '\0')
 	{
 		for (int i = 0; texte[j] != ' '; i++)
 		{
-			mot_actuel[i] = texte[j];
+			motRecherche.push_back(tolower(texte[j]));
 			j++;
 		}
 		nb_mots++;
 		j++;
-		for (int k = 0; k < taille_liste; k++)
-		{
-			if (strcmp(mot_actuel, liste_mots[k]))
-			{
-				mots_corrects++;
-				break;
-			}
+		if (listeMots.find(motRecherche) >= 0) {
+			mots_corrects = mots_corrects + listeMots.find(motRecherche);
 		}
+
+		
 	}
 	return (float)mots_corrects / (float)nb_mots;
 }

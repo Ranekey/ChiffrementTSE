@@ -2,69 +2,70 @@
 #include <random>
 #include <iostream>
 #include <math.h>
+#include "utils.h"
 using namespace std;
 
-/*
-variable dans le main
 
-best_score
-best_proposition
-
-score_actuelle
-proposition_actuelle
-
-score_courant
-proposition_courante
-
-*/
 
 bool Metropolis(float score_courant,float score_actuelle, unsigned int taille) {
-
+	//Générateur de nombre aléatoire
 	std::random_device rd;
 	std::mt19937 gen(rd());
 	std::uniform_real_distribution<> dist(0, 1);
-	float x = dist(gen); // génére un nombre aléatoire entre 0 et 1
 	
-	//float x = (float)rand()/(float)RAND_MAX; // génére un nombre aléatoire entre 0 et 1
+	
+	float x = dist(gen); // génére un nombre aléatoire entre 0 et 1
 	float p = exp((score_courant - score_actuelle) * taille);
-	//cout << " x = " << x << " p = " << p <<" score_courant = " << score_courant << " score_actuelle = " << score_actuelle << endl;
+	
 	return x < p; // Si vrai on accepte la proposition
 }
 
-float MetropolisBoucle(char proposition_initiale[43], char texte[], char proposition_courante[43], char proposition_actuelle[43], char best_proposition[43], unsigned int tailleTexte, float bigramm[42][42]) {
-	//initialisation variable pour decrypter
-	float best_score, score_courant, score_actuelle;
-	float score_initiale = ScoreBigramm(texte, tailleTexte, bigramm);
-	score_courant = score_initiale;
-	best_score = score_initiale;
-	score_actuelle = score_initiale;
-	//ca fait beaucoup de variable mais c++ me laisse pas faire de variable locale
-	proposition_courante = proposition_initiale;
-	proposition_actuelle = proposition_initiale;
-	best_proposition = proposition_initiale;
-	//initialisation variable pour boucle
-	const unsigned int MINITER = 2000;
-	const unsigned int MAXITER = 10;
-	const float scoreExcellent = -2.10; // à adapter et tester
+float MetropolisBoucle(char texte_crypt_actuelle[], char texte_crypt_courant[],unsigned int taille_texte, char proposition_courante[], char proposition_actuelle[], char best_proposition[], float bigrammes[42][42]) {
+	// Initialisation de proposition actuelle et courante
+	Proposition(26, proposition_actuelle); 
+	Copy(27, best_proposition, proposition_actuelle);
+
+	// Application de proposition courante sur le texte
+	ApplicationProposition(taille_texte, proposition_actuelle, texte_crypt_actuelle);
+
+	// Initialisation variable boucle
+	float best_score = ScoreBigramm(texte_crypt_actuelle, taille_texte, bigrammes);
+	float score_actuelle = best_score;
+	float score_courant;
+	const unsigned int MAXITER = 10000;
 	unsigned int i = 0;
-	while (i < MAXITER) {
-		//Nouvelle proposition
-		//proposition_courante = Proposition(); A faire Proposition
-		score_courant = ScoreBigramm(texte, tailleTexte, bigramm); // score à changer
-		if (Metropolis(score_courant, score_actuelle, tailleTexte)) {
-			proposition_actuelle = proposition_courante;
+	
+	while (i < MAXITER) 
+	{
+		//Nouvelle proposition et Application
+		Proposition(26, proposition_courante);
+		ApplicationProposition(taille_texte, proposition_courante, texte_crypt_courant);
+
+		score_courant = ScoreBigramm(texte_crypt_courant, taille_texte, bigrammes); 
+		// Choix de garder la proposition ou non
+		if (Metropolis(score_courant, score_actuelle, taille_texte)) {
+			//On met a jour le text, la proposition actuelle  et le score
+			Copy(taille_texte, texte_crypt_actuelle, texte_crypt_courant);
+			Copy(26, proposition_actuelle, proposition_courante);
 			score_actuelle = score_courant;
 
 		}
-		if (score_actuelle > best_score) {
+		// on retient la meilleur proposition, donc celle qui à produit le score le plus élèver
+		if (score_actuelle > best_score) 
+		{
 			best_score = score_actuelle;
-			best_proposition = proposition_actuelle;
+			Copy(26, best_proposition, proposition_actuelle);
+
 		}
 
-		//if (i > MINITER && best_score >= scoreExcellent) {
-		//	break; // faut casser la boucle alors
-		//}
+
+		//Pour voir les proposition en temps réel
+		i = i + 1;
+		cout << " i (m) : " << i;
+		cout << " proposition : " << proposition_courante << endl;
+
 	}
+
 	return best_score;
 }
 

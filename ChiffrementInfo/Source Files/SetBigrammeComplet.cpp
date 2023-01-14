@@ -66,7 +66,10 @@ bool SetBigrammeComplet(string nomfichier, float bigramme[42][42])
 				//Or on sait que log(A*B) = log(A) + log(B)
 				//Vu que l'on va avoir des petites probabilité je préfère appliquer directement le log
 				//bigramme[indPremierLettre][indDeuximeLettre] = log(occurrence / occurenceTotal[indPremierLettre] + valMin);
-				bigramme[indPremierLettre][indDeuximeLettre] = log(occurrence / maxBigramme);
+				if (indPremierLettre != -1 && indDeuximeLettre != -1) {
+					bigramme[indPremierLettre][indDeuximeLettre] = log(occurrence / maxBigramme);
+				}
+				
 				//cout << "bigramme : " << bigramme[indPremierLettre][indDeuximeLettre] << " occurence = " << occurrence << " rapport = " << occurrence / maxBigramme << endl;
 			}
 		
