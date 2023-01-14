@@ -76,5 +76,7 @@ float Score_Mots(const char texte[], const string dico)
 		cout << "Erreur ";
 	}
 
+	cout << mots_corrects << endl;
+	cout << nb_mots << endl;
 	return (float)mots_corrects / (float)nb_mots;
 }
