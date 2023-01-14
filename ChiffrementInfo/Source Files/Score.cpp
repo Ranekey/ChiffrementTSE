@@ -53,7 +53,7 @@ float Score_Mots(const char texte[], const string dico)
 		while ((pos = texteString.find(delimiter)) != std::string::npos) 
 		{
 			//Pour chaque nouveau on recommance la recherche du début dans le fichier dico
-			fichier.seekg(0, ios::beg);
+			
 			motRecherche = texteString.substr(0, pos);
 			string listeMots;
 			while(getline(fichier,listeMots ))
@@ -66,6 +66,7 @@ float Score_Mots(const char texte[], const string dico)
 				}
 			}
 			fichier.clear(); 
+			fichier.seekg(0, ios::beg);
 			nb_mots++;
 			//On efface les mots au fur et à mesure
 			texteString.erase(0, pos + delimiter.length());
