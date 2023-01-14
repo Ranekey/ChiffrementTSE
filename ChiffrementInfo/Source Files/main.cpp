@@ -61,18 +61,27 @@ int main()
 	//On convertit les bigrammes contenus dans un fichier dans un tableau de réels à 2 entrées (étant les fréquences d'apparitions)
 	bigrammesExiste = SetBigrammeComplet(fichier_bigrammes, bigrammes);
 
-	
+	char texte_test[500];
+	TextInTab("Resource Files/TextTest.txt", texte_test);
+	float score_test = ScoreBigramm(texte_test, taille_texte, bigrammes);
+	float score_test_courant = ScoreBigramm(texte_crypt_courant, taille_texte, bigrammes);
+
+	float score_test_mots = Score_Mots(texte_test, liste_mots, taille_liste_mots);
+	cout << score_test_mots << endl;
+	float score_test_mots_courant = Score_Mots(texte_crypt_courant, liste_mots, taille_liste_mots);
+	cout << score_test_mots_courant << endl;
+
 
 	if (bigrammesExiste) {
 		
-		best_score = MetropolisBoucle(texte_crypt, texte_crypt_courant, taille_texte, proposition_courante, proposition_actuelle, best_proposition, bigrammes);
-		cout << "Deuxième méthode : " << endl;
-		best_score = Recuit_boucle(texte_crypt, texte_crypt_courant, taille_texte, best_proposition, fichier_liste_mots, taille_liste_mots, bigrammes);
+		//best_score = MetropolisBoucle(texte_crypt, texte_crypt_courant, taille_texte, proposition_courante, proposition_actuelle, best_proposition, bigrammes);
+		//cout << "Deuxième méthode : " << endl;
+		//best_score = Recuit_boucle(texte_crypt, texte_crypt_courant, taille_texte, best_proposition, liste_mots, taille_liste_mots, bigrammes);
 	}
 	else {
 		cout << "Erreur dans la création du bigramme";
 	}
-	ApplicationProposition(texte_crypt,texte_crypt,taille_texte, best_proposition);
+	
 	Affiche_cle(taille_texte,best_proposition, texte_crypt, fichier_texte_decrypt);
 
 

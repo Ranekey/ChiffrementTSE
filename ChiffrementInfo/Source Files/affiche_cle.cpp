@@ -11,14 +11,13 @@ void Affiche_cle(unsigned int taille,char cle[], char texteDecrypter[], string n
 
 	if (fichier)  // si l'ouverture a réussi
 	{
-		fichier << "la cle est la suivante : " << cle ;
-		fichier << "le texte decrypter est le suivant : ";
+		fichier << "la cle est la suivante : " << cle << endl;
+		fichier << "le texte decrypter est le suivant : " << endl;
 		for (unsigned int i = 0; i < taille; i++) {
 			fichier << texteDecrypter[i];
 		}
 
 		cout << "la cle est la suivante : " << cle << endl;
-		cout << "le texte decrypter est le suivant : ";
 		//cout << "la cle est la suivante : " << cle << ' \n'; // retour console
 		//cout << "le texte decrypter est le suivant : \n" << texteDecrypter;
 		fichier.close();  // on ferme le fichier
