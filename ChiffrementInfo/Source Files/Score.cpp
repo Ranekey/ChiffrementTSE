@@ -34,7 +34,7 @@ float ScoreBigramm(const string texte, unsigned int tpTexte, const float bigramm
 
 
 
-float Score_Mots(const char texte[], string dico)
+float Score_Mots(const char texte[], const string dico)
 {
 	
 	int mots_corrects = 0; 

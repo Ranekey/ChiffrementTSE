@@ -66,9 +66,9 @@ int main()
 	float score_test = ScoreBigramm(texte_test, taille_texte, bigrammes);
 	float score_test_courant = ScoreBigramm(texte_crypt_courant, taille_texte, bigrammes);
 
-	float score_test_mots = Score_Mots(texte_test, liste_mots, taille_liste_mots);
+	float score_test_mots = Score_Mots(texte_test, liste_mots);
 	cout << score_test_mots << endl;
-	float score_test_mots_courant = Score_Mots(texte_crypt_courant, liste_mots, taille_liste_mots);
+	float score_test_mots_courant = Score_Mots(texte_crypt_courant, liste_mots);
 	cout << score_test_mots_courant << endl;
 
 

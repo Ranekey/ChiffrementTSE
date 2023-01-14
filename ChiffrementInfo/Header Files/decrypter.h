@@ -96,7 +96,7 @@ Rôle : Evaluer le score d'un texte en fonction du nombre de mots présents parmi 
 Entrée: un tableau de caractères (le texte à évaluer), un tableau de tableau de caractères (la liste des mots), un entier (le nombre de mots dans la liste)
 Sortie : un réel (le score du texte)
 */
-float Score_Mots(const char texte[], string dico);
+float Score_Mots(const char texte[], const string dico);
 
 
 /*
