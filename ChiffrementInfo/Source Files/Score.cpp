@@ -34,7 +34,7 @@ float ScoreBigramm(const string texte, unsigned int tpTexte, const float bigramm
 
 
 
-float Score_Mots(const char texte[], string nom_fichier, const unsigned int taille_texte)
+float Score_Mots(const char texte[], string dico)
 {
 	
 	int mots_corrects = 0; 
@@ -43,7 +43,7 @@ float Score_Mots(const char texte[], string nom_fichier, const unsigned int tail
 
 	string delimiter = " ";
 	
-	ifstream fichier(nom_fichier.c_str());
+	ifstream fichier(dico.c_str());
 	if(fichier)
 	{	
 		//On sépare le texte en mot indivuel
