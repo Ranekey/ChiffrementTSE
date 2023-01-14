@@ -1,3 +1,5 @@
+#include <string>
+using namespace std;
 /*
 Type composé utilisé pour associer à chaque caractère une fréquence d'apparation (en pourcentage de 0 à 1)
 */
@@ -54,7 +56,7 @@ Entrée : Un tableau de caractères étant le texte, un entier correspondant à la t
 Sortie : un réel représentant le score du texte
 */
 float Score(const char texte[], unsigned int tpTexte, float bigramme[26][26]);
-float ScoreBigramm(const char texte[], unsigned int tpTexte, float bigramme[42][42]);
+float ScoreBigramm(const string texte, unsigned int tpTexte, float bigramme[42][42]);
 
 float ScoreQuadgramm(const char texte[], unsigned int tpTexte, float quadgramm[42][42][42][42]);
 
@@ -71,7 +73,7 @@ Entrée : un tableau de caractères (le texte à traduire), la taille pratique du t
 Entrée / Sortie: Un tableau de caractères étant le nouveau texte sur lequel on a appliqué la proposition
 Sortie : vide
 */
-void ApplicationProposition(const char texte_initial[], const unsigned int tpTexte, const char proposition[], char texte_trad[]);
+void ApplicationProposition( unsigned int tpTexte, char proposition[], char texte_trad[]);
 
 /*
 Rôle: renvoie si le message décrypter doit être garder ou non grâce a une loi de probabilité

@@ -9,7 +9,6 @@ Entrée : le nom du fichier dans lequelle se trouve le texte, un tableau dans leq
 Sortie : la taille pratique du tableau texte (donc le nombre de charactère)
 */
 unsigned int TextInTab(const string nomfichier, char texte[]);
-
 /*
 Rôle : Convertir les frequences d'apparitions des caractères d'un fichier txt à un tableau de réels
 Entrée : la localisation du fichier contenant les fréquences d'apparitions de chaque lettres
@@ -40,8 +39,7 @@ Entrée : la clé et le texte décrypter sous forme de tableau, le nom du fichier o
 Sortie : vide
 */
 
-void affiche_cle(const char cle[], const char texteDecrypter[], string nomfichier);
-
+void affiche_cle(unsigned int taille, char cle[], char texteDecrypter[], string nomfichier);
 /*
 Rôle : Lire le fichier contenant le mots et les mettres dans un tableau de tableau
 Entrée : le chemin du fichier en string

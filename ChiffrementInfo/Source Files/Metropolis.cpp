@@ -1,5 +1,6 @@
 #include "decrypter.h"
 #include <random>
+#include <iostream>
 #include <math.h>
 using namespace std;
 
@@ -18,8 +19,15 @@ proposition_courante
 */
 
 bool Metropolis(float score_courant,float score_actuelle, unsigned int taille) {
-	float x = (float)rand()/(float)RAND_MAX; // génére un nombre aléatoire entre 0 et 1
+
+	std::random_device rd;
+	std::mt19937 gen(rd());
+	std::uniform_real_distribution<> dist(0, 1);
+	float x = dist(gen); // génére un nombre aléatoire entre 0 et 1
+	
+	//float x = (float)rand()/(float)RAND_MAX; // génére un nombre aléatoire entre 0 et 1
 	float p = exp((score_courant - score_actuelle) * taille);
+	//cout << " x = " << x << " p = " << p <<" score_courant = " << score_courant << " score_actuelle = " << score_actuelle << endl;
 	return x < p; // Si vrai on accepte la proposition
 }
 
@@ -36,7 +44,7 @@ float MetropolisBoucle(char proposition_initiale[43], char texte[], char proposi
 	best_proposition = proposition_initiale;
 	//initialisation variable pour boucle
 	const unsigned int MINITER = 2000;
-	const unsigned int MAXITER = 10000;
+	const unsigned int MAXITER = 10;
 	const float scoreExcellent = -2.10; // à adapter et tester
 	unsigned int i = 0;
 	while (i < MAXITER) {
@@ -53,9 +61,9 @@ float MetropolisBoucle(char proposition_initiale[43], char texte[], char proposi
 			best_proposition = proposition_actuelle;
 		}
 
-		if (i > MINITER && best_score >= scoreExcellent) {
-			break; // faut casser la boucle alors
-		}
+		//if (i > MINITER && best_score >= scoreExcellent) {
+		//	break; // faut casser la boucle alors
+		//}
 	}
 	return best_score;
 }

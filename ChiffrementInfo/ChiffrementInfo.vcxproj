@@ -129,11 +129,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\..\..\Documents\Visual Studio 2022\TSE\PropositionYazid.cpp" />
-    <ClCompile Include="LettreToNumberComplet.cpp" />
-    <ClCompile Include="ScoreBigramm.cpp" />
-    <ClCompile Include="ScoreQuadgramm.cpp" />
-    <ClCompile Include="SetBigrammeComplet.cpp" />
-    <ClCompile Include="SetQuadgramm.cpp" />
+    <ClCompile Include="Source Files\Copy.cpp" />
+    <ClCompile Include="Source Files\LettreToNumberComplet.cpp" />
+    <ClCompile Include="Source Files\ScoreBigramm.cpp" />
+    <ClCompile Include="Source Files\ScoreQuadgramm.cpp" />
+    <ClCompile Include="Source Files\SetBigrammeComplet.cpp" />
+    <ClCompile Include="Source Files\SetQuadgramm.cpp" />
     <ClCompile Include="Source Files\affiche_cle.cpp" />
     <ClCompile Include="Source Files\CleanText.cpp" />
     <ClCompile Include="Source Files\ApplicationProposition.cpp" />

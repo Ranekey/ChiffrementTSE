@@ -12,6 +12,10 @@ Entrée : la lettre à convertire
 Sortie : la lettre convertit en majuscule
 */
 char UpperCase(char lettre);
+/*
+Rôle : copy deux tableau de taille identique
+*/
+void Copy(unsigned int taille, char tab1[], char tab2[]);
 
 /*
 

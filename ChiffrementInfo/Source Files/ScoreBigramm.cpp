@@ -3,15 +3,16 @@
 #include <iostream>// à suppprimer
 #include <math.h>
 
-float ScoreBigramm(const char texte[], unsigned int tpTexte, float bigramme[42][42])
+float ScoreBigramm(const string texte, unsigned int tpTexte, float bigramme[42][42])
 {
 	unsigned int indPremierLettre;
 	unsigned int indDeuxiemeLettre;
 	float score = 0;
 	for (unsigned int indChar = 1; indChar < tpTexte; indChar++)
 	{
-		indDeuxiemeLettre = LettreToNumber(texte[indChar]);
-		indPremierLettre = LettreToNumber(texte[indChar - 1]);
+		
+		indDeuxiemeLettre = LettreToNumberComplet(texte[indChar]);
+		indPremierLettre = LettreToNumberComplet(texte[indChar - 1]);
 		if (indPremierLettre != -1 && indDeuxiemeLettre != -1) {
 			//cout << "score : " << score << " bigramme : " << bigramme[indPremierLettre][indDeuxiemeLettre] <<endl;;
 			score = score + bigramme[indPremierLettre][indDeuxiemeLettre];

@@ -62,7 +62,7 @@ float Recuit_boucle(char proposition_actuelle[27], float bigramme[26][26], const
 	while (k < NB_ITTERATIONS)
 	{
 		Proposition(27, proposition_courante);
-		ApplicationProposition(texte_initial, tpTexte_initial,proposition_courante,texte_trad);
+		//ApplicationProposition(texte_initial, tpTexte_initial,proposition_courante,texte_trad);
 		score_mots = Score_Mots(texte_trad, liste_mots, taille_liste);
 		score_courant = Score(texte_trad, tpTexte_initial, bigramme);
 		score_total = FACTEUR_SCORE_MOTS * score_mots + score_courant;

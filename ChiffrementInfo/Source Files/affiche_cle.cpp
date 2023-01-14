@@ -3,19 +3,23 @@
 #include <fstream>
 using namespace std;
 
-void affiche_cle(const char cle[], const char texteDecrypter[], string nomfichier)
+void affiche_cle(unsigned int taille,char cle[], char texteDecrypter[], string nomfichier)
 {
 
 
-	ofstream fichier(nomfichier.c_str(), ios::in);  // on ouvre le fichier en lecture
+	ofstream fichier(nomfichier.c_str());  // on ouvre le fichier en lecture
 
 	if (fichier)  // si l'ouverture a réussi
 	{
-		fichier << "la cle est la suivante : " << cle << ' \n';
-		fichier << "le texte decrypter est le suivant : \n" << texteDecrypter;
+		fichier << "la cle est la suivante : " << cle ;
+		fichier << "le texte decrypter est le suivant : ";
+		for (unsigned int i = 0; i < taille; i++) {
+			fichier << texteDecrypter[i];
+			cout << "lettre numero :"<< i<< " : " << texteDecrypter[i]<<endl;
+		}
 
-		cout << "la cle est la suivante : " << cle << ' \n'; // retour console
-		cout << "le texte decrypter est le suivant : \n" << texteDecrypter;
+		//cout << "la cle est la suivante : " << cle << ' \n'; // retour console
+		//cout << "le texte decrypter est le suivant : \n" << texteDecrypter;
 		fichier.close();  // on ferme le fichier
 	}
 	else

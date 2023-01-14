@@ -88,18 +88,22 @@ void Proposition_initiale(const char alphabet[], const float freqAlphabet[], con
 
 void Proposition(int tailleProposition, char proposition[])
 {
+	std::random_device rd;
+	std::mt19937 gen(rd());
+	std::uniform_int_distribution<> dist(0, tailleProposition-1);
 
 	int ind1, ind2;
 	char temp;
-	ind1 = rand() % tailleProposition;
-	ind2 = rand() % tailleProposition;
+	ind1 = dist(gen);
+	ind2 = dist(gen);
 	while (ind1 == ind2) // On veut deux indices différents
 	{
-		ind1 = rand() % tailleProposition;
-		ind2 = rand() % tailleProposition;
+		ind1 = dist(gen);
+		ind2 = dist(gen);
 
 	}
 	//Permutation
+	//cout << "ind1 : " << ind1<<" ind2 : "<<ind2;
 	temp = proposition[ind1];
 	proposition[ind1] = proposition[ind2];
 	proposition[ind2] = temp;
