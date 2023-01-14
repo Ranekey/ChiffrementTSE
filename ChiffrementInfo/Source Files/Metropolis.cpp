@@ -28,7 +28,7 @@ float MetropolisBoucle(const char texte_crypt[], char texte_crypt_courant[], uns
 	Copy(27, proposition_courante, best_proposition);
 
 	// Application de proposition actuelle sur le texte
-	ApplicationProposition(texte_crypt, texte_crypt_courant, taille_texte, proposition_actuelle);
+	ApplicationProposition(texte_crypt, taille_texte, proposition_actuelle, texte_crypt_courant);
 
 	// Initialisation variable boucle
 	float best_score = ScoreBigramm(texte_crypt_courant, taille_texte, bigrammes);
@@ -41,7 +41,7 @@ float MetropolisBoucle(const char texte_crypt[], char texte_crypt_courant[], uns
 	{
 		//Nouvelle proposition et Application
 		Proposition(26, proposition_courante);
-		ApplicationProposition(texte_crypt, texte_crypt_courant, taille_texte, proposition_courante);
+		ApplicationProposition(texte_crypt, taille_texte, proposition_courante, texte_crypt_courant);
 
 		score_courant = ScoreBigramm(texte_crypt_courant, taille_texte, bigrammes);
 

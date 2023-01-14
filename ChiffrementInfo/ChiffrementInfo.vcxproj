@@ -138,7 +138,6 @@
     <ClCompile Include="Source Files\ApplicationProposition.cpp" />
     <ClCompile Include="Source Files\Ecriture.cpp" />
     <ClCompile Include="Source Files\InitialisationTableau.cpp" />
-    <ClCompile Include="Source Files\LettreToNumber.cpp" />
     <ClCompile Include="Source Files\main.cpp" />
     <ClCompile Include="Source Files\Metropolis.cpp" />
     <ClCompile Include="Source Files\Proposition.cpp" />

@@ -18,9 +18,9 @@ Sortie : vide
 void FreqApparitions(const char texte[], float freq[]);
 
 /*
-Rôle : Associer à chaque lettre de l'alphabet sa fréquence en utilisant le type composé dicoFreq
-Entrée : 1 tableau de caractère étant l'alphabet à associer, 1 tableau de réels étant les fréquences d'apparitions des lettres dans l'ordre alphabétique
-Entrée / Sortie : 1 tableau de type composé dicoFreq où les lettres et les fréquences sont associés par pairs
+Rôle : Associer à chaque lettre de l'alphabet sa fréquence d'apparition en utilisant le type composé dicoFreq
+Entrée : un tableau de caractères étant l'alphabet à associer, un tableau de réels étant les fréquences d'apparitions des lettres dans l'ordre alphabétique
+Entrée / Sortie : un tableau de type composé dicoFreq où les lettres et les fréquences sont associées par pairs
 Sortie : vide
 */
 void AssociationFreq(const char alphabet[], const float freqApparitions[], dicoFreq associationLettresFreq[]);
@@ -43,50 +43,52 @@ Sortie : vide
 void Proposition_initiale(const char alphabet[], const float freqAlphabet[], const char texte[], char proposition[]);
 
 /*
-R: melanger les caractere d'une chaine de caracteres
-E: 1 tableau de caracteres avec caracteres non melangés
-E/S: 1 tableau de caracteres avec lettres melangers
+R: Inverser 2 caractères d'une chaine de caractères
+E: la taille de la chaine de caractères
+E/S: un tableau de caracteres avec dont la position de deux caractères va être inversée
 S: Vide
 */
-void Proposition(int tailleProposition, char proposition[]);
+void Proposition(const int tailleProposition, char proposition[]);
 
 /*
-Rôle : Assigne un score de plausibilité à un tableau de charactère
-Entrée : Un tableau de caractères étant le texte, un entier correspondant à la taille réelle du texte
-Sortie : un réel représentant le score du texte
+Rôle : Assigne un score de plausibilité à un tableau de charactère en utilisant la fréquence d'apparition de bigrammes
+Entrée : Un tableau de caractères étant le texte, un entier correspondant à la taille réelle du texte, la liste des bigrammes utilisés avec leur score associés pour calculer le score total
+Sortie : un réel représentant le score du texte (généralement négatif car on utilise la fonction logarithme) (un bon score est de -3, un mauvais score de -6)
 */
-float ScoreBigramm(const string texte, unsigned int tpTexte, const float bigramme[42][42]);
+float ScoreBigramm(const char texte[], const unsigned int tpTexte, const float bigramme[42][42]);
 
-float ScoreQuadgramm(const char texte[], unsigned int tpTexte, float quadgramm[42][42][42][42]);
+/*
+Rôle : Assigne un score de plausibilité à un tableau de charactère en utilisant la fréquence d'apparition de quadrigrammes
+Entrée : Un tableau de caractères étant le texte, un entier correspondant à la taille réelle du texte, la liste des quadrigrammes utilisés avec leur score associés pour calculer le score total
+Sortie : un réel représentant le score du texte (généralement négatif car on utilise la fonction logarithme)
+*/
+float ScoreQuadgramm(const char texte[], const unsigned int tpTexte, float quadgramm[42][42][42][42]);
 
 /*
 Rôle: Permet de donne l'indice d'une lettre dans l'alphabet (exemple : LettreToNumber('A') = 0)
-Entrée : un charactère (entre simple cote)
-Sortie : un entier entre 0 et 25 ou -1 en cas d'erreur
-A NE PLUS UTTILISER,
+Entrée : un caractère (entre simple cote)
+Sortie : un entier entre 0 et 25 (ou plus avec les accents) ou -1 en cas d'erreur
 */
-int LettreToNumber(char lettre);
-/*
-même rôle que lettre to number mais prends en compte un alphabet plus grand
-*/
-int LettreToNumberComplet(char lettre);
+int LettreToNumberComplet(const char lettre);
+
 /*
 Rôle: Application d'une proposition à un texte donné
-Entrée : la taille pratique du texte (un entier) une proposition (tableaux de 26 caractères)
+Entrée : un tableau de caractères (étant le texte initial), la taille pratique du texte (un entier) une proposition (tableaux de 26 caractères)
 Entrée / Sortie: un tableau de caractères (le texte à traduire qui est traduit)
 Sortie : vide
 */
-void ApplicationProposition(const char texte_initial[], char texte_traduit[], const unsigned int tpTexte, const char proposition[]);
+void ApplicationProposition(const char texte_initial[], const unsigned int tpTexte, const char proposition[], char texte_traduit[]);
 
 /*
 Rôle: renvoie si le message décrypter doit être garder ou non grâce a une loi de probabilité
-Entrée : un réel (le score actuel entrain d'être analyser), un réel (le score courant), un réel (la température utilisée pour le calcul)
+Entrée : un réel (le score actuelqui est meilleur que le score courant), un réel (le score courant), un réel (la température utilisée pour le calcul)
 Sortie : un booléean, vrai si la nouvelle proposition est accepter, faux sinon
 */
 bool Recuit(const float score_actuel, const float score_courant, const float temperature);
 
 /*
-Rôle : Evaluer la plausibilité d'un texte avec une liste de mots
+Rôle : Evaluer la plausibilité d'un texte avec une liste de mots et en comptant le nombre de mots corrects
+Entrée :
 Sortie : un réel (le meilleur score obtenu)
 */
 float Recuit_boucle(const char texte_crypt[], char texte_crypt_courant[], const unsigned int taille_texte, char best_proposition[27], string listeMots, const unsigned int taille_liste, const float bigrammes[42][42]);

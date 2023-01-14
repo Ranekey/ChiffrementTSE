@@ -3,7 +3,7 @@
 #include <iostream>
 using namespace std;
 
-void ApplicationProposition(const char texte_initial[], char texte_trad[], const unsigned int tpTexte, const char proposition[])
+void ApplicationProposition(const char texte_initial[], const unsigned int tpTexte, const char proposition[], char texte_trad[])
 {
 	int indLettre;
 

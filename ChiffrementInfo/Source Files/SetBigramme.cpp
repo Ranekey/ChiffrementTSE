@@ -52,8 +52,8 @@ bool SetBigramme(string nomfichier, float bigramme[26][26])
 		//InitialisationTableau(bigramme[26], 27, 0);// Initalise la dernier colone à 0;
 		// Calcule fréquence 
 		while (getline(Fichier, ligne)) {
-			indPremierLettre = LettreToNumber(ligne[0]);
-			indDeuximeLettre = LettreToNumber(ligne[1]);
+			indPremierLettre = LettreToNumberComplet(ligne[0]);
+			indDeuximeLettre = LettreToNumberComplet(ligne[1]);
 			strcpy_s(ligneChar, ligne.c_str()); // convertie ligne en un tableau de charctère enregistrer dans ligneChar
 			for (int i = 0; i < 3; i++) {
 				ligneChar[i] = '0';
