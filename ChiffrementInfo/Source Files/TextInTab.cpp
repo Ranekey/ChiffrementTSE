@@ -1,6 +1,7 @@
 #include "WRfichier.h"
-#include "utils.h"
+#include <fstream>
 #include <iostream>
+#include <string>
 using namespace std;
 
 unsigned int TextInTab(const string nomfichier, char texte[])

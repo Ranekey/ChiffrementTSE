@@ -1,12 +1,11 @@
 #include "WRfichier.h"
 #include "decrypter.h"
-#include "utils.h"
 #include <math.h>
 #include <cstdlib>
 #include <iostream>
 using namespace std;
 
-bool SetQuadgramm(string nomfichier, float quadgramm[42][42][42][42])
+bool SetQuadgramm(const string nomfichier, float quadgramm[42][42][42][42])
 {
 	unsigned int indPremierLettre;
 	unsigned int indDeuximeLettre;

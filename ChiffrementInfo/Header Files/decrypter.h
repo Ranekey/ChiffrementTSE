@@ -87,29 +87,31 @@ Sortie : un booléean, vrai si la nouvelle proposition est accepter, faux sinon
 bool Recuit(const float score_actuel, const float score_courant, const float temperature);
 
 /*
-Rôle : Evaluer la plausibilité d'un texte avec une liste de mots et en comptant le nombre de mots corrects
-Entrée :
+Rôle : Evaluer la plausibilité d'un texte avec une liste de mots en comptant le nombre de mots corrects
+Entrée : un tableau de caractères (le texte à décrypter), un entier (la taille du texte), un string (le chemin menant vers le fichier de la liste de mots), un tableau de tableau de réels (étant les bigrammes utilisés pour calculer le score)
+Entrée / Sortie : un tableau de caractères (le texte courant), un tableau de caractère (la clé de la meilleure proposition)
 Sortie : un réel (le meilleur score obtenu)
 */
-float Recuit_boucle(const char texte_crypt[], char texte_crypt_courant[], const unsigned int taille_texte, char best_proposition[27], string listeMots, const unsigned int taille_liste, const float bigrammes[42][42]);
+float Recuit_boucle(const char texte_crypt[], const unsigned int taille_texte, const string dico, const float bigrammes[42][42], char texte_crypt_courant[], char best_proposition[27]);
 
 /*
 Rôle : Evaluer le score d'un texte en fonction du nombre de mots présents parmi une liste de mots (ici en Francais)
-Entrée: un tableau de caractères (le texte à évaluer), un tableau de tableau de caractères (la liste des mots), un entier (le nombre de mots dans la liste)
+Entrée: un tableau de caractères (le texte à évaluer), un string (le chemin vers le fichier contenant la liste de mots)
 Sortie : un réel (le score du texte)
 */
 float Score_Mots(const char texte[], const string dico);
 
-
 /*
 Rôle : utiliser l'algorithme de métropolis pour savoir si une proposition est conserver ou non
-Entrée : le score de proposition actuelle et proposition courant, la taille du texte
-Sortie: un bool , Vrai si la proposition est accepter, faux sinon
+Entrée : deux réels (le score de proposition actuelle et proposition courante), un entier (la taille du texte)
+Sortie: un booléen , Vrai si la proposition est accepter, faux sinon
 */
-bool Metropolis(float score_courant, float score_actuelle, unsigned int taille);
+bool Metropolis(const float score_actuel, const float score_courant, const unsigned int taille);
 
 /*
-Rôle : Evaluer la plausibilité d'un texte avec une comparaison par bigrammes
+Rôle : évaluer la plausibilité d'un texte avec une comparaison par bigrammes
+Entrée : un tableau de caractères (le texte initial), un entier (la taille du texte), un tableau de tableau de réels (la fréquence des bigrammes)
+Entrée / Sortie : un tableau de caractère (le texte courant), 3 tableaux de caractères (les propositions de clé (actuelle, courante et best))
 Sortie : un réel (le meilleur score obtenu)
 */
-float MetropolisBoucle(const char texte_crypt[], char texte_crypt_courant[], unsigned int taille_texte, char proposition_courante[], char proposition_actuelle[], char best_proposition[], float bigrammes[42][42]);
+float MetropolisBoucle(const char texte_crypt[], const unsigned int taille_texte, const float bigrammes[42][42], char texte_crypt_courant[], char proposition_courante[], char proposition_actuelle[], char best_proposition[]);

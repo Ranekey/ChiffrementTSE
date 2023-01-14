@@ -2,12 +2,13 @@
 #include <random>
 #include <iostream>
 #include <math.h>
-#include "utils.h"
+#include "WRfichier.h"
 using namespace std;
 
 
 
-bool Metropolis(float score_courant,float score_actuelle, unsigned int taille) {
+bool Metropolis(const float score_actuel, const float score_courant, const unsigned int taille)
+{
 	//Générateur de nombre aléatoire
 	std::random_device rd;
 	std::mt19937 gen(rd());
@@ -15,17 +16,17 @@ bool Metropolis(float score_courant,float score_actuelle, unsigned int taille) {
 	
 	
 	float x = dist(gen); // génére un nombre aléatoire entre 0 et 1
-	float p = exp((score_courant - score_actuelle) * taille);
+	float p = exp((score_courant - score_actuel) * taille);
 	
 	return x < p; // Si vrai on accepte la proposition
 }
 
-float MetropolisBoucle(const char texte_crypt[], char texte_crypt_courant[], unsigned int taille_texte, char proposition_courante[], char proposition_actuelle[], char best_proposition[], float bigrammes[42][42])
+float MetropolisBoucle(const char texte_crypt[], const unsigned int taille_texte, const float bigrammes[42][42], char texte_crypt_courant[], char proposition_courante[], char proposition_actuelle[], char best_proposition[])
 {
 	
 	// Initialisation de proposition actuelle et courante avec la meilleure proposition
-	Copy(27, proposition_actuelle, best_proposition);
-	Copy(27, proposition_courante, best_proposition);
+	Copy(best_proposition, 27, proposition_actuelle);
+	Copy(best_proposition, 27, proposition_courante);
 
 	// Application de proposition actuelle sur le texte
 	ApplicationProposition(texte_crypt, taille_texte, proposition_actuelle, texte_crypt_courant);
@@ -49,7 +50,7 @@ float MetropolisBoucle(const char texte_crypt[], char texte_crypt_courant[], uns
 		if (Metropolis(score_courant, score_actuelle, taille_texte))
 		{
 			//On met a jour la proposition actuelle  et le score
-			Copy(26, proposition_actuelle, proposition_courante);
+			Copy(proposition_courante, 26, proposition_actuelle);
 			score_actuelle = score_courant;
 
 		}
@@ -57,7 +58,7 @@ float MetropolisBoucle(const char texte_crypt[], char texte_crypt_courant[], uns
 		if (score_actuelle > best_score) 
 		{
 			best_score = score_actuelle;
-			Copy(26, best_proposition, proposition_actuelle);
+			Copy(proposition_actuelle, 26, best_proposition);
 		}
 
 

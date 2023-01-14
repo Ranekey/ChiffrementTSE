@@ -3,7 +3,6 @@
 #include <string>
 #include "WRfichier.h"
 #include "decrypter.h"
-#include "utils.h"
 using namespace std;
 
 int main()
@@ -54,25 +53,21 @@ int main()
 	FreqToTab(fichier_freq_alphabet_base, freq_alphabet_base);
 	Proposition_initiale(alphabetBase, freq_alphabet_base, texte_crypt, best_proposition);
 
-	//On convertit les mots dans une liste
-	string liste_mots;
-	const unsigned int taille_liste_mots = MotInTab(fichier_liste_mots, liste_mots);
-
 	//On convertit les bigrammes contenus dans un fichier dans un tableau de réels à 2 entrées (étant les fréquences d'apparitions)
 	bigrammesExiste = SetBigrammeComplet(fichier_bigrammes, bigrammes);
 
 
 	if (bigrammesExiste) {
 		
-		best_score = MetropolisBoucle(texte_crypt, texte_crypt_courant, taille_texte, proposition_courante, proposition_actuelle, best_proposition, bigrammes);
-		cout << "Deuxieme methode : " << endl;
-		best_score = Recuit_boucle(texte_crypt, texte_crypt_courant, taille_texte, best_proposition, fichier_liste_mots, taille_liste_mots, bigrammes);
+		//best_score = MetropolisBoucle(texte_crypt, texte_crypt_courant, taille_texte, proposition_courante, proposition_actuelle, best_proposition, bigrammes);
+		//cout << "Deuxième méthode : " << endl;
+		//best_score = Recuit_boucle(texte_crypt, taille_texte, fichier_liste_mots, bigrammes, texte_crypt_courant, best_proposition);
 	}
 	else {
 		cout << "Erreur dans la création du bigramme";
 	}
 	
-	Affiche_cle(taille_texte,best_proposition, texte_crypt, fichier_texte_decrypt);
+	Affiche_cle(fichier_texte_decrypt, best_proposition, texte_crypt, taille_texte);
 
 
 	return 0;

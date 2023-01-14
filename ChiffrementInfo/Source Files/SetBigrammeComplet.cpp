@@ -1,6 +1,5 @@
 #include "WRfichier.h"
 #include "decrypter.h"
-#include "utils.h"
 #include <math.h>
 #include <cstdlib>
 #include <iostream>

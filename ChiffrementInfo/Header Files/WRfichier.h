@@ -5,12 +5,14 @@ using namespace std;
 
 /*
 Rôle : Ecrit le text crypter dans le tableau et renvoie la taille pratique (donc le nombre de charactère dans le texte)
-Entrée : le nom du fichier dans lequelle se trouve le texte, un tableau dans lequelle chaque charctère sera enregistré
+Entrée : le nom du fichier dans lequelle se trouve le texte
+Entrée / Sortie : un tableau dans lequel chaque caractère sera enregistré
 Sortie : la taille pratique du tableau texte (donc le nombre de charactère)
 */
 unsigned int TextInTab(const string nomfichier, char texte[]);
+
 /*
-Rôle : Convertir les frequences d'apparitions des caractères d'un fichier txt à un tableau de réels
+Rôle : Convertir les fréquences d'apparitions des caractères d'un fichier txt dans un tableau de réels
 Entrée : la localisation du fichier contenant les fréquences d'apparitions de chaque lettres
 Entrée / Sortie : un tableau de réels avec les fréquences d'apparitions de chaque lettres dans l'ordre alphabétique
 Sortie : vide
@@ -19,37 +21,30 @@ void FreqToTab(const string nomFichier, float tabFreq[]);
 
 /*
 Rôle : Permet de configurer le bigramme à partir d'un fichier texte
-Entrée : le nom du fichier, le tableau dans lequelle le bigramme va être enregistré
-Sortie : un booléan , Vrai si l'enregistrement s'est effuctuer sans erreur, faux sinon
-*/
-bool SetBigramme(const string nomfichier, float bigramme[26][26]);
-
-/*
-même rôle que SetBigrammme mais prends en compte un alphabet plus grand
+Entrée : un string étant le nom du fichier
+Entrée / Sortie : le tableau de tableau de réels dans lequel le bigramme va être enregistré
+Sortie : un booléan , Vrai si l'enregistrement s'est effectuer sans erreur, faux sinon
 */
 bool SetBigrammeComplet(const string nomfichier, float bigramme[42][42]);
 
-bool SetQuadgramm(string nomfichier, float quadgramm[42][42][42][42]);
-
-
+/*
+Rôle : Permet de configurer le quadrigramme à partir d'un fichier texte
+Entrée : un string étant le nom du fichier
+Entrée / Sortie : un tableau à 4 dimensions de réels dans lequel les quadrigrammes vont être enregistré
+Sortie : un booléan , Vrai si l'enregistrement s'est effectuer sans erreur, faux sinon
+*/
+bool SetQuadgramm(const string nomfichier, float quadgramm[42][42][42][42]);
 
 /*
-Rôle : permet d'afficher la clé et le texte décrypter
-Entrée : la clé et le texte décrypter sous forme de tableau, le nom du fichier où la clé ser enrgistrer
+Rôle : Permet d'afficher la clé et le texte décrypter dans un fichier texte mais aussi dans la console
+Entrée : un string (le nom du fichier où la clé et le texte seront enregistrés), un tableau de caractères (la clé), un tableau (le texte décrypter à mettre dans le fichier), un entier (la taille du texte)
 Sortie : vide
 */
-void Affiche_cle(unsigned int taille, char cle[], char texteDecrypter[], string nomfichier);
+void Affiche_cle(const string nomfichier, const char cle[], const char texteDecrypter[], const unsigned int taille);
 
 /*
-Rôle : Lire le fichier contenant le mots et les mettres dans un tableau de tableau
-Entrée : le chemin du fichier en string
-Entrée / Sortie : le tableau de tableau de caratères cotenant les mots
-Sortie : un entier (la taille de liste de mots, c'est à dire le nombre de mots dans la liste)
+Rôle : copy un tableau de caractère dans un autre de taille identique
+Entrée : le tableau que l'on va copier, un entier : la taille du tableau
+Entrée / Sortie : le tableau de caractère qui va être remplacé
 */
-unsigned int RecuperationMots(const string fichier, char liste_mots[][50]);
-
-/*
-Enregistre dans un string tout les mots du fichier de liste de mots francais
-En théorie cela fonctionne mais dans la pratique le string n'a pas assez d'octet pour stocker toute les informations;
-*/
-unsigned int MotInTab(const string nomFichier, string liste_mots);
+void Copy(const char tab2[], const unsigned int taille, char tab1[]);

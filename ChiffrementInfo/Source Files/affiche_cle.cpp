@@ -3,7 +3,7 @@
 #include <fstream>
 using namespace std;
 
-void Affiche_cle(unsigned int taille,char cle[], char texteDecrypter[], string nomfichier)
+void Affiche_cle(const string nomfichier, const char cle[], const char texteDecrypter[], const unsigned int taille)
 {
 
 

@@ -12,7 +12,4 @@ int LettreToNumberComplet(const char lettre)
 	indLettre = ALPHABET.find(lettre);
 	//cout << "indLettre = " << indLettre;
 	return indLettre;
-
-
-
 }

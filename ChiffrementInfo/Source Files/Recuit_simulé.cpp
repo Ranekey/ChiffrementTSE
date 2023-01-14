@@ -1,37 +1,11 @@
 #include<random>
 #include<math.h>
 #include "decrypter.h"
-#include "utils.h"
+#include "WRfichier.h"
 #include<fstream>
 #include<iostream>
 #include<string>
 using namespace std;
-
-/*
-Mets tout les mots dans la liste mot francais dans une variable string 
-*/
-unsigned int MotInTab(const string nomFichier, string liste_mots)
-{
-	ifstream fichier(nomFichier.c_str());
-	liste_mots = "";
-	unsigned int i = 0;
-	if (fichier) {
-		string ligne;
-		
-		while (getline(fichier, ligne) ){
-			liste_mots.append(ligne);
-			liste_mots.append(" ");
-			
-			i++;
-		}
-	}
-	else
-	{
-		cout << "Impossible d'ouvrir le fichier";
-	}
-	
-	return i;
-}
 
 bool Recuit(const float score_actuel, const float score_courant, const float temperature)
 {	
@@ -52,7 +26,7 @@ bool Recuit(const float score_actuel, const float score_courant, const float tem
 
 }
 
-float Recuit_boucle(const char texte_crypt[], char texte_crypt_courant[], const unsigned int taille_texte, char best_proposition[27], string dico, const unsigned int taille_liste, const float bigrammes[42][42])
+float Recuit_boucle(const char texte_crypt[], const unsigned int taille_texte, const string dico, const float bigrammes[42][42], char texte_crypt_courant[], char best_proposition[27])
 {
 	const int MAXITTER = 1000;
 	const int FACTEUR_SCORE_MOTS = 4;
@@ -63,11 +37,11 @@ float Recuit_boucle(const char texte_crypt[], char texte_crypt_courant[], const 
 	float score_mots_courant = 0;
 	float score_total_courant = 0;
 	char proposition_courante[27];
-	Copy(27, proposition_courante, best_proposition);
+	Copy(best_proposition, 27, proposition_courante);
 
 	float score_total_actuel = 0;
 	char proposition_actuelle[27];
-	Copy(27, proposition_actuelle, best_proposition);
+	Copy(best_proposition, 27, proposition_actuelle);
 
 	float score_total_best = 0;
 
@@ -92,12 +66,12 @@ float Recuit_boucle(const char texte_crypt[], char texte_crypt_courant[], const 
 		if (Recuit(score_total_actuel, score_total_courant, temperature))
 		{
 			score_total_actuel = score_total_courant;
-			Copy(27, proposition_actuelle, proposition_courante);
+			Copy(proposition_courante, 27, proposition_actuelle);
 		}
 		if (score_total_actuel > score_total_best)
 		{
 			score_total_best = score_total_actuel;
-			Copy(27, best_proposition, proposition_actuelle);
+			Copy(proposition_actuelle, 27, best_proposition);
 		}
 		//Faire baisser la température dans la recherche
 		temperature = temperature * rho_modif_temperature;
