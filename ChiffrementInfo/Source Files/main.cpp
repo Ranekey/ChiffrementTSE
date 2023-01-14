@@ -63,12 +63,12 @@ int main()
 
 	char texte_test[500];
 	TextInTab("Resource Files/TextTest.txt", texte_test);
-	float score_test = ScoreBigramm(texte_test, taille_texte, bigrammes);
-	float score_test_courant = ScoreBigramm(texte_crypt_courant, taille_texte, bigrammes);
+	char texte_test2[500];
+	TextInTab("Resource Files/TextTest2.txt", texte_test2);
 
-	float score_test_mots = Score_Mots(texte_test, liste_mots);
+	float score_test_mots = Score_Mots(texte_test, fichier_liste_mots);
 	cout << score_test_mots << endl;
-	float score_test_mots_courant = Score_Mots(texte_crypt_courant, liste_mots);
+	float score_test_mots_courant = Score_Mots(texte_test2, fichier_liste_mots);
 	cout << score_test_mots_courant << endl;
 
 
