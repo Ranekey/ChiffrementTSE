@@ -28,7 +28,8 @@ void Affiche_cle(const string nomfichier_mess,const string nomfichier_key, const
 	{
 		fichier2 << "La clé est la suivante : " << cle << endl;
 		//Afficher dans la console
-		cout << "la clé est la suivante : " << cle << endl;
+		cout << "Voir les fichiers key.txt et message_cry_decry.txt." << endl;
+		cout << "La meilleure clé trouvée est la suivante : " << cle << endl;
 		fichier2.close();  // on ferme le fichier
 	}
 	else
