@@ -130,11 +130,10 @@
   <ItemGroup>
     <ClCompile Include="Source Files\Copy.cpp" />
     <ClCompile Include="Source Files\LettreToNumberComplet.cpp" />
-    <ClCompile Include="Source Files\ScoreBigramm.cpp" />
     <ClCompile Include="Source Files\ScoreQuadgramm.cpp" />
     <ClCompile Include="Source Files\SetBigrammeComplet.cpp" />
     <ClCompile Include="Source Files\SetQuadgramm.cpp" />
-    <ClCompile Include="Source Files\affiche_cle.cpp" />
+    <ClCompile Include="Source Files\Affiche_cle.cpp" />
     <ClCompile Include="Source Files\CleanText.cpp" />
     <ClCompile Include="Source Files\ApplicationProposition.cpp" />
     <ClCompile Include="Source Files\Ecriture.cpp" />
@@ -150,14 +149,13 @@
     <ClCompile Include="Source Files\FreqToTab.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="Resource Files\BigrammeTexteComplet.txt" />
     <Text Include="Resource Files\FrequencesLettres.txt" />
     <Text Include="Resource Files\ListeMotFr.txt" />
-    <Text Include="Resource Files\mess_crypt.txt" />
     <Text Include="Resource Files\OccurenceTotalParLettre.txt" />
     <Text Include="Resource Files\BigrammesTexte.txt" />
     <Text Include="Resource Files\quadgramm.txt" />
-    <Text Include="Resource Files\TextDecrypter.txt" />
+    <Text Include="Resource Files\TextDeCrypter.txt" />
+    <Text Include="Resource Files\Text_a_trouver.txt" />
     <Text Include="Resource Files\TextCrypter.txt" />
   </ItemGroup>
   <ItemGroup>

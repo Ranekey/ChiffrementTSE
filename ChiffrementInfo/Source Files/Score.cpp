@@ -4,21 +4,21 @@
 #include <math.h>
 #include <string>
 
-
-float Score(const char texte[], unsigned int tpTexte, float bigramme[26][26])
+float ScoreBigramm(const string texte, unsigned int tpTexte, const float bigramme[42][42])
 {
 	unsigned int indPremierLettre;
 	unsigned int indDeuxiemeLettre;
 	float score = 0;
 	for (unsigned int indChar = 1; indChar < tpTexte; indChar++)
 	{
-		indDeuxiemeLettre = LettreToNumber(texte[indChar]);
-		indPremierLettre = LettreToNumber(texte[indChar - 1]);
+
+		indDeuxiemeLettre = LettreToNumberComplet(texte[indChar]);
+		indPremierLettre = LettreToNumberComplet(texte[indChar - 1]);
 		if (indPremierLettre != -1 && indDeuxiemeLettre != -1) {
 			//cout << "score : " << score << " bigramme : " << bigramme[indPremierLettre][indDeuxiemeLettre] <<endl;;
 			score = score + bigramme[indPremierLettre][indDeuxiemeLettre];
 		}
-		
+
 		//Pour calculer le score il faut multiplier tout les probabilté puis appliquer le log
 		//Or on sait que log(A*B) = log(A) + log(B)
 		//Vu que l'on va avoir des petites probabilité on préfère appliquer directement le log
@@ -27,7 +27,7 @@ float Score(const char texte[], unsigned int tpTexte, float bigramme[26][26])
 	}
 
 
-	return score/tpTexte; // on normalise par le nombre de charactères
+	return score / tpTexte; // on normalise par le nombre de charactères
 }
 
 float Score_Mots(const char texte[], string listeMots, const unsigned int taille_liste)
@@ -51,8 +51,6 @@ float Score_Mots(const char texte[], string listeMots, const unsigned int taille
 		if (listeMots.find(motRecherche) >= 0) {
 			mots_corrects = mots_corrects + listeMots.find(motRecherche);
 		}
-
-		
 	}
 	return (float)mots_corrects / (float)nb_mots;
 }

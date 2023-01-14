@@ -3,7 +3,7 @@
 #include <fstream>
 using namespace std;
 
-void affiche_cle(unsigned int taille,char cle[], char texteDecrypter[], string nomfichier)
+void Affiche_cle(unsigned int taille,char cle[], char texteDecrypter[], string nomfichier)
 {
 
 
@@ -17,7 +17,7 @@ void affiche_cle(unsigned int taille,char cle[], char texteDecrypter[], string n
 			fichier << texteDecrypter[i];
 		}
 
-		cout << "la cle est la suivante : " << cle<< endl;
+		cout << "la cle est la suivante : " << cle << endl;
 		cout << "le texte decrypter est le suivant : ";
 		//cout << "la cle est la suivante : " << cle << ' \n'; // retour console
 		//cout << "le texte decrypter est le suivant : \n" << texteDecrypter;

@@ -15,7 +15,7 @@ char UpperCase(char lettre);
 /*
 Rôle : copy deux tableau de taille identique
 */
-void Copy(unsigned int taille, char tab1[], char tab2[]);
+void Copy(unsigned int taille, char tab1[], const char tab2[]);
 
 /*
 

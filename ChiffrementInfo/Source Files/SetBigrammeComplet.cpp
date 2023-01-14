@@ -23,7 +23,7 @@ cela sera donc la valeur à laquelle sera initialisé le tableau (à l'exception de
 302325,749605,555439,294371,127336,698456,856958,760068,671894,172783,2885,43647,29651,15632];
 
 */
-bool SetBigrammeComplet(string nomfichier, float bigramme[42][42])
+bool SetBigrammeComplet(const string nomfichier, float bigramme[42][42])
 {
 	unsigned int indPremierLettre;
 	unsigned int indDeuximeLettre;
@@ -38,7 +38,7 @@ bool SetBigrammeComplet(string nomfichier, float bigramme[42][42])
 	if (Fichier) {
 		sansErreur = true;
 		string ligne;
-		float valMin = 0.001;
+		float valMin = 0.00001;
 		char ligneChar[11];
 		// Initialisation 
 		for (unsigned int i = 0; i < 42; i++) {
