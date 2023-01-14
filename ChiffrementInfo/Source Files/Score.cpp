@@ -3,6 +3,8 @@
 #include <iostream>// à suppprimer
 #include <math.h>
 #include <string>
+#include <vector>
+using namespace std;
 
 
 float Score(const char texte[], unsigned int tpTexte, float bigramme[26][26])
@@ -30,29 +32,50 @@ float Score(const char texte[], unsigned int tpTexte, float bigramme[26][26])
 	return score/tpTexte; // on normalise par le nombre de charactères
 }
 
-float Score_Mots(const char texte[], string listeMots, const unsigned int taille_liste)
+
+
+float Score_Mots(const char texte[], string nom_fichier, const unsigned int taille_texte)
 {
-	//unsigned int occurence = 0;
-	//char mot_actuel[50];
-	int mots_corrects = 0; // == occurence
+	
+	int mots_corrects = 0; 
 	int nb_mots = 0;
-	int j = 0;
-	string motRecherche;
+	string texteString = texte;
 
-	while (texte[j] != '\0')
-	{
-		for (int i = 0; texte[j] != ' '; i++)
+	string delimiter = " ";
+	
+	ifstream fichier(nom_fichier.c_str());
+	if(fichier)
+	{	
+		//On sépare le texte en mot indivuel
+		string motRecherche = texteString.substr(0, texteString.find(delimiter));
+		int pos;
+		//on vérifie qu'on est pas à la fin du string
+		while ((pos = texteString.find(delimiter)) != std::string::npos) 
 		{
-			motRecherche.push_back(tolower(texte[j]));
-			j++;
-		}
-		nb_mots++;
-		j++;
-		if (listeMots.find(motRecherche) >= 0) {
-			mots_corrects = mots_corrects + listeMots.find(motRecherche);
-		}
-
-		
+			//Pour chaque nouveau on recommance la recherche du début dans le fichier dico
+			fichier.seekg(0, ios::beg);
+			motRecherche = texteString.substr(0, pos);
+			string listeMots;
+			while(getline(fichier,listeMots ))
+			{		
+				//On vérifie si il y a une correspondance
+				if (listeMots.find(motRecherche) != std::string::npos)
+				{
+					cout << " les mots : " << motRecherche<<endl;
+					mots_corrects = mots_corrects + 1;
+					break;
+				}
+			}
+			nb_mots++;
+			//On efface les mots au fur et à mesure
+			texteString.erase(0, pos + delimiter.length());
+		}	
 	}
+	else {
+		cout << "Erreur ";
+	}
+
+	cout <<" mots_corrects : " << mots_corrects << endl;
+	cout << " nb_mots : " << nb_mots << endl;
 	return (float)mots_corrects / (float)nb_mots;
 }
