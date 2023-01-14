@@ -71,7 +71,7 @@ int main()
 	else {
 		cout << "Erreur dans la création du bigramme";
 	}
-	
+	ApplicationProposition(texte_crypt_courant, taille_texte, best_proposition, texte_crypt);
 	Affiche_cle(taille_texte,best_proposition, texte_crypt, fichier_texte_decrypt);
 
 

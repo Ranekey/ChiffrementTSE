@@ -18,15 +18,10 @@ float ScoreQuadgramm(const char texte[], const unsigned int tpTexte, float quadg
 		indQuatriemeLettre = LettreToNumberComplet(texte[indChar]);
 		
 		if (indPremierLettre != -1 && indDeuxiemeLettre != -1) {
-			//cout << "score : " << score << " bigramme : " << bigramme[indPremierLettre][indDeuxiemeLettre] <<endl;;
+
 			score = score + quadgramm[indPremierLettre][indDeuxiemeLettre][indTroisiemeLettre][indQuatriemeLettre];
 		}
 
-		//Pour calculer le score il faut multiplier tout les probabilté puis appliquer le log
-		//Or on sait que log(A*B) = log(A) + log(B)
-		//Vu que l'on va avoir des petites probabilité on préfère appliquer directement le log
-		//Donc dans bigramme on déja appliquer le log
-		//il ne reste plus qu'à faire l'addition
 	}
 
 

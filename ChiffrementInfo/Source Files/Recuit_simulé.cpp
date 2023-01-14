@@ -54,7 +54,7 @@ bool Recuit(const float score_actuel, const float score_courant, const float tem
 
 float Recuit_boucle(const char texte_crypt[], char texte_crypt_courant[], const unsigned int taille_texte, char best_proposition[27], string dico, const unsigned int taille_liste, const float bigrammes[42][42])
 {
-	const int MAXITTER = 1000;
+	const int MAXITTER = 10;
 	const int FACTEUR_SCORE_MOTS = 4;
 	float temperature = 0.05;
 	float rho_modif_temperature = 0.999;
