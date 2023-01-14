@@ -9,7 +9,7 @@ void FreqToTab(const string nomFichier, float tabFreq[])
 
 	if (fichier)
 	{
-		//La lecture est bonne
+		//La lecture est bonne on copie les valeurs dans le tableau
 		string ligne;
 		int i = 0;
 		do

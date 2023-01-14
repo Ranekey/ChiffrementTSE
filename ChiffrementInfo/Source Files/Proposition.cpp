@@ -103,7 +103,6 @@ void Proposition(const int tailleProposition, char proposition[])
 
 	}
 	//Permutation
-	//cout << "ind1 : " << ind1<<" ind2 : "<<ind2;
 	temp = proposition[ind1];
 	proposition[ind1] = proposition[ind2];
 	proposition[ind2] = temp;

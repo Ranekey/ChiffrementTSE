@@ -4,6 +4,7 @@
 #include <cstdlib>
 #include <iostream>
 using namespace std;
+
 /*
 SetBigramme permet d'enregistrer dans un tableau 2D le log des fréquence d'apparation
 de chaque bigramme de lettres,
@@ -18,10 +19,6 @@ le log de ce résultat est -7.02 (environ)
 cela sera donc la valeur à laquelle sera initialisé le tableau (à l'exception des charactère spéciaux)
 */
 
-/*occurenceTotal = [858233,102743,331243,392195,1830803,117642,101900,89870,769610,47935,2511,598945,
-302325,749605,555439,294371,127336,698456,856958,760068,671894,172783,2885,43647,29651,15632];
-
-*/
 bool SetBigrammeComplet(const string nomfichier, float bigramme[42][42])
 {
 	unsigned int indPremierLettre;
@@ -41,15 +38,11 @@ bool SetBigrammeComplet(const string nomfichier, float bigramme[42][42])
 		char ligneChar[11];
 		// Initialisation 
 		for (unsigned int i = 0; i < 42; i++) {
-			for (unsigned int j = 0; j < 42; j++) {
-						bigramme[i][j] = log(valMin / maxBigramme);
-				//bigramme[i][j] = log(1.0/occurenceTotal[i]);
-				
-				//cout << "ligne : " << i << " col : " << j << " valeur : " << bigramme[i][j]<< endl;
+			for (unsigned int j = 0; j < 42; j++)
+			{
+				bigramme[i][j] = log(valMin / maxBigramme);
 			}
-			//bigramme[i][26] = 0; //Charactères spéciaux , a voir si on conserve
 		}
-		//InitialisationTableau(bigramme[26], 27, 0);// Initalise la dernier colone à 0;
 		// Calcule fréquence 
 		while (getline(Fichier, ligne)) {
 			
@@ -57,7 +50,8 @@ bool SetBigrammeComplet(const string nomfichier, float bigramme[42][42])
 				indDeuximeLettre = LettreToNumberComplet(ligne[1]);
 				
 				strcpy_s(ligneChar, ligne.c_str()); // convertie ligne en un tableau de charctère enregistrer dans ligneChar
-				for (int i = 0; i < 3; i++) {
+				for (int i = 0; i < 3; i++)
+				{
 					ligneChar[i] = '0';
 				}
 				occurrence = atoi(ligneChar);
@@ -65,11 +59,10 @@ bool SetBigrammeComplet(const string nomfichier, float bigramme[42][42])
 				//Or on sait que log(A*B) = log(A) + log(B)
 				//Vu que l'on va avoir des petites probabilité je préfère appliquer directement le log
 				//bigramme[indPremierLettre][indDeuximeLettre] = log(occurrence / occurenceTotal[indPremierLettre] + valMin);
-				if (indPremierLettre != -1 && indDeuximeLettre != -1) {
+				if (indPremierLettre != -1 && indDeuximeLettre != -1)
+				{
 					bigramme[indPremierLettre][indDeuximeLettre] = log(occurrence / maxBigramme);
 				}
-				
-				//cout << "bigramme : " << bigramme[indPremierLettre][indDeuximeLettre] << " occurence = " << occurrence << " rapport = " << occurrence / maxBigramme << endl;
 			}
 		
 	}

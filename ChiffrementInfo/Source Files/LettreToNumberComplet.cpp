@@ -10,6 +10,5 @@ int LettreToNumberComplet(const char lettre)
 	//string ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 	indLettre = ALPHABET.find(lettre);
-	//cout << "indLettre = " << indLettre;
 	return indLettre;
 }

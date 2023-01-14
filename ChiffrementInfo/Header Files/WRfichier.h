@@ -28,19 +28,11 @@ Sortie : un booléan , Vrai si l'enregistrement s'est effectuer sans erreur, faux
 bool SetBigrammeComplet(const string nomfichier, float bigramme[42][42]);
 
 /*
-Rôle : Permet de configurer le quadrigramme à partir d'un fichier texte
-Entrée : un string étant le nom du fichier
-Entrée / Sortie : un tableau à 4 dimensions de réels dans lequel les quadrigrammes vont être enregistré
-Sortie : un booléan , Vrai si l'enregistrement s'est effectuer sans erreur, faux sinon
-*/
-bool SetQuadgramm(const string nomfichier, float quadgramm[42][42][42][42]);
-
-/*
 Rôle : Permet d'afficher la clé et le texte décrypter dans un fichier texte mais aussi dans la console
 Entrée : un string (le nom du fichier où la clé et le texte seront enregistrés), un tableau de caractères (la clé), un tableau (le texte décrypter à mettre dans le fichier), un entier (la taille du texte)
 Sortie : vide
 */
-void Affiche_cle(const string nomfichier, const char cle[], const char texteDecrypter[], const unsigned int taille);
+void Affiche_cle(const string nomfichier_mess, const string nomfichier_key, const char cle[], const char texteDecrypter[], const unsigned int taille);
 
 /*
 Rôle : copy un tableau de caractère dans un autre de taille identique

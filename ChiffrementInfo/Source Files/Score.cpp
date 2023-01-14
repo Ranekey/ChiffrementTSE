@@ -1,6 +1,6 @@
 #include "decrypter.h"
 #include "WRfichier.h"
-#include <iostream>// à suppprimer
+#include <iostream>
 #include <math.h>
 #include <string>
 #include <vector>
@@ -17,7 +17,6 @@ float ScoreBigramm(const char texte[], const unsigned int tpTexte, const float b
 		indDeuxiemeLettre = LettreToNumberComplet(texte[indChar]);
 		indPremierLettre = LettreToNumberComplet(texte[indChar - 1]);
 		if (indPremierLettre != -1 && indDeuxiemeLettre != -1) {
-			//cout << "score : " << score << " bigramme : " << bigramme[indPremierLettre][indDeuxiemeLettre] <<endl;;
 			score = score + bigramme[indPremierLettre][indDeuxiemeLettre];
 		}
 
@@ -76,7 +75,5 @@ float Score_Mots(const char texte[], const string dico)
 		cout << "Erreur ";
 	}
 
-	cout << mots_corrects << endl;
-	cout << nb_mots << endl;
 	return (float)mots_corrects / (float)nb_mots;
 }

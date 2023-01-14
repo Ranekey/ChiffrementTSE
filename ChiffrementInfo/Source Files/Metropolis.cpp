@@ -33,12 +33,12 @@ float MetropolisBoucle(const char texte_crypt[], const unsigned int taille_texte
 
 	// Initialisation variable boucle
 	float best_score = ScoreBigramm(texte_crypt_courant, taille_texte, bigrammes);
-	float score_actuelle = best_score;
+	float score_actuel = best_score;
 	float score_courant;
-	const unsigned int MAXITER = 10000;
+	const unsigned int MAXITTER = 10000;
 	unsigned int i = 0;
 	
-	while (i < MAXITER)
+	while (i < MAXITTER)
 	{
 		//Nouvelle proposition et Application
 		Proposition(26, proposition_courante);
@@ -47,17 +47,17 @@ float MetropolisBoucle(const char texte_crypt[], const unsigned int taille_texte
 		score_courant = ScoreBigramm(texte_crypt_courant, taille_texte, bigrammes);
 
 		// Choix de garder la proposition ou non
-		if (Metropolis(score_courant, score_actuelle, taille_texte))
+		if (Metropolis(score_actuel, score_courant, taille_texte))
 		{
 			//On met a jour la proposition actuelle  et le score
 			Copy(proposition_courante, 26, proposition_actuelle);
-			score_actuelle = score_courant;
+			score_actuel = score_courant;
 
 		}
 		// on retient la meilleur proposition, donc celle qui à produit le score le plus élèver
-		if (score_actuelle > best_score) 
+		if (score_actuel > best_score) 
 		{
-			best_score = score_actuelle;
+			best_score = score_actuel;
 			Copy(proposition_actuelle, 26, best_proposition);
 		}
 

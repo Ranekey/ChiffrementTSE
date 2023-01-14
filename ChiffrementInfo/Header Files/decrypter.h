@@ -58,13 +58,6 @@ Sortie : un réel représentant le score du texte (généralement négatif car on uti
 float ScoreBigramm(const char texte[], const unsigned int tpTexte, const float bigramme[42][42]);
 
 /*
-Rôle : Assigne un score de plausibilité à un tableau de charactère en utilisant la fréquence d'apparition de quadrigrammes
-Entrée : Un tableau de caractères étant le texte, un entier correspondant à la taille réelle du texte, la liste des quadrigrammes utilisés avec leur score associés pour calculer le score total
-Sortie : un réel représentant le score du texte (généralement négatif car on utilise la fonction logarithme)
-*/
-float ScoreQuadgramm(const char texte[], const unsigned int tpTexte, float quadgramm[42][42][42][42]);
-
-/*
 Rôle: Permet de donne l'indice d'une lettre dans l'alphabet (exemple : LettreToNumber('A') = 0)
 Entrée : un caractère (entre simple cote)
 Sortie : un entier entre 0 et 25 (ou plus avec les accents) ou -1 en cas d'erreur

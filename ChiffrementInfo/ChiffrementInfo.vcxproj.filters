@@ -18,34 +18,19 @@
     <ClCompile Include="Source Files\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Source Files\Ecriture.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Source Files\Proposition.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Source Files\Score.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Source Files\LettreToNumber.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Source Files\TextInTab.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Source Files\InitialisationTableau.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Source Files\SetBigramme.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Source Files\ApplicationProposition.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Source Files\FreqToTab.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Source Files\CleanText.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Source Files\Recuit_simulé.cpp">
@@ -63,13 +48,7 @@
     <ClCompile Include="Source Files\LettreToNumberComplet.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Source Files\ScoreQuadgramm.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Source Files\SetBigrammeComplet.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Source Files\SetQuadgramm.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -81,18 +60,12 @@
       <Filter>Resource Files</Filter>
     </Text>
     <Text Include="Resource Files\BigrammesTexte.txt" />
-    <Text Include="Resource Files\TextCrypter.txt" />
-    <Text Include="Resource Files\Text_a_trouver.txt" />
-    <Text Include="Resource Files\quadgramm.txt" />
-    <Text Include="Resource Files\TextDeCrypter.txt" />
-    <Text Include="Resource Files\TextTest.txt" />
-    <Text Include="Resource Files\OccurenceTotalParLettre.txt" />
+    <Text Include="message_cry.txt" />
+    <Text Include="key.txt" />
+    <Text Include="message_cry_decry.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header Files\decrypter.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Header Files\utils.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Header Files\WRfichier.h">
