@@ -104,8 +104,8 @@ float Recuit_boucle(const char texte_crypt[], char texte_crypt_courant[], const 
 
 		//Pour voir les propositions en temps réel
 		k = k + 1;
-		//cout << " k (r) : " << k;
-		//cout << " proposition : " << proposition_courante << " et le best_score : " << score_total_best << endl;
+		cout << " k (r) : " << k;
+		cout << " proposition : " << proposition_courante << " et le best_score : " << score_total_best << endl;
 		
 	}
 	return score_total_best;
