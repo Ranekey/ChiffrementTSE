@@ -32,7 +32,9 @@ unsigned int RecuperationMots(const string nomFichier, char liste_mots[][50])
 	*/
 	return 0;
 }
-
+/*
+Mets tout les mots dans la liste mot francais dans une variable string 
+*/
 string MotInTab(const string nomFichier) {
 	ifstream fichier(nomFichier.c_str());
 	string mots = "";
@@ -56,8 +58,11 @@ string MotInTab(const string nomFichier) {
 
 bool Recuit(float score_actuel, float score_courant, float temperature)
 {
+
+	
 	bool b;
 	float prob;
+	//crée un nombre aléatoire 
 	std::random_device rd;
 	std::mt19937 gen(rd());
 	std::uniform_real_distribution<> dist(0, 1);

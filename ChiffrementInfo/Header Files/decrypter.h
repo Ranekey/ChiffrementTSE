@@ -54,8 +54,11 @@ void Proposition(int tailleProposition, char proposition[]);
 Rôle : Assigne un score de plausibilité à un tableau de charactère
 Entrée : Un tableau de caractères étant le texte, un entier correspondant à la taille réelle du texte
 Sortie : un réel représentant le score du texte
+A NE PLUS UTTILISER, UTILISER SCOREBIGRAMM
 */
 float Score(const char texte[], unsigned int tpTexte, float bigramme[26][26]);
+
+
 float ScoreBigramm(const string texte, unsigned int tpTexte, float bigramme[42][42]);
 
 float ScoreQuadgramm(const char texte[], unsigned int tpTexte, float quadgramm[42][42][42][42]);
@@ -64,8 +67,12 @@ float ScoreQuadgramm(const char texte[], unsigned int tpTexte, float quadgramm[4
 Rôle: Permet de donne l'indice d'une lettre dans l'alphabet (exemple : LettreToNumber('A') = 0)
 Entrée : un charactère (entre simple cote)
 Sortie : un entier entre 0 et 25 ou -1 en cas d'erreur
+A NE PLUS UTTILISER,
 */
 int LettreToNumber(char lettre);
+/*
+même rôle que lettre to number mais prends en compte un alphabet plus grand
+*/
 int LettreToNumberComplet(char lettre);
 /*
 Rôle: Application d'une proposition à un texte donné

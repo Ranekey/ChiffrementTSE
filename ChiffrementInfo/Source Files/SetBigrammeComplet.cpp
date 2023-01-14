@@ -38,7 +38,7 @@ bool SetBigrammeComplet(string nomfichier, float bigramme[42][42])
 	if (Fichier) {
 		sansErreur = true;
 		string ligne;
-		float valMin = 0.01;
+		float valMin = 0.001;
 		char ligneChar[11];
 		// Initialisation 
 		for (unsigned int i = 0; i < 42; i++) {
@@ -79,36 +79,3 @@ bool SetBigrammeComplet(string nomfichier, float bigramme[42][42])
 	}
 	return sansErreur;
 }
-
-
-
-/*
-C'est méthode est à utiliser si l'on se base sur un texte  pour créer notre propre bigramme
-Cependant le site https://www.apprendre-en-ligne.net/crypto/stat/francais.html propose déjà un bigramme
-Nous allons donc utiliser le leur
-
-bool SetBigramme(string nomfichier, float bigramme[26][26]) {
-	char texteBigramme[100000];// cent milles charctère maximum
-	int tpTexteBigramme;
-	int occurences[26] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
-	unsigned int indPremierLettre;
-	unsigned int indDeuximeLettre;
-	char lettre;
-	int nbLettres = 0;
-	// acquisistion du texte
-	tpTexteBigramme = TextInTab(nomfichier, texteBigramme);
-	// contenu du fichier enregistrer dans texteBigramme
-	if (tpTexteBigramme >= 0) {
-		for (unsigned ind i = 1, i < tpTexteBigramme, i++) {
-			indPremierLettre = LettreToNumber(texteBigramme[i - 1]);
-			indDeuximeLettre = LettreToNumber(texteBigramme[i]);
-			bigramme[indPremierLettre][indDeuximeLettre] = bigramme[indPremierLettre][indDeuximeLettre] + 1;
-			// bien s'assurer d'initialiser les valeurs à 0
-
-		}
-	}
-
-
-
-}
-*/
