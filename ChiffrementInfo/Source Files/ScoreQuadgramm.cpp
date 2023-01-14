@@ -3,7 +3,7 @@
 #include <iostream>// à suppprimer
 #include <math.h>
 
-float ScoreQuadgramm(const char texte[], unsigned int tpTexte, float quadgramm[42][42][42][42])
+float ScoreQuadgramm(const char texte[], const unsigned int tpTexte, float quadgramm[42][42][42][42])
 {
 	unsigned int indPremierLettre;
 	unsigned int indDeuxiemeLettre;
@@ -12,10 +12,10 @@ float ScoreQuadgramm(const char texte[], unsigned int tpTexte, float quadgramm[4
 	float score = 0;
 	for (unsigned int indChar = 3; indChar < tpTexte; indChar++)
 	{
-		indPremierLettre = LettreToNumber(texte[indChar - 3]);
-		indDeuxiemeLettre = LettreToNumber(texte[indChar - 2]);
-		indTroisiemeLettre = LettreToNumber(texte[indChar - 1]);
-		indQuatriemeLettre = LettreToNumber(texte[indChar]);
+		indPremierLettre = LettreToNumberComplet(texte[indChar - 3]);
+		indDeuxiemeLettre = LettreToNumberComplet(texte[indChar - 2]);
+		indTroisiemeLettre = LettreToNumberComplet(texte[indChar - 1]);
+		indQuatriemeLettre = LettreToNumberComplet(texte[indChar]);
 		
 		if (indPremierLettre != -1 && indDeuxiemeLettre != -1) {
 			//cout << "score : " << score << " bigramme : " << bigramme[indPremierLettre][indDeuxiemeLettre] <<endl;;

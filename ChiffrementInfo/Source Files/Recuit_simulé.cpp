@@ -72,7 +72,7 @@ float Recuit_boucle(const char texte_crypt[], char texte_crypt_courant[], const 
 	float score_total_best = 0;
 
 
-	ApplicationProposition(texte_crypt, texte_crypt_courant, taille_texte, best_proposition);
+	ApplicationProposition(texte_crypt, taille_texte, best_proposition, texte_crypt_courant);
 	score_courant = ScoreBigramm(texte_crypt_courant, taille_texte, bigrammes);
 	score_mots_courant = Score_Mots(texte_crypt_courant, dico);
 	score_total_courant = FACTEUR_SCORE_MOTS * score_mots_courant + score_courant;
@@ -84,7 +84,7 @@ float Recuit_boucle(const char texte_crypt[], char texte_crypt_courant[], const 
 	while (k < MAXITTER)
 	{
 		Proposition(26, proposition_courante);
-		ApplicationProposition(texte_crypt, texte_crypt_courant, taille_texte, proposition_courante);
+		ApplicationProposition(texte_crypt, taille_texte, proposition_courante, texte_crypt_courant);
 		score_courant = ScoreBigramm(texte_crypt_courant, taille_texte, bigrammes);
 		score_mots_courant = Score_Mots(texte_crypt_courant, dico);
 		score_total_courant = FACTEUR_SCORE_MOTS * score_mots_courant + score_courant;

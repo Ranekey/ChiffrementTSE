@@ -47,7 +47,7 @@ void FreqApparitions(const char texte[], float freq[])
 	for (int i = 0; texte[i] != '\0'; i++)
 	{
 		lettre = texte[i];
-		indLettre = LettreToNumber(lettre);
+		indLettre = LettreToNumberComplet(lettre);
 		if (indLettre != -1)
 		{
 			occurences[indLettre] = occurences[indLettre] + 1;
@@ -81,12 +81,12 @@ void Proposition_initiale(const char alphabet[], const float freqAlphabet[], con
 
 	for (int i = 0; i < 26; i++)
 	{
-		indiceProp = LettreToNumber(associationAlphabet[i].caractere);
+		indiceProp = LettreToNumberComplet(associationAlphabet[i].caractere);
 		proposition[indiceProp] = associationMess[i].caractere;
 	}
 }
 
-void Proposition(int tailleProposition, char proposition[])
+void Proposition(const int tailleProposition, char proposition[])
 {
 	std::random_device rd;
 	std::mt19937 gen(rd());

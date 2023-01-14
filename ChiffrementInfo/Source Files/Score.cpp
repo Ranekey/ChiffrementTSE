@@ -6,7 +6,7 @@
 #include <vector>
 using namespace std;
 
-float ScoreBigramm(const string texte, unsigned int tpTexte, const float bigramme[42][42])
+float ScoreBigramm(const char texte[], const unsigned int tpTexte, const float bigramme[42][42])
 {
 	unsigned int indPremierLettre;
 	unsigned int indDeuxiemeLettre;

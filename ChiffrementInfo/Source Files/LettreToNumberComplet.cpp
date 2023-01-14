@@ -3,7 +3,7 @@
 #include <iostream>// a sup
 using namespace std;
 
-int LettreToNumberComplet(char lettre)
+int LettreToNumberComplet(const char lettre)
 {
 	int indLettre;
 	string ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸ";
