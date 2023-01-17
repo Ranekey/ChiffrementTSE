@@ -114,19 +114,43 @@ float Score_Mots(const char texte[], unsigned int tailleTexte,const int* tabOccu
 			unsigned int posCursor = StartPosCursor(motRecherche[0], tabOccurenceLettre);
 			unsigned int interval = Interval(motRecherche[0], tabOccurenceLettre);
 			unsigned int posInterval = 0;
-			fichier.seekg(posCursor, ios::beg);
 			string listeMots;
-			while (posInterval < interval) {
-				posInterval++;
+			int debut, fin, milieu;
+			debut = posCursor;
+			fin = posCursor + interval;
+			while (debut <= fin) {
+				milieu = (debut + fin) / 2;
+				fichier.seekg(milieu, ios::beg);
+
 				//cout << "posInterval: " << posInterval << " interval : " << interval<<" lettre : " << motRecherche[0] << endl;
 				getline(fichier, listeMots);
+				
+				if (listeMots.compare(motRecherche) == 0) 
 				{
-					//On vérifie si il y a une correspondance
-					if (listeMots.find(motRecherche) != std::string::npos)
+					mots_corrects++;
+					break;
+				}
+				else
+				{
+					
+					bool estInclus = false;
+					int taille_min = min(listeMots.length(), motRecherche.length());
+					cout << "listeMots :" << listeMots << " motRecherche : " << motRecherche << endl;
+					cout << "debut :" << debut << " fin : " << fin <<" milieu :" << milieu <<" taille_min : " << taille_min << endl;
+					for (int i = 0; i<taille_min; i++)
 					{
-						mots_corrects = mots_corrects + 1;
-						break;
+						if (int(motRecherche[i]) > int(listeMots[i]))
+						{
+							debut = milieu +1;
+							break;
+						}
+						else
+						{
+							fin = milieu - 1;
+							break;
+						}
 					}
+
 				}
 			}
 			fichier.clear(); 
