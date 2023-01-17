@@ -30,7 +30,7 @@ void AssociationFreq(const char alphabet[], const float freqApparitions[], dicoF
 	}
 }
 
-void FreqApparitions(const char texte[], float freq[])
+void FreqApparitions(const char texte[], unsigned int taille_texte, float freq[])
 {
 	int occurences[26];
 	//initialiser toutes les occurences à 0
@@ -44,7 +44,7 @@ void FreqApparitions(const char texte[], float freq[])
 
 	//Parcourir le texte (tableau de caractères) jusqu'à atteindre le caractère fin de chaine
 	//Compte le nombre de chaque caractère
-	for (int i = 0; texte[i] != '\0'; i++)
+	for (int i = 0; i < taille_texte; i++)
 	{
 		lettre = texte[i];
 		indLettre = LettreToNumberComplet(lettre);
@@ -64,14 +64,14 @@ void FreqApparitions(const char texte[], float freq[])
 	}
 }
 
-void Proposition_initiale(const char alphabet[], const float freqAlphabet[], const char texte[], char proposition[])
+void Proposition_initiale(const char alphabet[], const float freqAlphabet[], const char texte[], unsigned int taille_texte, char proposition[])
 {
 	float freqMess[26];
 	dicoFreq associationMess[26];
 	dicoFreq associationAlphabet[26];
 	int indiceProp;
 
-	FreqApparitions(texte, freqMess);
+	FreqApparitions(texte, taille_texte, freqMess);
 
 	AssociationFreq(alphabet, freqAlphabet, associationAlphabet);
 	AssociationFreq(alphabet, freqMess, associationMess);

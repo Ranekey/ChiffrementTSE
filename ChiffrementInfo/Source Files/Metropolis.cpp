@@ -35,7 +35,7 @@ float MetropolisBoucle(const char texte_crypt[], const unsigned int taille_texte
 	float best_score = ScoreBigramm(texte_crypt_courant, taille_texte, bigrammes);
 	float score_actuel = best_score;
 	float score_courant;
-	const unsigned int MAXITTER = 10000;
+	const unsigned int MAXITTER = 100000;
 	unsigned int i = 0;
 	
 	while (i < MAXITTER)

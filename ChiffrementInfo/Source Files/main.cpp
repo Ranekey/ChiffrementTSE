@@ -44,7 +44,7 @@ int main()
 
 	//On fait l'analyse fréquentielle des occurences de chaques lettres avec la fonction Proposition_initiale, ceci nous donne une clé de départ
 	FreqToTab(fichier_freq_alphabet_base, freq_alphabet_base);
-	Proposition_initiale(alphabetBase, freq_alphabet_base, texte_crypt, best_proposition);
+	Proposition_initiale(alphabetBase, freq_alphabet_base, texte_crypt, taille_texte, best_proposition);
 
 	//On convertit les bigrammes contenus dans un fichier dans un tableau de réels à 2 entrées (étant les fréquences d'apparitions)
 	bigrammesExiste = SetBigrammeComplet(fichier_bigrammes, bigrammes);
@@ -52,10 +52,10 @@ int main()
 	if (bigrammesExiste)
 	{
 		
-		best_score = MetropolisBoucle(texte_crypt, taille_texte, bigrammes, texte_crypt_courant,  proposition_courante, proposition_actuelle, best_proposition);
+		//best_score = MetropolisBoucle(texte_crypt, taille_texte, bigrammes, texte_crypt_courant,  proposition_courante, proposition_actuelle, best_proposition);
 
 		//Ici, une deuxième méthode avec un calcul sur le nombre de mots francais présents (qui n'est pas assez efficace de part le parcours de la liste de mots)
-		//best_score = Recuit_boucle(texte_crypt, taille_texte, fichier_liste_mots, bigrammes, texte_crypt_courant, best_proposition);
+		best_score = Recuit_boucle(texte_crypt, taille_texte, fichier_liste_mots, bigrammes, texte_crypt_courant, best_proposition);
 	}
 	else
 	{

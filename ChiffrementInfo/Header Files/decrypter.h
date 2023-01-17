@@ -15,7 +15,7 @@ Entrée : Un tableau de caractères étant le texte
 Entrée / Sortie : Un tableau de la fréquence d'apparation de chaque lettres en pourcentage (de 0 à 1) (dans l'ordre A à Z)
 Sortie : vide
 */
-void FreqApparitions(const char texte[], float freq[]);
+void FreqApparitions(const char texte[], unsigned int taille_texte, float freq[]);
 
 /*
 Rôle : Associer à chaque lettre de l'alphabet sa fréquence d'apparition en utilisant le type composé dicoFreq
@@ -40,7 +40,7 @@ dans l'ordre de cet alphabet, un tableau de caractère étant le texte à décrypter
 Entrée / Sortie : Un tableau étant la proposition de clé de l'ordre des 26 lettres
 Sortie : vide
 */
-void Proposition_initiale(const char alphabet[], const float freqAlphabet[], const char texte[], char proposition[]);
+void Proposition_initiale(const char alphabet[], const float freqAlphabet[], const char texte[], unsigned int taille_texte, char proposition[]);
 
 /*
 R: Inverser 2 caractères d'une chaine de caractères
