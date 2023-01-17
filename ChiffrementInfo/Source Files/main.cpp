@@ -54,7 +54,7 @@ int main()
 	if (bigrammesExiste)
 	{
 		
-		//best_score = MetropolisBoucle(texte_crypt, taille_texte, bigrammes, texte_crypt_courant,  proposition_courante, proposition_actuelle, best_proposition);
+		best_score = MetropolisBoucle(texte_crypt, taille_texte, bigrammes, texte_crypt_courant,  proposition_courante, proposition_actuelle, best_proposition);
 
 		//Ici, une deuxième méthode avec un calcul sur le nombre de mots francais présents (qui n'est pas assez efficace de part le parcours de la liste de mots)
 		best_score = Recuit_boucle(texte_crypt, tabOccurenceMotLettre,taille_texte, fichier_liste_mots, bigrammes, texte_crypt_courant, best_proposition);
