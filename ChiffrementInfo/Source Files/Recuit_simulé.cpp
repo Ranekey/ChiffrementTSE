@@ -26,10 +26,10 @@ bool Recuit(const float score_actuel, const float score_courant, const float tem
 
 }
 
-float Recuit_boucle(const char texte_crypt[], const unsigned int taille_texte, const string dico, const float bigrammes[42][42], char texte_crypt_courant[], char best_proposition[27])
+float Recuit_boucle(const char texte_crypt[],const int* tabOccurenceMotLettre,const unsigned int taille_texte, const string dico, const float bigrammes[42][42], char texte_crypt_courant[], char best_proposition[27])
 {
 	//Initialisation des valeurs pour le calcul
-	const int MAXITTER = 10;
+	const int MAXITTER = 2000;
 	const int FACTEUR_SCORE_MOTS = 4;
 	float temperature = 0.05;
 	float rho_modif_temperature = 0.999;
@@ -50,7 +50,7 @@ float Recuit_boucle(const char texte_crypt[], const unsigned int taille_texte, c
 	//Calcul du score de la meilleure proposition précédemment trouvée pour avoir un score initial
 	ApplicationProposition(texte_crypt, taille_texte, best_proposition, texte_crypt_courant);
 	score_courant = ScoreBigramm(texte_crypt_courant, taille_texte, bigrammes);
-	score_mots_courant = Score_Mots(texte_crypt_courant, dico);
+	score_mots_courant = Score_Mots(texte_crypt_courant, taille_texte,tabOccurenceMotLettre,dico);
 	score_total_courant = FACTEUR_SCORE_MOTS * score_mots_courant + score_courant;
 	score_total_actuel = score_total_courant;
 	score_total_best = score_total_courant;
@@ -65,7 +65,7 @@ float Recuit_boucle(const char texte_crypt[], const unsigned int taille_texte, c
 		Proposition(26, proposition_courante);
 		ApplicationProposition(texte_crypt, taille_texte, proposition_courante, texte_crypt_courant);
 		score_courant = ScoreBigramm(texte_crypt_courant, taille_texte, bigrammes);
-		score_mots_courant = Score_Mots(texte_crypt_courant, dico);
+		score_mots_courant = Score_Mots(texte_crypt_courant, taille_texte,tabOccurenceMotLettre ,dico);
 		score_total_courant = FACTEUR_SCORE_MOTS * score_mots_courant + score_courant;
 
 		//Evaluer si l'on garde ou non la propostion

@@ -68,6 +68,7 @@ float MetropolisBoucle(const char texte_crypt[], const unsigned int taille_texte
 		cout << " proposition : " << proposition_courante << " et le best_score : " << best_score << endl;
 
 	}
+	
 
 	return best_score;
 }

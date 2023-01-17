@@ -17,18 +17,21 @@ unsigned int TextInTab(const string nomfichier, char texte[])
 		while (getline(Fichier, ligne))
 		{
 			//ajouter tous les caractères un par un dans le tableau
-			for (unsigned int i = 0; i < ligne.length(); i++)
+			for (unsigned int i = 0; i < ligne.length()-1; i++)//on n'enregistre pas le carctèr \n
 			{
+
 				lettre = ligne[i];
-				texte[ind] = lettre;
-				ind = ind + 1;
+				texte[ind+i] = lettre;
+				
 			}
+			texte[ind + ligne.length() - 1] = ' ';
+			ind = ind + ligne.length();
+			//i = ligne.length()-2
 		}
 	}
 	else
 	{
 		cout << "Le fichier n'a pas été lu.";
 	}
-
 	return ind; 
 }
