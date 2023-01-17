@@ -85,14 +85,15 @@ Entrée : un tableau de caractères (le texte à décrypter), un entier (la taille d
 Entrée / Sortie : un tableau de caractères (le texte courant), un tableau de caractère (la clé de la meilleure proposition)
 Sortie : un réel (le meilleur score obtenu)
 */
-float Recuit_boucle(const char texte_crypt[], const unsigned int taille_texte, const string dico, const float bigrammes[42][42], char texte_crypt_courant[], char best_proposition[27]);
+float Recuit_boucle(const char texte_crypt[], const int* tabOccurenceMotLettre, const unsigned int taille_texte, const string dico, const float bigrammes[42][42], char texte_crypt_courant[], char best_proposition[27]);
 
 /*
 Rôle : Evaluer le score d'un texte en fonction du nombre de mots présents parmi une liste de mots (ici en Francais)
 Entrée: un tableau de caractères (le texte à évaluer), un string (le chemin vers le fichier contenant la liste de mots)
 Sortie : un réel (le score du texte)
 */
-float Score_Mots(const char texte[], const string dico);
+
+float Score_Mots(const char texte[], unsigned int tailleTexte, const int* tabOccurenceLettre, const string dico);
 
 /*
 Rôle : utiliser l'algorithme de métropolis pour savoir si une proposition est conserver ou non
